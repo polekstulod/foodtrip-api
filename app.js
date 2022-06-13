@@ -1,4 +1,5 @@
 // * Import required modules
+const express = require('express');
 const dotenv = require('dotenv');
 const db = require('./src/models');
 
@@ -23,3 +24,19 @@ if (process.env.ALLOW_SYNC === 'true') {
 			console.log('Done adding/updating the database based on the Models.')
 		);
 }
+
+// * Routes
+const userRoute = require('./src/routes/user.routes');
+
+// * Initialize express
+var app = express();
+
+const PORT = process.env.PORT || 5000;
+
+app.use(express.json());
+
+app.use(`${process.env.API_VERSION}/user`, userRoute);
+
+app.listen(PORT, () => {
+	console.log(`Server is running on port ${PORT}.`);
+});
