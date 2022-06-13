@@ -1,8 +1,11 @@
+// * Import required modules
 const dotenv = require('dotenv');
 const db = require('./src/models');
 
+// * Get config variables
 dotenv.config();
 
+// * Authenticate Database connection
 db.sequelize
 	.authenticate()
 	.then(() => {
@@ -12,6 +15,7 @@ db.sequelize
 		console.error('Unable to connect to the database:', err);
 	});
 
+// * Sync Database tables
 if (process.env.ALLOW_SYNC === 'true') {
 	db.sequelize
 		.sync({ alter: true })
