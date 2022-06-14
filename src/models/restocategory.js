@@ -18,6 +18,11 @@ module.exports = (sequelize, DataTypes) => {
 				as: 'updated',
 				foreignKey: 'updated_by',
 			});
+
+			this.hasMany(models.Restaurant, {
+				as: 'restaurant_category',
+				foreignKey: 'restocatg_id',
+			});
 		}
 	}
 
@@ -35,6 +40,20 @@ module.exports = (sequelize, DataTypes) => {
 				validate: {
 					notNull: { msg: 'Restaurant Category Name should not be null.' },
 					notEmpty: { msg: 'Restaurant Category Name should not be empty.' },
+				},
+			},
+			created_by: {
+				type: DataTypes.UUID,
+				references: {
+					model: sequelize.User,
+					key: 'user_id',
+				},
+			},
+			updated_by: {
+				type: DataTypes.UUID,
+				references: {
+					model: sequelize.User,
+					key: 'user_id',
 				},
 			},
 		},
