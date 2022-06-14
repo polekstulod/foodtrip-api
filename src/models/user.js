@@ -62,11 +62,6 @@ module.exports = (sequelize, DataTypes) => {
 			password: {
 				type: DataTypes.STRING,
 				allowNull: false,
-				validate: {
-					is: /^[0-9a-f]{64}$/i,
-					notNull: { msg: 'Password should not be null.' },
-					notEmpty: { msg: 'Password should not be empty.' },
-				},
 			},
 			first_name: {
 				type: DataTypes.STRING,
