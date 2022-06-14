@@ -4,16 +4,20 @@ const bcrypt = require('bcrypt');
 
 // * Create user
 exports.create = async (req, res) => {
+	req.body.created_by = req.user.user_id;
+
 	req.body.password = await bcrypt.hash(
 		req.body.password,
 		parseInt(process.env.SALT_ROUND)
 	);
 	User.create(req.body)
 		.then((data) => {
-			res.send({
-				error: false,
-				data: data,
-				message: ['User is created successfully.'],
+			User.findByPk(data.user_id, { include: ['created'] }).then((result) => {
+				res.send({
+					error: false,
+					data: result,
+					message: ['User is created successfully.'],
+				});
 			});
 		})
 		.catch((err) => {
@@ -81,9 +85,7 @@ exports.update = async (req, res) => {
 		where: { user_id: id },
 	})
 		.then((result) => {
-			console.log(result);
 			if (result) {
-				// success
 				User.findByPk(id).then((data) => {
 					res.send({
 						error: false,
@@ -100,7 +102,6 @@ exports.update = async (req, res) => {
 			}
 		})
 		.catch((err) => {
-			console.log(err);
 			res.status(500).send({
 				error: true,
 				data: [],
