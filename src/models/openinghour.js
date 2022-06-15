@@ -59,37 +59,37 @@ module.exports = (sequelize, DataTypes) => {
 						msg: 'Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, and Saturday only',
 					},
 				},
-				open_time: {
-					type: DataTypes.TIME,
-					allowNull: false,
-					validate: {
-						notNull: { msg: 'Opening time should not be null.' },
-						notEmpty: { msg: 'Opening time should not be empty.' },
-					},
+			},
+			open_time: {
+				type: DataTypes.TIME,
+				allowNull: false,
+				validate: {
+					notNull: { msg: 'Opening time should not be null.' },
+					notEmpty: { msg: 'Opening time should not be empty.' },
 				},
-				close_time: {
-					type: DataTypes.TIME,
-					allowNull: false,
-					validate: {
-						notNull: { msg: 'Closing time should not be null.' },
-						notEmpty: { msg: 'Closing time should not be empty.' },
-					},
+			},
+			close_time: {
+				type: DataTypes.TIME,
+				allowNull: false,
+				validate: {
+					notNull: { msg: 'Closing time should not be null.' },
+					notEmpty: { msg: 'Closing time should not be empty.' },
 				},
-				created_by: {
-					type: DataTypes.UUID,
-					allowNull: true,
-					references: {
-						model: sequelize.User,
-						key: 'user_id',
-					},
+			},
+			created_by: {
+				type: DataTypes.UUID,
+				allowNull: true,
+				references: {
+					model: sequelize.User,
+					key: 'user_id',
 				},
-				updated_by: {
-					type: DataTypes.UUID,
-					allowNull: true,
-					references: {
-						model: sequelize.User,
-						key: 'user_id',
-					},
+			},
+			updated_by: {
+				type: DataTypes.UUID,
+				allowNull: true,
+				references: {
+					model: sequelize.User,
+					key: 'user_id',
 				},
 			},
 		},

@@ -9,8 +9,18 @@ module.exports = (sequelize, DataTypes) => {
 		 */
 		static associate(models) {
 			// define association here
+			this.belongsTo(models.User, {
+				as: 'created',
+				foreignKey: 'created_by',
+			});
+
+			this.belongsTo(models.User, {
+				as: 'updated',
+				foreignKey: 'updated_by',
+			});
+
 			this.belongsTo(models.Restaurant, {
-				as: 'dish_restaurant_category',
+				as: 'dish_resto_category',
 				foreignKey: 'resto_id',
 			});
 		}
@@ -39,16 +49,16 @@ module.exports = (sequelize, DataTypes) => {
 				},
 			},
 			created_by: {
-				type: DataTypes.STRING,
+				type: DataTypes.UUID,
 				references: {
-					model: sequelize.users,
+					model: sequelize.User,
 					key: 'user_id',
 				},
 			},
 			updated_by: {
-				type: DataTypes.STRING,
+				type: DataTypes.UUID,
 				references: {
-					model: sequelize.users,
+					model: sequelize.User,
 					key: 'user_id',
 				},
 			},

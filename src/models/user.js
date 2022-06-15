@@ -22,11 +22,10 @@ module.exports = (sequelize, DataTypes) => {
 				foreignKey: 'updated_by',
 			});
 
-			// TODO: Uncomment when Restaurant model is created
-			/* 			this.belongsTo(models.Restaurant, {
+			this.belongsTo(models.Restaurant, {
 				as: 'user_restaurant',
 				foreignKey: 'resto_id',
-			}); */
+			});
 		}
 
 		toJSON() {
@@ -47,13 +46,13 @@ module.exports = (sequelize, DataTypes) => {
 				defaultValue: DataTypes.UUIDV4,
 			},
 			// TODO: Uncomment when Restaurant model is created
-			/* 			resto_id: {
+			resto_id: {
 				type: DataTypes.UUID,
 				references: {
 					model: sequelize.Restaurant,
 					key: 'resto_id',
 				},
-			}, */
+			},
 			user_no: {
 				type: DataTypes.INTEGER,
 				allowNull: false,

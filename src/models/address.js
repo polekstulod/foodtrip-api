@@ -112,7 +112,7 @@ module.exports = (sequelize, DataTypes) => {
 			updated_by: {
 				type: DataTypes.UUID,
 				references: {
-					model: User,
+					model: sequelize.User,
 					key: 'user_id',
 				},
 			},
