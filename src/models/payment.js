@@ -18,6 +18,16 @@ module.exports = (sequelize, DataTypes) => {
 				as: 'updated',
 				foreignKey: 'updated_by',
 			});
+
+			this.belongsTo(models.User, {
+				as: 'deleted',
+				foreignKey: 'deleted_by',
+			});
+
+			/* this.belongsTo(models.Order, {
+				as: 'order',
+				foreignKey: 'order_id',
+			}); */
 		}
 	}
 	Payment.init(
@@ -36,7 +46,13 @@ module.exports = (sequelize, DataTypes) => {
 					notEmpty: { msg: 'Payment Number should not be empty.' },
 				},
 			},
-			// TODO: order_id
+			/* order_id: {
+				type: DataTypes.UUID,
+				references: {
+					model: sequelize.Order,
+					key: 'order_id',
+				},
+			}, */
 			payment_status: {
 				type: DataTypes.STRING,
 				defaultValue: 'Paid',
@@ -54,7 +70,7 @@ module.exports = (sequelize, DataTypes) => {
 				type: DataTypes.DECIMAL(10, 2),
 				allowNull: false,
 				validate: {
-					isDecimal: true,
+					isDecimal: { msg: 'Payment Total must be in a valid format.' },
 					notNull: { msg: 'Payment Total should not be null.' },
 					notEmpty: { msg: 'Payment Total should not be empty.' },
 				},
@@ -67,6 +83,13 @@ module.exports = (sequelize, DataTypes) => {
 				},
 			},
 			updated_by: {
+				type: DataTypes.UUID,
+				references: {
+					model: sequelize.User,
+					key: 'user_id',
+				},
+			},
+			deleted_by: {
 				type: DataTypes.UUID,
 				references: {
 					model: sequelize.User,
