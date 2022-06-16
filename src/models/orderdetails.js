@@ -18,8 +18,6 @@ module.exports = (sequelize, DataTypes) => {
 				primaryKey: true,
 				defaultValue: DataTypes.UUIDV4,
 			},
-			// TODO: order_id
-			// TODO: dish_id
 			quantity: {
 				type: DataTypes.INTEGER(10),
 				allowNull: false,
