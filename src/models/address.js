@@ -28,6 +28,11 @@ module.exports = (sequelize, DataTypes) => {
 				as: 'resto_address',
 				foreignKey: 'resto_id',
 			});
+
+			this.hasMany(models.Order, {
+				as: 'adddress',
+				foreignKey: 'address_id',
+			});
 		}
 	}
 	Address.init(

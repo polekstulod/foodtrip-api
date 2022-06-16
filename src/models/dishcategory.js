@@ -19,9 +19,9 @@ module.exports = (sequelize, DataTypes) => {
 				foreignKey: 'updated_by',
 			});
 
-			this.belongsTo(models.Restaurant, {
-				as: 'dish_resto_category',
-				foreignKey: 'resto_id',
+			this.hasMany(models.Dish, {
+				as: 'dish_category',
+				foreignKey: 'dishcatg_id',
 			});
 		}
 	}
@@ -40,13 +40,6 @@ module.exports = (sequelize, DataTypes) => {
 					notEmpty: { msg: 'Dish Category Name should not be empty.' },
 				},
 				unique: { msg: 'Dish Category Name already exists.' },
-			},
-			resto_id: {
-				type: DataTypes.UUID,
-				references: {
-					model: sequelize.Restaurant,
-					key: 'resto_id',
-				},
 			},
 			created_by: {
 				type: DataTypes.UUID,
