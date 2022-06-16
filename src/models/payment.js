@@ -24,10 +24,10 @@ module.exports = (sequelize, DataTypes) => {
 				foreignKey: 'deleted_by',
 			});
 
-			/* this.belongsTo(models.Order, {
+			this.belongsTo(models.Order, {
 				as: 'order',
 				foreignKey: 'order_id',
-			}); */
+			});
 		}
 	}
 	Payment.init(
@@ -46,13 +46,13 @@ module.exports = (sequelize, DataTypes) => {
 					notEmpty: { msg: 'Payment Number should not be empty.' },
 				},
 			},
-			/* order_id: {
+			order_id: {
 				type: DataTypes.UUID,
 				references: {
 					model: sequelize.Order,
 					key: 'order_id',
 				},
-			}, */
+			},
 			payment_status: {
 				type: DataTypes.STRING,
 				defaultValue: 'Paid',

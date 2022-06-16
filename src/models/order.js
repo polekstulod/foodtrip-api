@@ -40,10 +40,10 @@ module.exports = (sequelize, DataTypes) => {
 				through: models.OrderDetails,
 			});
 
-			/* this.hasOne(models.Payment, {
+			this.hasOne(models.Payment, {
 				as: 'order',
 				foreignKey: 'order_id',
-			}); */
+			});
 		}
 	}
 	Order.init(
