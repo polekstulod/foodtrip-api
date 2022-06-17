@@ -43,6 +43,10 @@ module.exports = (sequelize, DataTypes) => {
 				as: 'order',
 				foreignKey: 'order_id',
 			});
+
+			this.hasOne(models.DeliveryDetails, {
+				foreignKey: 'order_id',
+			});
 		}
 	}
 	Order.init(

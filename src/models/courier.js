@@ -23,6 +23,11 @@ module.exports = (sequelize, DataTypes) => {
 				as: 'deleted',
 				foreignKey: 'deleted_by',
 			});
+
+			this.hasMany(models.DeliveryDetails, {
+				as: 'courier',
+				foreignKey: 'courier_id',
+			});
 		}
 	}
 	Courier.init(

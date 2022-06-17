@@ -19,11 +19,17 @@ module.exports = (sequelize, DataTypes) => {
 				foreignKey: 'updated_by',
 			});
 
-			this.belongsTo(models.Restaurant, {
-				foreignKey: 'resto_id',
+			this.belongsTo(models.User, {
+				as: 'deleted',
+				foreignKey: 'deleted_by',
+			});
+
+			this.belongsTo(models.Order, {
+				foreignKey: 'order_id',
 			});
 
 			this.belongsTo(models.Courier, {
+				as: 'courier',
 				foreignKey: 'courier_id',
 			});
 		}
@@ -39,14 +45,18 @@ module.exports = (sequelize, DataTypes) => {
 				type: DataTypes.INTEGER(11),
 				allowNull: false,
 				unique: { msg: 'Tracking Number already exists.' },
+				validate: {
+					notNull: { msg: 'Tracking Number should not be null.' },
+					notEmpty: { msg: 'Tracking Number should not be empty.' },
+				},
 			},
-			/* order_id: {
+			order_id: {
 				type: DataTypes.UUID,
 				references: {
 					model: sequelize.Order,
 					key: 'order_id',
 				},
-			}, */
+			},
 			courier_id: {
 				type: DataTypes.UUID,
 				references: {
@@ -55,7 +65,7 @@ module.exports = (sequelize, DataTypes) => {
 				},
 			},
 			driver_name: {
-				type: DataTypes.STRING(255),
+				type: DataTypes.STRING,
 				allowNull: false,
 				validate: {
 					notNull: { msg: 'Driver Name should not be null.' },
@@ -70,8 +80,8 @@ module.exports = (sequelize, DataTypes) => {
 						args: /^(09|\+639)\d{9}$/,
 						msg: 'Please enter a valid phone number.',
 					},
-					notNull: { msg: 'Driver phone number should not be null.' },
-					notEmpty: { msg: 'Driver phone number should not be empty.' },
+					notNull: { msg: "Driver's Phone Number should not be null." },
+					notEmpty: { msg: "Driver's Phone Number should not be empty." },
 				},
 			},
 			created_by: {
@@ -90,13 +100,20 @@ module.exports = (sequelize, DataTypes) => {
 					key: 'user_id',
 				},
 			},
+			deleted_by: {
+				type: DataTypes.UUID,
+				allowNull: true,
+				references: {
+					model: sequelize.User,
+					key: 'user_id',
+				},
+			},
 			date_received: {
 				type: DataTypes.DATE,
 				comment:
 					'Date and Time in which the order has been received by the customer.',
 			},
 		},
-
 		{
 			sequelize,
 			timestamps: true,
