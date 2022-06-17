@@ -9,6 +9,23 @@ module.exports = (sequelize, DataTypes) => {
 		 */
 		static associate(models) {
 			// define association here
+			this.belongsTo(models.User, {
+				as: 'created',
+				foreignKey: 'created_by',
+			});
+
+			this.belongsTo(models.User, {
+				as: 'updated',
+				foreignKey: 'updated_by',
+			});
+
+			this.belongsTo(models.Restaurant, {
+				foreignKey: 'resto_id',
+			});
+
+			this.belongsTo(models.Courier, {
+				foreignKey: 'courier_id',
+			});
 		}
 	}
 	DeliveryDetails.init(
@@ -23,13 +40,13 @@ module.exports = (sequelize, DataTypes) => {
 				allowNull: false,
 				unique: { msg: 'Tracking Number already exists.' },
 			},
-			order_id: {
+			/* order_id: {
 				type: DataTypes.UUID,
 				references: {
 					model: sequelize.Order,
 					key: 'order_id',
 				},
-			},
+			}, */
 			courier_id: {
 				type: DataTypes.UUID,
 				references: {
@@ -74,7 +91,7 @@ module.exports = (sequelize, DataTypes) => {
 				},
 			},
 			date_received: {
-				type: DataTypes.Date,
+				type: DataTypes.DATE,
 				comment:
 					'Date and Time in which the order has been received by the customer.',
 			},
@@ -82,6 +99,11 @@ module.exports = (sequelize, DataTypes) => {
 
 		{
 			sequelize,
+			timestamps: true,
+			createdAt: 'date_created',
+			updatedAt: 'date_updated',
+			deletedAt: 'date_deleted',
+			paranoid: true,
 			modelName: 'DeliveryDetails',
 		}
 	);
