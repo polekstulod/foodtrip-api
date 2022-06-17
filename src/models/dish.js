@@ -51,8 +51,10 @@ module.exports = (sequelize, DataTypes) => {
 			dish_no: {
 				type: DataTypes.INTEGER(11),
 				allowNull: false,
-				unique: {
-					msg: 'Dish number already exists.',
+				unique: { msg: 'Dish Number already exists.' },
+				validate: {
+					notNull: { msg: 'Dish Number should not be null.' },
+					notEmpty: { msg: 'Dish Number should not be empty.' },
 				},
 			},
 			dish_name: {
@@ -97,7 +99,7 @@ module.exports = (sequelize, DataTypes) => {
 				defaultValue: 'Available',
 				allowNull: false,
 				validate: {
-					notNull: { msg: 'Status is required.' },
+					notNull: { msg: 'Status should not be null.' },
 					notEmpty: { msg: 'Status should not be empty.' },
 					isIn: {
 						args: [['Available', 'Unavailable']],
@@ -148,8 +150,8 @@ module.exports = (sequelize, DataTypes) => {
 			createdAt: 'date_created',
 			updatedAt: 'date_updated',
 			deletedAt: 'date_deleted',
-			modelName: 'Dish',
 			paranoid: true,
+			modelName: 'Dish',
 		}
 	);
 	return Dish;

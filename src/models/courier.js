@@ -18,6 +18,11 @@ module.exports = (sequelize, DataTypes) => {
 				as: 'updated',
 				foreignKey: 'updated_by',
 			});
+
+			this.belongsTo(models.User, {
+				as: 'deleted',
+				foreignKey: 'deleted_by',
+			});
 		}
 	}
 	Courier.init(
@@ -31,9 +36,13 @@ module.exports = (sequelize, DataTypes) => {
 				type: DataTypes.INTEGER(11),
 				allowNull: false,
 				unique: { msg: 'Courier Number already exists.' },
+				validate: {
+					notNull: { msg: 'Courier Number should not be null.' },
+					notEmpty: { msg: 'Courier Number should not be empty.' },
+				},
 			},
 			courier_name: {
-				type: DataTypes.STRING(255),
+				type: DataTypes.STRING,
 				allowNull: false,
 				validate: {
 					notNull: { msg: 'Courier Name should not be null.' },
@@ -41,11 +50,12 @@ module.exports = (sequelize, DataTypes) => {
 				},
 			},
 			courier_status: {
-				type: DataTypes.STRING(255),
+				type: DataTypes.STRING,
 				defaultValue: 'Available',
 				allowNull: false,
 				validate: {
-					notNull: { msg: 'Status is required.' },
+					notNull: { msg: 'Courier status should not be null.' },
+					notEmpty: { msg: 'Courier status should not be empty.' },
 					isIn: {
 						args: [['Available', 'Unavailable']],
 						msg: 'Status should be Available or Unavailable only.',
@@ -66,12 +76,21 @@ module.exports = (sequelize, DataTypes) => {
 					key: 'user_id',
 				},
 			},
+			deleted_by: {
+				type: DataTypes.UUID,
+				references: {
+					model: sequelize.User,
+					key: 'user_id',
+				},
+			},
 		},
 		{
 			sequelize,
 			timestamps: true,
 			createdAt: 'date_created',
 			updatedAt: 'date_updated',
+			deletedAt: 'date_deleted',
+			paranoid: true,
 			modelName: 'Courier',
 		}
 	);

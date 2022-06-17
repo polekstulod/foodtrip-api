@@ -22,8 +22,18 @@ module.exports = (sequelize, DataTypes) => {
 				foreignKey: 'updated_by',
 			});
 
+			this.belongsTo(User, {
+				as: 'deleted',
+				foreignKey: 'deleted_by',
+			});
+
+			this.hasMany(models.Address, {
+				as: 'user',
+				foreignKey: 'user_id',
+			});
+
 			this.belongsTo(models.Restaurant, {
-				as: 'user_restaurant',
+				as: 'restaurant',
 				foreignKey: 'resto_id',
 			});
 		}
@@ -45,7 +55,6 @@ module.exports = (sequelize, DataTypes) => {
 				primaryKey: true,
 				defaultValue: DataTypes.UUIDV4,
 			},
-			// TODO: Uncomment when Restaurant model is created
 			resto_id: {
 				type: DataTypes.UUID,
 				references: {
@@ -57,10 +66,18 @@ module.exports = (sequelize, DataTypes) => {
 				type: DataTypes.INTEGER,
 				allowNull: false,
 				unique: { msg: 'User Number already exists.' },
+				validate: {
+					notNull: { msg: 'User Number should not be null.' },
+					notEmpty: { msg: 'User Number should not be empty.' },
+				},
 			},
 			password: {
 				type: DataTypes.STRING,
 				allowNull: false,
+				validate: {
+					notNull: { msg: 'Password should not be null.' },
+					notEmpty: { msg: 'Password should not be empty.' },
+				},
 			},
 			first_name: {
 				type: DataTypes.STRING,
@@ -86,7 +103,8 @@ module.exports = (sequelize, DataTypes) => {
 				allowNull: false,
 				validate: {
 					isEmail: { msg: 'Email Address entered must be in a valid format.' },
-					notNull: { msg: 'Email Address is required.' },
+					notNull: { msg: 'Email Address should not be null.' },
+					notEmpty: { msg: 'Email Address should not be empty.' },
 				},
 				unique: { msg: 'Email Address already exists.' },
 			},
@@ -98,6 +116,10 @@ module.exports = (sequelize, DataTypes) => {
 						args: /^(09|\+639)\d{9}$/,
 						msg: 'Please enter a valid phone number.',
 					},
+					notNull: { msg: 'Phone Number should not be null.' },
+					notEmpty: { msg: 'Phone Number should not be empty.' },
+					comment:
+						'Phone number must start with "09" or "+639" and only up 13 characters',
 				},
 			},
 			gender: {
@@ -106,8 +128,10 @@ module.exports = (sequelize, DataTypes) => {
 				validate: {
 					isIn: {
 						args: [['Male', 'Female', 'Others']],
-						msg: 'Gender should be male, female or others only.',
+						msg: 'Gender should be Male, Female or Others only.',
 					},
+					notNull: { msg: 'Gender should not be null.' },
+					notEmpty: { msg: 'Gender should not be empty.' },
 				},
 			},
 			user_type: {
@@ -115,11 +139,12 @@ module.exports = (sequelize, DataTypes) => {
 				allowNull: false,
 				defaultValue: 'Customer',
 				validate: {
-					notNull: { msg: 'User type is required.' },
 					isIn: {
 						args: [['Customer', 'Resto_Admin', 'Admin']],
 						msg: 'User type should be Customer, Resto_Admin or Admin only.',
 					},
+					notNull: { msg: 'User Type should not be null.' },
+					notEmpty: { msg: 'User Type should not be empty.' },
 				},
 			},
 			status: {
@@ -127,11 +152,12 @@ module.exports = (sequelize, DataTypes) => {
 				defaultValue: 'Active',
 				allowNull: false,
 				validate: {
-					notNull: { msg: 'Status is required.' },
 					isIn: {
 						args: [['Active', 'Inactive']],
 						msg: 'Status should be Active or Inactive only.',
 					},
+					notNull: { msg: 'Status should not be null.' },
+					notEmpty: { msg: 'Status should not be empty.' },
 				},
 			},
 			created_by: {
@@ -148,12 +174,21 @@ module.exports = (sequelize, DataTypes) => {
 					key: 'user_id',
 				},
 			},
+			deleted_by: {
+				type: DataTypes.UUID,
+				references: {
+					model: User,
+					key: 'user_id',
+				},
+			},
 		},
 		{
 			sequelize,
 			timestamps: true,
 			createdAt: 'date_created',
 			updatedAt: 'date_updated',
+			deletedAt: 'date_deleted',
+			paranoid: true,
 			modelName: 'User',
 		}
 	);

@@ -19,6 +19,11 @@ module.exports = (sequelize, DataTypes) => {
 				foreignKey: 'updated_by',
 			});
 
+			this.belongsTo(models.User, {
+				as: 'deleted',
+				foreignKey: 'deleted_by',
+			});
+
 			this.hasMany(models.Restaurant, {
 				as: 'restaurant_category',
 				foreignKey: 'restocatg_id',
@@ -56,12 +61,21 @@ module.exports = (sequelize, DataTypes) => {
 					key: 'user_id',
 				},
 			},
+			deleted_by: {
+				type: DataTypes.UUID,
+				references: {
+					model: sequelize.User,
+					key: 'user_id',
+				},
+			},
 		},
 		{
 			sequelize,
 			timestamps: true,
 			createdAt: 'date_created',
 			updatedAt: 'date_updated',
+			deletedAt: 'date_deleted',
+			paranoid: true,
 			modelName: 'RestoCategory',
 		}
 	);

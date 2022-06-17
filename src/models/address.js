@@ -20,12 +20,17 @@ module.exports = (sequelize, DataTypes) => {
 			});
 
 			this.belongsTo(models.User, {
-				as: 'user_address',
+				as: 'deleted',
+				foreignKey: 'deleted_by',
+			});
+
+			this.belongsTo(models.User, {
+				as: 'user',
 				foreignKey: 'user_id',
 			});
 
 			this.belongsTo(models.Restaurant, {
-				as: 'resto_address',
+				as: 'restaurant',
 				foreignKey: 'resto_id',
 			});
 
@@ -46,18 +51,21 @@ module.exports = (sequelize, DataTypes) => {
 				type: DataTypes.STRING(500),
 				allowNull: false,
 				validate: {
-					notNull: { msg: 'Address Line 1 is required' },
+					notNull: { msg: 'Address Line 1 should not be null' },
 					notEmpty: { msg: 'Address Line 1 should not be empty.' },
 				},
+				comment: 'Room, Floor, Suite or House Number, Street Name',
 			},
 			address_2: {
 				type: DataTypes.STRING(500),
+				comment:
+					'Building, Dormitory, School or Company Name, Subdivision, Village',
 			},
 			barangay: {
 				type: DataTypes.STRING(50),
 				allowNull: false,
 				validate: {
-					notNull: { msg: 'Barangay is required' },
+					notNull: { msg: 'Barangay should not be null' },
 					notEmpty: { msg: 'Barangay should not be empty.' },
 				},
 			},
@@ -65,7 +73,7 @@ module.exports = (sequelize, DataTypes) => {
 				type: DataTypes.STRING(50),
 				allowNull: false,
 				validate: {
-					notNull: { msg: 'City is required' },
+					notNull: { msg: 'City should not be null' },
 					notEmpty: { msg: 'City should not be empty.' },
 				},
 			},
@@ -73,7 +81,7 @@ module.exports = (sequelize, DataTypes) => {
 				type: DataTypes.STRING(50),
 				allowNull: false,
 				validate: {
-					notNull: { msg: 'Province is required' },
+					notNull: { msg: 'Province should not be null' },
 					notEmpty: { msg: 'Province should not be empty.' },
 				},
 			},
@@ -81,7 +89,7 @@ module.exports = (sequelize, DataTypes) => {
 				type: DataTypes.STRING(50),
 				allowNull: false,
 				validate: {
-					notNull: { msg: 'Region is required' },
+					notNull: { msg: 'Region should not be null' },
 					notEmpty: { msg: 'Region should not be empty.' },
 				},
 			},
@@ -89,8 +97,8 @@ module.exports = (sequelize, DataTypes) => {
 				type: DataTypes.INTEGER(4),
 				allowNull: false,
 				validate: {
-					notNull: { msg: 'Zip_Code is required' },
-					notEmpty: { msg: 'Zip_Code should not be empty.' },
+					notNull: { msg: 'Zip Code should not be null' },
+					notEmpty: { msg: 'Zip Code should not be empty.' },
 				},
 			},
 			user_id: {
@@ -121,12 +129,21 @@ module.exports = (sequelize, DataTypes) => {
 					key: 'user_id',
 				},
 			},
+			deleted_by: {
+				type: DataTypes.UUID,
+				references: {
+					model: sequelize.User,
+					key: 'user_id',
+				},
+			},
 		},
 		{
 			sequelize,
 			timestamps: true,
 			createdAt: 'date_created',
 			updatedAt: 'date_updated',
+			deletedAt: 'date_deleted',
+			paranoid: true,
 			modelName: 'Address',
 		}
 	);

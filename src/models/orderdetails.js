@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
 				type: DataTypes.INTEGER(10),
 				allowNull: false,
 				validate: {
-					isInt: true,
+					isInt: { msg: 'Quantity entered must be a valid integer.' },
 					notNull: { msg: 'Quantity should not be null.' },
 					notEmpty: { msg: 'Quantity should not be empty.' },
 				},
@@ -31,10 +31,11 @@ module.exports = (sequelize, DataTypes) => {
 				type: DataTypes.DECIMAL(10, 2),
 				allowNull: false,
 				validate: {
-					isDecimal: true,
+					isDecimal: { msg: 'Subtotal should be in a valid format.' },
 					notNull: { msg: 'Subtotal should not be null.' },
 					notEmpty: { msg: 'Subtotal should not be empty.' },
 				},
+				comment: 'Dish(dish_price) * OrderDetails(quantity)',
 			},
 		},
 		{

@@ -58,7 +58,7 @@ module.exports = (sequelize, DataTypes) => {
 				defaultValue: 'Paid',
 				allowNull: false,
 				validate: {
-					notNull: { msg: 'Payment Status is required.' },
+					notNull: { msg: 'Payment Status should not be null.' },
 					notEmpty: { msg: 'Payment Status should not be empty.' },
 					isIn: {
 						args: [['Paid', 'Refunded']],
@@ -74,6 +74,7 @@ module.exports = (sequelize, DataTypes) => {
 					notNull: { msg: 'Payment Total should not be null.' },
 					notEmpty: { msg: 'Payment Total should not be empty.' },
 				},
+				comment: 'Total payment made by the customer.',
 			},
 			created_by: {
 				type: DataTypes.UUID,

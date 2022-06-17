@@ -25,7 +25,6 @@ module.exports = (sequelize, DataTypes) => {
 			});
 
 			this.belongsTo(models.Restaurant, {
-				as: 'restaurant',
 				foreignKey: 'resto_id',
 			});
 
@@ -86,13 +85,16 @@ module.exports = (sequelize, DataTypes) => {
 				type: DataTypes.DECIMAL(10, 2),
 				allowNull: false,
 				validate: {
-					isDecimal: { msg: 'Price entered must be in a valid format.' },
+					isDecimal: { msg: 'Order Total must be in a valid format.' },
 					notNull: { msg: 'Order Total should not be null.' },
 					notEmpty: { msg: 'Order Total should not be empty.' },
 				},
+				comment:
+					'Sum of the OrderDetails(subtotal) of all rows with the same order_id',
 			},
 			order_comment: {
 				type: DataTypes.TEXT,
+				comment: 'Remarks/ Additional Request from customer',
 			},
 			address_id: {
 				type: DataTypes.UUID,
@@ -103,9 +105,12 @@ module.exports = (sequelize, DataTypes) => {
 			},
 			date_released: {
 				type: DataTypes.DATE,
+				comment:
+					'Date and time in which the order/food is released from the restaurant and dispatched to the courier',
 			},
 			date_rejected: {
 				type: DataTypes.DATE,
+				comment: 'Date and time in which the order has been rejected',
 			},
 			created_by: {
 				type: DataTypes.UUID,

@@ -20,12 +20,30 @@ module.exports = (sequelize, DataTypes) => {
 				foreignKey: 'updated_by',
 			});
 
+			this.belongsTo(models.User, {
+				as: 'deleted',
+				foreignKey: 'deleted_by',
+			});
+
+			this.hasOne(models.User, {
+				foreignKey: 'resto_id',
+			});
+
+			this.hasOne(models.Address, {
+				foreignKey: 'address_id',
+			});
+
 			this.belongsTo(models.RestoCategory, {
 				as: 'restaurant_category',
 				foreignKey: 'restocatg_id',
 			});
 
+			this.hasMany(models.OpeningHour, {
+				foreignKey: 'resto_id',
+			});
+
 			this.hasMany(models.Dish, {
+				as: 'restaurant',
 				foreignKey: 'resto_id',
 			});
 
@@ -76,6 +94,8 @@ module.exports = (sequelize, DataTypes) => {
 						msg: 'Please enter a valid phone number.',
 					},
 				},
+				comment:
+					'Phone number must start with "09" or "+639" and only up 13 characters',
 			},
 			resto_landline: {
 				type: DataTypes.STRING(8),
@@ -88,6 +108,7 @@ module.exports = (sequelize, DataTypes) => {
 					notNull: { msg: 'Landline Number should not be null.' },
 					notEmpty: { msg: 'Landline Number should not be empty.' },
 				},
+				comment: 'Landline number should have 8 digits.',
 			},
 			resto_website: {
 				type: DataTypes.STRING,
@@ -124,7 +145,7 @@ module.exports = (sequelize, DataTypes) => {
 				defaultValue: 'Open',
 				allowNull: false,
 				validate: {
-					notNull: { msg: 'Status is required.' },
+					notNull: { msg: 'Status should not be null.' },
 					notEmpty: { msg: 'Status should not be empty.' },
 					isIn: {
 						args: [['Open', 'Closed']],
@@ -146,12 +167,21 @@ module.exports = (sequelize, DataTypes) => {
 					key: 'user_id',
 				},
 			},
+			deleted_by: {
+				type: DataTypes.UUID,
+				references: {
+					model: sequelize.User,
+					key: 'user_id',
+				},
+			},
 		},
 		{
 			sequelize,
 			timestamps: true,
 			createdAt: 'date_created',
 			updatedAt: 'date_updated',
+			deletedAt: 'date_deleted',
+			paranoid: true,
 			modelName: 'Restaurant',
 		}
 	);

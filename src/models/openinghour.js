@@ -19,8 +19,12 @@ module.exports = (sequelize, DataTypes) => {
 				foreignKey: 'updated_by',
 			});
 
+			this.belongsTo(models.User, {
+				as: 'deleted',
+				foreignKey: 'deleted_by',
+			});
+
 			this.belongsTo(models.Restaurant, {
-				as: 'restaurant_opening',
 				foreignKey: 'resto_id',
 			});
 		}
@@ -58,6 +62,8 @@ module.exports = (sequelize, DataTypes) => {
 						],
 						msg: 'Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, and Saturday only',
 					},
+					notNull: { msg: 'Day should not be null.' },
+					notEmpty: { msg: 'Day should not be empty.' },
 				},
 			},
 			open_time: {
@@ -92,12 +98,22 @@ module.exports = (sequelize, DataTypes) => {
 					key: 'user_id',
 				},
 			},
+			deleted_by: {
+				type: DataTypes.UUID,
+				allowNull: true,
+				references: {
+					model: sequelize.User,
+					key: 'user_id',
+				},
+			},
 		},
 		{
 			sequelize,
 			timestamps: true,
 			createdAt: 'date_created',
 			updatedAt: 'date_updated',
+			deletedAt: 'date_deleted',
+			paranoid: true,
 			modelName: 'OpeningHour',
 		}
 	);
