@@ -118,9 +118,9 @@ module.exports = (sequelize, DataTypes) => {
 					},
 					notNull: { msg: 'Phone Number should not be null.' },
 					notEmpty: { msg: 'Phone Number should not be empty.' },
-					comment:
-						'Phone number must start with "09" or "+639" and only up 13 characters',
 				},
+				comment:
+					'Phone number must start with "09" or "+639" and only up 13 characters',
 			},
 			gender: {
 				type: DataTypes.STRING,
@@ -145,19 +145,6 @@ module.exports = (sequelize, DataTypes) => {
 					},
 					notNull: { msg: 'User Type should not be null.' },
 					notEmpty: { msg: 'User Type should not be empty.' },
-				},
-			},
-			status: {
-				type: DataTypes.STRING,
-				defaultValue: 'Active',
-				allowNull: false,
-				validate: {
-					isIn: {
-						args: [['Active', 'Inactive']],
-						msg: 'Status should be Active or Inactive only.',
-					},
-					notNull: { msg: 'Status should not be null.' },
-					notEmpty: { msg: 'Status should not be empty.' },
 				},
 			},
 			created_by: {
