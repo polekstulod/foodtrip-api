@@ -31,7 +31,7 @@ exports.create = async (req, res) => {
 
 // * Retrieve all User
 exports.findAll = (req, res) => {
-	User.findAll({ where: { status: 'Active' } })
+	User.findAll()
 		.then((data) => {
 			res.send({
 				error: false,
@@ -73,6 +73,7 @@ exports.findOne = (req, res) => {
 // * Update User
 exports.update = async (req, res) => {
 	const id = req.params.id;
+	req.body.updated_by = req.user.user_id;
 
 	if (req.body.password) {
 		req.body.password = await bcrypt.hash(
@@ -86,7 +87,7 @@ exports.update = async (req, res) => {
 	})
 		.then((result) => {
 			if (result) {
-				User.findByPk(id).then((data) => {
+				User.findByPk(id, { include: ['updated'] }).then((data) => {
 					res.send({
 						error: false,
 						data: data,
@@ -112,36 +113,43 @@ exports.update = async (req, res) => {
 };
 
 // * Delete User
-exports.delete = (req, res) => {
+exports.delete = async (req, res) => {
 	const id = req.params.id;
-	const body = { status: 'Inactive' };
+	req.body.deleted_by = req.user.user_id;
 
-	User.update(body, {
+	User.destroy({
+		where: {
+			user_id: id,
+		},
+	}).catch((err) => {
+		res.status(500).send({
+			error: true,
+			data: [],
+			message:
+				err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
+		});
+	});
+
+	User.update(req.body, {
 		where: { user_id: id },
-	})
-		.then((result) => {
-			if (result) {
-				User.findByPk(id).then((data) => {
+		paranoid: false,
+	}).then((result) => {
+		if (result) {
+			User.findByPk(id, { paranoid: false, include: ['deleted'] }).then(
+				(data) => {
 					res.send({
 						error: false,
 						data: data,
-						message: [process.env.SUCCESS_UPDATE],
+						message: [process.env.SUCCESS_DELETE],
 					});
-				});
-			} else {
-				res.status(500).send({
-					error: true,
-					data: [],
-					message: ['Error in updating a record'],
-				});
-			}
-		})
-		.catch((err) => {
+				}
+			);
+		} else {
 			res.status(500).send({
 				error: true,
 				data: [],
-				message:
-					err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
+				message: ['Error in deleting a record'],
 			});
-		});
+		}
+	});
 };
