@@ -20,7 +20,7 @@ exports.login = (req, res) => {
 	}
 
 	User.findOne({
-		where: { email_address: req.body.email_address, status: 'Active' },
+		where: { email_address: req.body.email_address },
 	})
 		.then((data) => {
 			if (data) {
