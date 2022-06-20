@@ -9,4 +9,11 @@ router.get('/category', restoController.findAllRestoCat);
 router.get('/category/:id', restoController.findOneRestoCat);
 router.delete('/category/:id', restoController.deleteRestoCat);
 
+// * Dish Category Controller Routes
+router.post('/dish/category', restoController.createDishCat);
+router.put('/dish/category/:id', restoController.updateDishCat);
+router.get('/dish/category', restoController.findAllDishCat);
+router.get('/dish/category/:id', restoController.findOneDishCat);
+router.delete('/dish/category/:id', restoController.deleteDishCat);
+
 module.exports = router;
