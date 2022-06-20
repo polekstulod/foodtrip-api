@@ -130,7 +130,9 @@ module.exports = (sequelize, DataTypes) => {
 				},
 				get() {
 					const rawValue = this.getDataValue('resto_img');
-					return rawValue ? 'http://localhost:3600/public/' + rawValue : null;
+					return rawValue
+						? 'http://localhost:3600/public/restaurants/' + rawValue
+						: null;
 				},
 			},
 			restocatg_id: {
