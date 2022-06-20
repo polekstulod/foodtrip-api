@@ -104,4 +104,7 @@ dist
 .tern-port
 
 # Vscode settings
-.vscode/  
+.vscode/ 
+
+# Public uploads
+public/
