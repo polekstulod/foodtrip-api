@@ -2,7 +2,7 @@ var router = require('express').Router();
 
 const restoController = require('../controllers/restaurant.controller');
 
-// * Restaurant Controller Routes
+// * Restaurant Category Controller Routes
 router.post('/category', restoController.createRestoCat);
 router.put('/category/:id', restoController.updateRestoCat);
 router.get('/category', restoController.findAllRestoCat);
