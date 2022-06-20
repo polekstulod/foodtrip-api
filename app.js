@@ -30,6 +30,7 @@ if (process.env.ALLOW_SYNC === 'true') {
 const userRoute = require('./src/routes/user.routes');
 const loginRoute = require('./src/routes/login.routes');
 const restaurantRoute = require('./src/routes/restaurant.routes');
+const addressRoute = require('./src/routes/address.routes');
 
 // * Initialize express
 var app = express();
@@ -58,6 +59,7 @@ app.use(
 	authenticateToken,
 	restaurantRoute
 );
+app.use(`${process.env.API_VERSION}/address`, authenticateToken, addressRoute);
 
 app.listen(PORT, () => {
 	console.log(`Server is running on port ${PORT}.`);
