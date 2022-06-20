@@ -4,6 +4,7 @@ const Address = db.Address;
 // * Add address
 exports.create = async (req, res) => {
 	req.body.created_by = req.user.user_id;
+	req.body.user_id = req.user.user_id;
 
 	Address.create(req.body, { include: ['created'] })
 		.then((data) => {
