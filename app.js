@@ -3,6 +3,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const db = require('./src/models');
 const jwt = require('jsonwebtoken');
+const path = require('path');
 
 // * Get config variables
 dotenv.config();
@@ -39,6 +40,12 @@ const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
 
+app.use(
+	express.urlencoded({
+		extended: true,
+	})
+);
+
 const authenticateToken = (req, res, next) => {
 	const authHeader = req.headers['authorization'];
 	const token = authHeader && authHeader.split(' ')[1];
@@ -52,6 +59,7 @@ const authenticateToken = (req, res, next) => {
 	});
 };
 
+app.use('/public', express.static(path.join(__dirname + '/public/uploads/')));
 app.use(`${process.env.API_VERSION}/login`, loginRoute);
 app.use(`${process.env.API_VERSION}/user`, authenticateToken, userRoute);
 app.use(

@@ -2,6 +2,10 @@ var router = require('express').Router();
 
 const restoController = require('../controllers/restaurant.controller');
 
+const multer = require('multer');
+const path = require('path');
+const helpers = require('../helpers/imageHelper');
+
 // * Restaurant Category Controller Routes
 router.post('/category', restoController.createRestoCat);
 router.put('/category/:id', restoController.updateRestoCat);
