@@ -2,6 +2,7 @@ const db = require('../models');
 const RestoCategory = db.RestoCategory;
 const DishCategory = db.DishCategory;
 const Restaurant = db.Restaurant;
+const Dish = db.Dish;
 
 // * Create Restaurant Category
 exports.createRestoCat = async (req, res) => {
@@ -307,6 +308,30 @@ exports.createResto = async (req, res) => {
 					});
 				}
 			);
+		})
+		.catch((err) => {
+			res.status(500).send({
+				error: true,
+				data: [],
+				message: err.errors.map((e) => e.message),
+			});
+		});
+};
+
+// * Create Dish
+exports.createDish = async (req, res) => {
+	req.body.dish_img = req.file != undefined ? req.file.filename : '';
+	req.body.created_by = req.user.user_id;
+
+	Dish.create(req.body)
+		.then((data) => {
+			Dish.findByPk(data.dish_id, { include: ['created'] }).then((result) => {
+				res.send({
+					error: false,
+					data: result,
+					message: ['Dish is created successfully.'],
+				});
+			});
 		})
 		.catch((err) => {
 			res.status(500).send({
