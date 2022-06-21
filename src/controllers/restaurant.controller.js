@@ -318,6 +318,126 @@ exports.createResto = async (req, res) => {
 		});
 };
 
+// * Retrieve all Restaurant
+exports.findAllResto = (req, res) => {
+	Restaurant.findAll()
+		.then((data) => {
+			res.send({
+				error: false,
+				data: data,
+				message: ['Retrieved successfully.'],
+			});
+		})
+		.catch((err) => {
+			res.status(500).send({
+				error: true,
+				data: [],
+				message: err.errors.map((e) => e.message),
+			});
+		});
+};
+
+// * Find single Restaurant
+exports.findOneResto = (req, res) => {
+	const id = req.params.id;
+
+	Restaurant.findByPk(id)
+		.then((data) => {
+			res.send({
+				error: false,
+				data: data,
+				message: [process.env.SUCCESS_RETRIEVED],
+			});
+		})
+		.catch((err) => {
+			res.status(500).send({
+				error: true,
+				data: [],
+				message:
+					err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
+			});
+		});
+};
+
+// * Update Restaurant
+exports.updateResto = async (req, res) => {
+	const id = req.params.id;
+	req.body.updated_by = req.user.user_id;
+	req.body.resto_img = req.file != undefined ? req.file.filename : '';
+
+	Restaurant.update(req.body, {
+		where: { resto_id: id },
+	})
+		.then((result) => {
+			if (result) {
+				Restaurant.findByPk(id, { include: ['updated'] }).then((data) => {
+					res.send({
+						error: false,
+						data: data,
+						message: [process.env.SUCCESS_UPDATE],
+					});
+				});
+			} else {
+				res.status(500).send({
+					error: true,
+					data: [],
+					message: ['Error in updating a record'],
+				});
+			}
+		})
+		.catch((err) => {
+			res.status(500).send({
+				error: true,
+				data: [],
+				message:
+					err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
+			});
+		});
+};
+
+// * Delete Restaurant Category
+exports.deleteResto = async (req, res) => {
+	const id = req.params.id;
+	req.body.deleted_by = req.user.user_id;
+
+	Restaurant.destroy({
+		where: {
+			resto_id: id,
+		},
+	}).catch((err) => {
+		res.status(500).send({
+			error: true,
+			data: [],
+			message:
+				err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
+		});
+	});
+
+	Restaurant.update(req.body, {
+		where: { resto_id: id },
+		paranoid: false,
+	}).then((result) => {
+		if (result) {
+			Restaurant.findByPk(id, {
+				paranoid: false,
+				include: ['deleted'],
+			}).then((data) => {
+				res.send({
+					error: false,
+					data: data,
+					message: [process.env.SUCCESS_DELETE],
+				});
+			});
+		} else {
+			res.status(500).send({
+				error: true,
+				data: [],
+				message: ['Error in deleting a record'],
+			});
+		}
+	});
+};
+
 // * Create Dish
 exports.createDish = async (req, res) => {
 	req.body.dish_img = req.file != undefined ? req.file.filename : '';

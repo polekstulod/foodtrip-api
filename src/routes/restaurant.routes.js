@@ -122,6 +122,10 @@ router.delete('/dish/category/:id', restoController.deleteDishCat);
 
 // * Restaurant Controller Routes
 router.post('/', uploadRestoImage, restoController.createResto);
+router.put('/:id', uploadRestoImage, restoController.updateResto);
+router.get('/', restoController.findAllResto);
+router.get('/:id', restoController.findOneResto);
+router.delete('/:id', restoController.deleteResto);
 
 // * Dish Controller Routes
 router.post('/dish', uploadDishImage, restoController.createDish);
