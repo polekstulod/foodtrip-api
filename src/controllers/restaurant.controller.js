@@ -173,7 +173,7 @@ exports.createDishCat = async (req, res) => {
 		});
 };
 
-// * Retrieve all Restaurant Category
+// * Retrieve all Dish Category
 exports.findAllDishCat = (req, res) => {
 	DishCategory.findAll()
 		.then((data) => {
@@ -192,7 +192,7 @@ exports.findAllDishCat = (req, res) => {
 		});
 };
 
-// * Find single Restaurant Category
+// * Find single Dish Category
 exports.findOneDishCat = (req, res) => {
 	const id = req.params.id;
 
@@ -214,7 +214,7 @@ exports.findOneDishCat = (req, res) => {
 		});
 };
 
-// * Update Restaurant Category
+// * Update Dish Category
 exports.updateDishCat = async (req, res) => {
 	const id = req.params.id;
 	req.body.updated_by = req.user.user_id;
@@ -249,7 +249,7 @@ exports.updateDishCat = async (req, res) => {
 		});
 };
 
-// * Delete Restaurant Category
+// * Delete Dish Category
 exports.deleteDishCat = async (req, res) => {
 	const id = req.params.id;
 	req.body.deleted_by = req.user.user_id;
