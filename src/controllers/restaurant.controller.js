@@ -461,3 +461,123 @@ exports.createDish = async (req, res) => {
 			});
 		});
 };
+
+// * Retrieve all Dish
+exports.findAllDish = (req, res) => {
+	Dish.findAll()
+		.then((data) => {
+			res.send({
+				error: false,
+				data: data,
+				message: ['Retrieved successfully.'],
+			});
+		})
+		.catch((err) => {
+			res.status(500).send({
+				error: true,
+				data: [],
+				message: err.errors.map((e) => e.message),
+			});
+		});
+};
+
+// * Find single Dish
+exports.findOneDish = (req, res) => {
+	const id = req.params.id;
+
+	Dish.findByPk(id)
+		.then((data) => {
+			res.send({
+				error: false,
+				data: data,
+				message: [process.env.SUCCESS_RETRIEVED],
+			});
+		})
+		.catch((err) => {
+			res.status(500).send({
+				error: true,
+				data: [],
+				message:
+					err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
+			});
+		});
+};
+
+// * Update Dish
+exports.updateDish = async (req, res) => {
+	const id = req.params.id;
+	req.body.updated_by = req.user.user_id;
+	req.body.dish_img = req.file != undefined ? req.file.filename : '';
+
+	Dish.update(req.body, {
+		where: { dish_id: id },
+	})
+		.then((result) => {
+			if (result) {
+				Dish.findByPk(id, { include: ['updated'] }).then((data) => {
+					res.send({
+						error: false,
+						data: data,
+						message: [process.env.SUCCESS_UPDATE],
+					});
+				});
+			} else {
+				res.status(500).send({
+					error: true,
+					data: [],
+					message: ['Error in updating a record'],
+				});
+			}
+		})
+		.catch((err) => {
+			res.status(500).send({
+				error: true,
+				data: [],
+				message:
+					err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
+			});
+		});
+};
+
+// * Delete Dish
+exports.deleteDish = async (req, res) => {
+	const id = req.params.id;
+	req.body.deleted_by = req.user.user_id;
+
+	Dish.destroy({
+		where: {
+			dish_id: id,
+		},
+	}).catch((err) => {
+		res.status(500).send({
+			error: true,
+			data: [],
+			message:
+				err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
+		});
+	});
+
+	Dish.update(req.body, {
+		where: { dish_id: id },
+		paranoid: false,
+	}).then((result) => {
+		if (result) {
+			Dish.findByPk(id, {
+				paranoid: false,
+				include: ['deleted'],
+			}).then((data) => {
+				res.send({
+					error: false,
+					data: data,
+					message: [process.env.SUCCESS_DELETE],
+				});
+			});
+		} else {
+			res.status(500).send({
+				error: true,
+				data: [],
+				message: ['Error in deleting a record'],
+			});
+		}
+	});
+};

@@ -120,14 +120,18 @@ router.get('/dish/category', restoController.findAllDishCat);
 router.get('/dish/category/:id', restoController.findOneDishCat);
 router.delete('/dish/category/:id', restoController.deleteDishCat);
 
+// * Dish Controller Routes
+router.post('/dish', uploadDishImage, restoController.createDish);
+router.put('/dish/:id', uploadDishImage, restoController.updateDish);
+router.get('/dish', restoController.findAllDish);
+router.get('/dish/:id', restoController.findOneDish);
+router.delete('/dish/:id', restoController.deleteDish);
+
 // * Restaurant Controller Routes
 router.post('/', uploadRestoImage, restoController.createResto);
 router.put('/:id', uploadRestoImage, restoController.updateResto);
 router.get('/', restoController.findAllResto);
 router.get('/:id', restoController.findOneResto);
 router.delete('/:id', restoController.deleteResto);
-
-// * Dish Controller Routes
-router.post('/dish', uploadDishImage, restoController.createDish);
 
 module.exports = router;
