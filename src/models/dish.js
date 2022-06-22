@@ -49,7 +49,7 @@ module.exports = (sequelize, DataTypes) => {
 				defaultValue: DataTypes.UUIDV4,
 			},
 			dish_no: {
-				type: DataTypes.INTEGER(11),
+				type: DataTypes.BIGINT(11),
 				allowNull: false,
 				unique: { msg: 'Dish Number already exists.' },
 				validate: {

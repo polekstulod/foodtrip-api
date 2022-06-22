@@ -38,7 +38,7 @@ module.exports = (sequelize, DataTypes) => {
 				defaultValue: DataTypes.UUIDV4,
 			},
 			payment_no: {
-				type: DataTypes.INTEGER(11),
+				type: DataTypes.BIGINT(11),
 				allowNull: false,
 				unique: { msg: 'Payment Number already exists.' },
 				validate: {

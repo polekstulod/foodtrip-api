@@ -57,7 +57,7 @@ module.exports = (sequelize, DataTypes) => {
 				defaultValue: DataTypes.UUIDV4,
 			},
 			order_no: {
-				type: DataTypes.INTEGER(11),
+				type: DataTypes.BIGINT(11),
 				allowNull: false,
 				unique: { msg: 'Order Number already exists.' },
 				validate: {
