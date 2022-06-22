@@ -127,6 +127,13 @@ router.get('/dish', restoController.findAllDish);
 router.get('/dish/:id', restoController.findOneDish);
 router.delete('/dish/:id', restoController.deleteDish);
 
+// * Opening Hour Controller Routes
+router.post('/openinghour/', restoController.createOpeningHour);
+router.get('/openinghour/', restoController.findAllOpeningHour);
+router.get('/openinghour/:id', restoController.findRestoOpeningHours);
+router.put('/openinghour/:id', restoController.updateOpeningHour);
+router.delete('/openinghour/:id', restoController.deleteOpeningHour);
+
 // * Restaurant Controller Routes
 router.post('/', uploadRestoImage, restoController.createResto);
 router.put('/:id', uploadRestoImage, restoController.updateResto);

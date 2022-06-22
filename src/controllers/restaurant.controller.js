@@ -3,6 +3,7 @@ const RestoCategory = db.RestoCategory;
 const DishCategory = db.DishCategory;
 const Restaurant = db.Restaurant;
 const Dish = db.Dish;
+const OpeningHour = db.OpeningHour;
 
 // * Create Restaurant Category
 exports.createRestoCat = async (req, res) => {
@@ -565,6 +566,152 @@ exports.deleteDish = async (req, res) => {
 	}).then((result) => {
 		if (result) {
 			Dish.findByPk(id, {
+				paranoid: false,
+				include: ['deleted'],
+			}).then((data) => {
+				res.send({
+					error: false,
+					data: data,
+					message: [process.env.SUCCESS_DELETE],
+				});
+			});
+		} else {
+			res.status(500).send({
+				error: true,
+				data: [],
+				message: ['Error in deleting a record'],
+			});
+		}
+	});
+};
+
+// * Create Opening Hour
+exports.createOpeningHour = async (req, res) => {
+	req.body.created_by = req.user.user_id;
+
+	OpeningHour.create(req.body)
+		.then((data) => {
+			OpeningHour.findByPk(data.openhrs_id, { include: ['created'] }).then(
+				(result) => {
+					res.send({
+						error: false,
+						data: result,
+						message: ['Opening hour is created successfully.'],
+					});
+				}
+			);
+		})
+		.catch((err) => {
+			console.log(err);
+			res.status(500).send({
+				error: true,
+				data: [],
+				message: err.errors.map((e) => e.message),
+			});
+		});
+};
+
+// * Retrieve all Opening Hours
+exports.findAllOpeningHour = (req, res) => {
+	OpeningHour.findAll()
+		.then((data) => {
+			res.send({
+				error: false,
+				data: data,
+				message: ['Retrieved successfully.'],
+			});
+		})
+		.catch((err) => {
+			res.status(500).send({
+				error: true,
+				data: [],
+				message: err.errors.map((e) => e.message),
+			});
+		});
+};
+
+// * Find Restaurant Opening Hours
+exports.findRestoOpeningHours = (req, res) => {
+	const id = req.params.id;
+
+	OpeningHour.findAll({ where: { resto_no: id } })
+		.then((data) => {
+			res.send({
+				error: false,
+				data: data,
+				message: [process.env.SUCCESS_RETRIEVED],
+			});
+		})
+		.catch((err) => {
+			res.status(500).send({
+				error: true,
+				data: [],
+				message:
+					err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
+			});
+		});
+};
+
+// * Update Opening Hour
+exports.updateOpeningHour = async (req, res) => {
+	const id = req.params.id;
+	req.body.updated_by = req.user.user_id;
+
+	OpeningHour.update(req.body, {
+		where: { openhrs_id: id },
+	})
+		.then((result) => {
+			if (result) {
+				OpeningHour.findByPk(id, { include: ['updated'] }).then((data) => {
+					res.send({
+						error: false,
+						data: data,
+						message: [process.env.SUCCESS_UPDATE],
+					});
+				});
+			} else {
+				res.status(500).send({
+					error: true,
+					data: [],
+					message: ['Error in updating a record'],
+				});
+			}
+		})
+		.catch((err) => {
+			console.log(err);
+			res.status(500).send({
+				error: true,
+				data: [],
+				message:
+					err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
+			});
+		});
+};
+
+// * Delete Opening Hour
+exports.deleteOpeningHour = async (req, res) => {
+	const id = req.params.id;
+	req.body.deleted_by = req.user.user_id;
+
+	OpeningHour.destroy({
+		where: {
+			openhrs_id: id,
+		},
+	}).catch((err) => {
+		res.status(500).send({
+			error: true,
+			data: [],
+			message:
+				err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
+		});
+	});
+
+	OpeningHour.update(req.body, {
+		where: { openhrs_id: id },
+		paranoid: false,
+	}).then((result) => {
+		if (result) {
+			OpeningHour.findByPk(id, {
 				paranoid: false,
 				include: ['deleted'],
 			}).then((data) => {
