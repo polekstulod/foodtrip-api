@@ -4,6 +4,7 @@ const bcrypt = require('bcrypt');
 
 // * Create user
 exports.create = async (req, res) => {
+	req.body.user_no = `${Math.floor(Math.random() * (9999999999 - 1 + 1) + 1)}`;
 	req.body.created_by = req.user.user_id;
 
 	req.body.password = await bcrypt.hash(

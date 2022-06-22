@@ -296,6 +296,7 @@ exports.deleteDishCat = async (req, res) => {
 exports.createResto = async (req, res) => {
 	req.body.resto_img = req.file != undefined ? req.file.filename : '';
 	req.body.created_by = req.user.user_id;
+	req.body.resto_no = Math.floor(Math.random() * (99999999999 - 1 + 1) + 1);
 
 	Restaurant.create(req.body)
 		.then((data) => {
@@ -442,6 +443,7 @@ exports.deleteResto = async (req, res) => {
 exports.createDish = async (req, res) => {
 	req.body.dish_img = req.file != undefined ? req.file.filename : '';
 	req.body.created_by = req.user.user_id;
+	req.body.dish_no = Math.floor(Math.random() * (99999999999 - 1 + 1) + 1);
 
 	Dish.create(req.body)
 		.then((data) => {
