@@ -15,7 +15,7 @@ exports.login = (req, res) => {
 		res.status(500).send({
 			error: true,
 			data: [],
-			message: ['Username or Password is empty.'],
+			message: ['Email or Password is empty.'],
 		});
 	}
 
@@ -43,7 +43,7 @@ exports.login = (req, res) => {
 							res.status(500).send({
 								error: true,
 								data: [],
-								message: ['Invalid username and Password.'],
+								message: ['Invalid email and Password.'],
 							});
 						}
 					}
@@ -52,7 +52,7 @@ exports.login = (req, res) => {
 				res.status(500).send({
 					error: true,
 					data: [],
-					message: ['Username does not exists.'],
+					message: ['Email does not exists.'],
 				});
 			}
 		})
