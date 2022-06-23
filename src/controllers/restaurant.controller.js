@@ -588,18 +588,19 @@ exports.deleteDish = async (req, res) => {
 // * Create Opening Hour
 exports.createOpeningHour = async (req, res) => {
 	req.body.created_by = req.user.user_id;
+	req.body.resto_id = req.user.resto_id;
 
 	OpeningHour.create(req.body)
 		.then((data) => {
-			OpeningHour.findByPk(data.openhrs_id, { include: ['created'] }).then(
-				(result) => {
-					res.send({
-						error: false,
-						data: result,
-						message: ['Opening hour is created successfully.'],
-					});
-				}
-			);
+			OpeningHour.findByPk(data.openhrs_id, {
+				include: ['created', 'restaurant'],
+			}).then((result) => {
+				res.send({
+					error: false,
+					data: result,
+					message: ['Opening hour is created successfully.'],
+				});
+			});
 		})
 		.catch((err) => {
 			console.log(err);
@@ -613,7 +614,7 @@ exports.createOpeningHour = async (req, res) => {
 
 // * Retrieve all Opening Hours
 exports.findAllOpeningHour = (req, res) => {
-	OpeningHour.findAll()
+	OpeningHour.findAll({ include: 'restaurant' })
 		.then((data) => {
 			res.send({
 				error: false,
@@ -634,7 +635,7 @@ exports.findAllOpeningHour = (req, res) => {
 exports.findRestoOpeningHours = (req, res) => {
 	const id = req.params.id;
 
-	OpeningHour.findAll({ where: { resto_no: id } })
+	OpeningHour.findAll({ where: { resto_id: id } })
 		.then((data) => {
 			res.send({
 				error: false,
@@ -662,13 +663,15 @@ exports.updateOpeningHour = async (req, res) => {
 	})
 		.then((result) => {
 			if (result) {
-				OpeningHour.findByPk(id, { include: ['updated'] }).then((data) => {
-					res.send({
-						error: false,
-						data: data,
-						message: [process.env.SUCCESS_UPDATE],
-					});
-				});
+				OpeningHour.findByPk(id, { include: ['updated', 'restaurant'] }).then(
+					(data) => {
+						res.send({
+							error: false,
+							data: data,
+							message: [process.env.SUCCESS_UPDATE],
+						});
+					}
+				);
 			} else {
 				res.status(500).send({
 					error: true,
@@ -713,7 +716,7 @@ exports.deleteOpeningHour = async (req, res) => {
 		if (result) {
 			OpeningHour.findByPk(id, {
 				paranoid: false,
-				include: ['deleted'],
+				include: ['deleted', 'restaurant'],
 			}).then((data) => {
 				res.send({
 					error: false,
