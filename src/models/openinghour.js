@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
 			});
 
 			this.belongsTo(models.Restaurant, {
-				foreignKey: 'resto_no',
+				foreignKey: 'resto_id',
 			});
 		}
 	}
@@ -36,12 +36,12 @@ module.exports = (sequelize, DataTypes) => {
 				primaryKey: true,
 				defaultValue: DataTypes.UUIDV4,
 			},
-			resto_no: {
-				type: DataTypes.BIGINT(10),
+			resto_id: {
+				type: DataTypes.UUID,
 				allowNull: false,
 				references: {
 					model: sequelize.Restaurant,
-					key: 'resto_no',
+					key: 'resto_id',
 				},
 			},
 			day: {

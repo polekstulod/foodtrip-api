@@ -39,7 +39,7 @@ module.exports = (sequelize, DataTypes) => {
 			});
 
 			this.hasMany(models.OpeningHour, {
-				foreignKey: 'resto_no',
+				foreignKey: 'resto_id',
 			});
 
 			this.hasMany(models.Dish, {
