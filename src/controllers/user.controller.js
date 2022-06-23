@@ -32,7 +32,7 @@ exports.create = async (req, res) => {
 
 // * Retrieve all User
 exports.findAll = (req, res) => {
-	User.findAll()
+	User.findAll({ include: ['created'] })
 		.then((data) => {
 			res.send({
 				error: false,
@@ -53,7 +53,7 @@ exports.findAll = (req, res) => {
 exports.findOne = (req, res) => {
 	const id = req.params.id;
 
-	User.findByPk(id)
+	User.findByPk(id, { include: ['created'] })
 		.then((data) => {
 			res.send({
 				error: false,
