@@ -34,8 +34,9 @@ exports.login = (req, res) => {
 								data: data,
 								token: generateToken({
 									user_id: data.user_id,
-									name: data.first_name,
+									name: `${data.first_name} ${data.last_name}`,
 									email_address: data.email_address,
+									resto_id: data.resto_id,
 								}),
 								message: [process.env.SUCCESS_RETRIEVED],
 							});
