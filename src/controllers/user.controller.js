@@ -13,13 +13,15 @@ exports.create = async (req, res) => {
 	);
 	User.create(req.body)
 		.then((data) => {
-			User.findByPk(data.user_id, { include: ['created'] }).then((result) => {
-				res.send({
-					error: false,
-					data: result,
-					message: ['User is created successfully.'],
-				});
-			});
+			User.findByPk(data.user_id, { include: ['created', 'restaurant'] }).then(
+				(result) => {
+					res.send({
+						error: false,
+						data: result,
+						message: ['User is created successfully.'],
+					});
+				}
+			);
 		})
 		.catch((err) => {
 			res.status(500).send({
@@ -32,7 +34,7 @@ exports.create = async (req, res) => {
 
 // * Retrieve all User
 exports.findAll = (req, res) => {
-	User.findAll({ include: ['created'] })
+	User.findAll({ include: ['created', 'restaurant'] })
 		.then((data) => {
 			res.send({
 				error: false,
@@ -53,7 +55,7 @@ exports.findAll = (req, res) => {
 exports.findOne = (req, res) => {
 	const id = req.params.id;
 
-	User.findByPk(id, { include: ['created'] })
+	User.findByPk(id, { include: ['created', 'restaurant'] })
 		.then((data) => {
 			res.send({
 				error: false,
@@ -88,13 +90,15 @@ exports.update = async (req, res) => {
 	})
 		.then((result) => {
 			if (result) {
-				User.findByPk(id, { include: ['updated'] }).then((data) => {
-					res.send({
-						error: false,
-						data: data,
-						message: [process.env.SUCCESS_UPDATE],
-					});
-				});
+				User.findByPk(id, { include: ['updated', 'restaurant'] }).then(
+					(data) => {
+						res.send({
+							error: false,
+							data: data,
+							message: [process.env.SUCCESS_UPDATE],
+						});
+					}
+				);
 			} else {
 				res.status(500).send({
 					error: true,
@@ -136,15 +140,16 @@ exports.delete = async (req, res) => {
 		paranoid: false,
 	}).then((result) => {
 		if (result) {
-			User.findByPk(id, { paranoid: false, include: ['deleted'] }).then(
-				(data) => {
-					res.send({
-						error: false,
-						data: data,
-						message: [process.env.SUCCESS_DELETE],
-					});
-				}
-			);
+			User.findByPk(id, {
+				paranoid: false,
+				include: ['deleted', 'restaurant'],
+			}).then((data) => {
+				res.send({
+					error: false,
+					data: data,
+					message: [process.env.SUCCESS_DELETE],
+				});
+			});
 		} else {
 			res.status(500).send({
 				error: true,
