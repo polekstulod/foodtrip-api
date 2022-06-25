@@ -32,7 +32,7 @@ exports.createRestoCat = async (req, res) => {
 
 // * Retrieve all Restaurant Category
 exports.findAllRestoCat = (req, res) => {
-	RestoCategory.findAll()
+	RestoCategory.findAll({ include: 'restaurant_category' })
 		.then((data) => {
 			res.send({
 				error: false,
@@ -53,7 +53,7 @@ exports.findAllRestoCat = (req, res) => {
 exports.findOneRestoCat = (req, res) => {
 	const id = req.params.id;
 
-	RestoCategory.findByPk(id)
+	RestoCategory.findByPk(id, { include: 'restaurant_category' })
 		.then((data) => {
 			res.send({
 				error: false,
