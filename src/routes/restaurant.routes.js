@@ -125,6 +125,8 @@ router.post('/dish', uploadDishImage, restoController.createDish);
 router.put('/dish/:id', uploadDishImage, restoController.updateDish);
 router.get('/dish', restoController.findAllDish);
 router.get('/dish/:id', restoController.findOneDish);
+router.get('/:restoId/dish/:id', restoController.findOneDishOfResto);
+router.get('/:restoId/dish/', restoController.findAllDishOfResto);
 router.delete('/dish/:id', restoController.deleteDish);
 
 // * Opening Hour Controller Routes

@@ -506,6 +506,50 @@ exports.findOneDish = (req, res) => {
 		});
 };
 
+// * Retrieve all Dish of Restaurant
+exports.findAllDishOfResto = (req, res) => {
+	const restoId = req.params.restoId;
+
+	Dish.findAll({ where: { resto_id: restoId } })
+		.then((data) => {
+			res.send({
+				error: false,
+				data: data,
+				message: ['Retrieved successfully.'],
+			});
+		})
+		.catch((err) => {
+			res.status(500).send({
+				error: true,
+				data: [],
+				message: err.errors.map((e) => e.message),
+			});
+		});
+};
+
+// * Find single Dish of Restaurant
+exports.findOneDishOfResto = (req, res) => {
+	const id = req.params.id;
+	const restoId = req.params.restoId;
+
+	Dish.findByPk(id, { where: { resto_id: restoId } })
+		.then((data) => {
+			res.send({
+				error: false,
+				data: data,
+				message: [process.env.SUCCESS_RETRIEVED],
+			});
+		})
+		.catch((err) => {
+			res.status(500).send({
+				error: true,
+				data: [],
+				message:
+					err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
+			});
+		});
+};
+
 // * Update Dish
 exports.updateDish = async (req, res) => {
 	const id = req.params.id;
