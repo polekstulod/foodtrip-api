@@ -467,7 +467,7 @@ exports.createDish = async (req, res) => {
 
 // * Retrieve all Dish
 exports.findAllDish = (req, res) => {
-	Dish.findAll()
+	Dish.findAll({ include: ['dish_category', 'restaurant'] })
 		.then((data) => {
 			res.send({
 				error: false,
@@ -488,7 +488,7 @@ exports.findAllDish = (req, res) => {
 exports.findOneDish = (req, res) => {
 	const id = req.params.id;
 
-	Dish.findByPk(id)
+	Dish.findByPk(id, { include: ['dish_category', 'restaurant'] })
 		.then((data) => {
 			res.send({
 				error: false,
@@ -510,7 +510,10 @@ exports.findOneDish = (req, res) => {
 exports.findAllDishOfResto = (req, res) => {
 	const restoId = req.params.restoId;
 
-	Dish.findAll({ where: { resto_id: restoId } })
+	Dish.findAll({
+		where: { resto_id: restoId },
+		include: ['dish_category', 'restaurant'],
+	})
 		.then((data) => {
 			res.send({
 				error: false,
@@ -532,7 +535,10 @@ exports.findOneDishOfResto = (req, res) => {
 	const id = req.params.id;
 	const restoId = req.params.restoId;
 
-	Dish.findByPk(id, { where: { resto_id: restoId } })
+	Dish.findByPk(id, {
+		where: { resto_id: restoId },
+		include: ['dish_category', 'restaurant'],
+	})
 		.then((data) => {
 			res.send({
 				error: false,
