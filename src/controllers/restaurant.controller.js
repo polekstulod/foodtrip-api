@@ -176,7 +176,7 @@ exports.createDishCat = async (req, res) => {
 
 // * Retrieve all Dish Category
 exports.findAllDishCat = (req, res) => {
-	DishCategory.findAll()
+	DishCategory.findAll({ include: 'dish_category' })
 		.then((data) => {
 			res.send({
 				error: false,
@@ -197,7 +197,7 @@ exports.findAllDishCat = (req, res) => {
 exports.findOneDishCat = (req, res) => {
 	const id = req.params.id;
 
-	DishCategory.findByPk(id)
+	DishCategory.findByPk(id, { include: 'dish_category' })
 		.then((data) => {
 			res.send({
 				error: false,
