@@ -127,6 +127,10 @@ router.get('/dish', restoController.findAllDish);
 router.get('/dish/:id', restoController.findOneDish);
 router.get('/:restoId/dish/:id', restoController.findOneDishOfResto);
 router.get('/:restoId/dish/', restoController.findAllDishOfResto);
+router.get(
+	'/:restoId/dish/category/:catId',
+	restoController.findOneDishCatOfResto
+);
 router.delete('/dish/:id', restoController.deleteDish);
 
 // * Opening Hour Controller Routes

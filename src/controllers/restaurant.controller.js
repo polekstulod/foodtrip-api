@@ -556,6 +556,33 @@ exports.findOneDishOfResto = (req, res) => {
 		});
 };
 
+// * Find single Dish Category of Restaurant
+exports.findOneDishCatOfResto = (req, res) => {
+	const restoId = req.params.restoId;
+	const catId = req.params.catId;
+
+	Dish.findAll({
+		where: { resto_id: restoId, dishcatg_id: catId },
+		include: ['dish_category', 'restaurant'],
+	})
+		.then((data) => {
+			res.send({
+				error: false,
+				data: data,
+				message: [process.env.SUCCESS_RETRIEVED],
+			});
+		})
+		.catch((err) => {
+			console.log(err);
+			res.status(500).send({
+				error: true,
+				data: [],
+				message:
+					err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
+			});
+		});
+};
+
 // * Update Dish
 exports.updateDish = async (req, res) => {
 	const id = req.params.id;
