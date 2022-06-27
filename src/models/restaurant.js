@@ -94,8 +94,7 @@ module.exports = (sequelize, DataTypes) => {
 						msg: 'Please enter a valid phone number.',
 					},
 				},
-				comment:
-					'Phone number must start with "09" or "+639" and only up 13 characters',
+				comment: 'Phone number must start with "09" or "+639" and only up 13 characters',
 			},
 			resto_landline: {
 				type: DataTypes.STRING(8),
@@ -130,9 +129,7 @@ module.exports = (sequelize, DataTypes) => {
 				},
 				get() {
 					const rawValue = this.getDataValue('resto_img');
-					return rawValue
-						? 'http://localhost:3600/public/restaurants/' + rawValue
-						: null;
+					return rawValue ? 'http://localhost:3600/public/restaurants/' + rawValue : null;
 				},
 			},
 			restocatg_id: {

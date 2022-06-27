@@ -8,10 +8,7 @@ const generateToken = (data) => {
 };
 
 exports.login = (req, res) => {
-	if (
-		String(req.body.email_address) === '' ||
-		String(req.body.password) === ''
-	) {
+	if (String(req.body.email_address) === '' || String(req.body.password) === '') {
 		res.status(500).send({
 			error: true,
 			data: [],
@@ -24,31 +21,27 @@ exports.login = (req, res) => {
 	})
 		.then((data) => {
 			if (data) {
-				bcrypt.compare(
-					req.body.password,
-					data.password,
-					function (err, result) {
-						if (result) {
-							res.send({
-								error: false,
-								data: data,
-								token: generateToken({
-									user_id: data.user_id,
-									name: `${data.first_name} ${data.last_name}`,
-									email_address: data.email_address,
-									resto_id: data.resto_id,
-								}),
-								message: [process.env.SUCCESS_RETRIEVED],
-							});
-						} else {
-							res.status(500).send({
-								error: true,
-								data: [],
-								message: ['Invalid email and Password.'],
-							});
-						}
+				bcrypt.compare(req.body.password, data.password, function (err, result) {
+					if (result) {
+						res.send({
+							error: false,
+							data: data,
+							token: generateToken({
+								user_id: data.user_id,
+								name: `${data.first_name} ${data.last_name}`,
+								email_address: data.email_address,
+								resto_id: data.resto_id,
+							}),
+							message: [process.env.SUCCESS_RETRIEVED],
+						});
+					} else {
+						res.status(500).send({
+							error: true,
+							data: [],
+							message: ['Invalid email and Password.'],
+						});
 					}
-				);
+				});
 			} else {
 				res.status(500).send({
 					error: true,
@@ -61,8 +54,7 @@ exports.login = (req, res) => {
 			res.status(500).send({
 				error: true,
 				data: [],
-				message:
-					err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
+				message: err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
 			});
 		});
 };

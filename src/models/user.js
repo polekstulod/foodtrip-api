@@ -119,8 +119,7 @@ module.exports = (sequelize, DataTypes) => {
 					notNull: { msg: 'Phone Number should not be null.' },
 					notEmpty: { msg: 'Phone Number should not be empty.' },
 				},
-				comment:
-					'Phone number must start with "09" or "+639" and only up 13 characters',
+				comment: 'Phone number must start with "09" or "+639" and only up 13 characters',
 			},
 			gender: {
 				type: DataTypes.STRING,

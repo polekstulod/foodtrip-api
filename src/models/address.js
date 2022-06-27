@@ -58,8 +58,7 @@ module.exports = (sequelize, DataTypes) => {
 			},
 			address_2: {
 				type: DataTypes.STRING(500),
-				comment:
-					'Building, Dormitory, School or Company Name, Subdivision, Village',
+				comment: 'Building, Dormitory, School or Company Name, Subdivision, Village',
 			},
 			barangay: {
 				type: DataTypes.STRING(50),

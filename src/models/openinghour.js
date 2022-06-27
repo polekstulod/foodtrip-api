@@ -50,17 +50,7 @@ module.exports = (sequelize, DataTypes) => {
 				allowNull: false,
 				validate: {
 					isIn: {
-						args: [
-							[
-								'Sunday',
-								'Monday',
-								'Tuesday',
-								'Wednesday',
-								'Thursday',
-								'Friday',
-								'Saturday',
-							],
-						],
+						args: [['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']],
 						msg: 'Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, and Saturday only',
 					},
 					notNull: { msg: 'Day should not be null.' },
