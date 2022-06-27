@@ -322,7 +322,15 @@ exports.createResto = async (req, res) => {
 
 // * Retrieve all Restaurant
 exports.findAllResto = (req, res) => {
-	Restaurant.findAll({ include: 'restaurant_category' })
+	Restaurant.findAll({
+		include: [
+			'restaurant_category',
+			{
+				model: Dish,
+				as: 'resto_dishes',
+			},
+		],
+	})
 		.then((data) => {
 			res.send({
 				error: false,
@@ -343,7 +351,15 @@ exports.findAllResto = (req, res) => {
 exports.findOneResto = (req, res) => {
 	const id = req.params.id;
 
-	Restaurant.findByPk(id, { include: 'restaurant_category' })
+	Restaurant.findByPk(id, {
+		include: [
+			'restaurant_category',
+			{
+				model: Dish,
+				as: 'resto_dishes',
+			},
+		],
+	})
 		.then((data) => {
 			res.send({
 				error: false,
