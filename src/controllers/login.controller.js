@@ -31,6 +31,7 @@ exports.login = (req, res) => {
 								name: `${data.first_name} ${data.last_name}`,
 								email_address: data.email_address,
 								resto_id: data.resto_id,
+								user_type: data.user_type,
 							}),
 							message: [process.env.SUCCESS_RETRIEVED],
 						});
