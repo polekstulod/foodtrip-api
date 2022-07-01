@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 const db = require('./src/models');
 const jwt = require('jsonwebtoken');
 const path = require('path');
+const cors = require('cors');
 
 // * Get config variables
 dotenv.config();
@@ -40,6 +41,9 @@ app.use(
 		extended: true,
 	})
 );
+
+// * Cors
+app.use(cors());
 
 const authenticateToken = (req, res, next) => {
 	const authHeader = req.headers['authorization'];
