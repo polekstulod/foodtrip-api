@@ -25,7 +25,6 @@ if (process.env.ALLOW_SYNC === 'true') {
 
 // * Routes
 const userRoute = require('./src/routes/user.routes');
-const loginRoute = require('./src/routes/login.routes');
 const restaurantRoute = require('./src/routes/restaurant.routes');
 const addressRoute = require('./src/routes/address.routes');
 
@@ -56,7 +55,7 @@ const authenticateToken = (req, res, next) => {
 };
 
 app.use('/public', express.static(path.join(__dirname + '/public/uploads/')));
-app.use(`${process.env.API_VERSION}/login`, loginRoute);
+app.use(`${process.env.API_VERSION}/home`, require('./src/routes/home.routes'));
 app.use(`${process.env.API_VERSION}/test`, authenticateToken, require('./src/routes/test.routes'));
 app.use(`${process.env.API_VERSION}/user`, authenticateToken, userRoute);
 app.use(`${process.env.API_VERSION}/restaurant`, authenticateToken, restaurantRoute);
