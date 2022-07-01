@@ -1,22 +1,18 @@
 const db = require('../../models');
-const User = db.User;
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const { dataResponse, errResponse, emptyDataResponse } = require('../../helpers/controller.helper');
 
 const generateToken = (data) => {
-	return jwt.sign(data, process.env.TOKEN_SECRET, { expiresIn: '7200s' });
+	return jwt.sign(data, process.env.TOKEN_SECRET, { expiresIn: '12h' });
 };
 
 exports.login = (req, res) => {
 	if (String(req.body.email_address) === '' || String(req.body.password) === '') {
-		res.status(500).send({
-			error: true,
-			data: [],
-			message: ['Email or Password is empty.'],
-		});
+		emptyDataResponse(res, 'Email or password is empty');
 	}
 
-	User.findOne({
+	db.User.findOne({
 		where: { email_address: req.body.email_address },
 	})
 		.then((data) => {
@@ -33,29 +29,15 @@ exports.login = (req, res) => {
 								resto_id: data.resto_id,
 								user_type: data.user_type,
 							}),
-							message: [process.env.SUCCESS_RETRIEVED],
+							message: 'User has been successfully login',
 						});
 					} else {
-						res.status(500).send({
-							error: true,
-							data: [],
-							message: ['Invalid email and Password.'],
-						});
+						emptyDataResponse(res, 'Incorrect email or password');
 					}
 				});
 			} else {
-				res.status(500).send({
-					error: true,
-					data: [],
-					message: ['Email does not exists.'],
-				});
+				emptyDataResponse(res, 'Email does not exist');
 			}
 		})
-		.catch((err) => {
-			res.status(500).send({
-				error: true,
-				data: [],
-				message: err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
-			});
-		});
+		.catch((err) => errResponse(res, err));
 };
