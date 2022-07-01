@@ -52,6 +52,7 @@ module.exports = (sequelize, DataTypes) => {
 		{
 			user_id: {
 				type: DataTypes.UUID,
+				allowNull: false,
 				primaryKey: true,
 				defaultValue: DataTypes.UUIDV4,
 			},
@@ -110,27 +111,21 @@ module.exports = (sequelize, DataTypes) => {
 			},
 			phone_number: {
 				type: DataTypes.STRING(13),
-				allowNull: false,
 				validate: {
 					is: {
 						args: /^(09|\+639)\d{9}$/,
 						msg: 'Please enter a valid phone number.',
 					},
-					notNull: { msg: 'Phone Number should not be null.' },
-					notEmpty: { msg: 'Phone Number should not be empty.' },
 				},
 				comment: 'Phone number must start with "09" or "+639" and only up 13 characters',
 			},
 			gender: {
 				type: DataTypes.STRING,
-				allowNull: false,
 				validate: {
 					isIn: {
 						args: [['Male', 'Female', 'Others']],
 						msg: 'Gender should be Male, Female or Others only.',
 					},
-					notNull: { msg: 'Gender should not be null.' },
-					notEmpty: { msg: 'Gender should not be empty.' },
 				},
 			},
 			user_type: {
@@ -155,6 +150,7 @@ module.exports = (sequelize, DataTypes) => {
 			},
 			updated_by: {
 				type: DataTypes.UUID,
+
 				references: {
 					model: User,
 					key: 'user_id',
