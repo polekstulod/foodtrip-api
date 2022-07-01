@@ -60,8 +60,9 @@ router.post('/register/restaurant', uploadRestoImage, registerCtlr.restaurant);
 router.post('/register/admin', registerCtlr.admin);
 
 var dishCat = require('../controllers/all/dish_cat.controller');
-/* router.get('/dishes', dishes.getAllDishes);
-router.get('/dish/:dishID', dishes.getDish); */
+router.get('/dishes', dishCat.getAllDishes);
+router.get('/dish-cat', dishCat.getAllDishCat);
+router.get('/dish-cat/:dishCatID', dishCat.getDishCat);
 
 var restaurant = require('../controllers/all/restaurants.controller');
 /* router.get('/restaurants', restaurant.getAllRestaurants);
