@@ -9,7 +9,7 @@ const generateToken = (data) => {
 
 exports.login = (req, res) => {
 	if (String(req.body.email_address) === '' || String(req.body.password) === '') {
-		emptyDataResponse(res, 'Email or password is empty');
+		errResponse(res, 'Email or password is empty');
 	}
 
 	db.User.findOne({
@@ -32,11 +32,11 @@ exports.login = (req, res) => {
 							message: 'User has been successfully login',
 						});
 					} else {
-						emptyDataResponse(res, 'Incorrect email or password');
+						errResponse(res, 'Incorrect email or password');
 					}
 				});
 			} else {
-				emptyDataResponse(res, 'Email does not exist');
+				errResponse(res, 'Email does not exist');
 			}
 		})
 		.catch((err) => errResponse(res, err));
