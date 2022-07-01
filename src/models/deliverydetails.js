@@ -110,8 +110,7 @@ module.exports = (sequelize, DataTypes) => {
 			},
 			date_received: {
 				type: DataTypes.DATE,
-				comment:
-					'Date and Time in which the order has been received by the customer.',
+				comment: 'Date and Time in which the order has been received by the customer.',
 			},
 		},
 		{

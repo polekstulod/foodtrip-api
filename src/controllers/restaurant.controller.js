@@ -11,15 +11,13 @@ exports.createRestoCat = async (req, res) => {
 
 	RestoCategory.create(req.body)
 		.then((data) => {
-			RestoCategory.findByPk(data.restocatg_id, { include: ['created'] }).then(
-				(result) => {
-					res.send({
-						error: false,
-						data: result,
-						message: ['Restaurant Category is created successfully.'],
-					});
-				}
-			);
+			RestoCategory.findByPk(data.restocatg_id, { include: ['created'] }).then((result) => {
+				res.send({
+					error: false,
+					data: result,
+					message: ['Restaurant Category is created successfully.'],
+				});
+			});
 		})
 		.catch((err) => {
 			res.status(500).send({
@@ -65,8 +63,7 @@ exports.findOneRestoCat = (req, res) => {
 			res.status(500).send({
 				error: true,
 				data: [],
-				message:
-					err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
+				message: err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
 			});
 		});
 };
@@ -100,8 +97,7 @@ exports.updateRestoCat = async (req, res) => {
 			res.status(500).send({
 				error: true,
 				data: [],
-				message:
-					err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
+				message: err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
 			});
 		});
 };
@@ -119,8 +115,7 @@ exports.deleteRestoCat = async (req, res) => {
 		res.status(500).send({
 			error: true,
 			data: [],
-			message:
-				err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
+			message: err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
 		});
 	});
 
@@ -155,15 +150,13 @@ exports.createDishCat = async (req, res) => {
 
 	DishCategory.create(req.body)
 		.then((data) => {
-			DishCategory.findByPk(data.dishcatg_id, { include: ['created'] }).then(
-				(result) => {
-					res.send({
-						error: false,
-						data: result,
-						message: ['Dish Category is created successfully.'],
-					});
-				}
-			);
+			DishCategory.findByPk(data.dishcatg_id, { include: ['created'] }).then((result) => {
+				res.send({
+					error: false,
+					data: result,
+					message: ['Dish Category is created successfully.'],
+				});
+			});
 		})
 		.catch((err) => {
 			res.status(500).send({
@@ -209,8 +202,7 @@ exports.findOneDishCat = (req, res) => {
 			res.status(500).send({
 				error: true,
 				data: [],
-				message:
-					err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
+				message: err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
 			});
 		});
 };
@@ -244,8 +236,7 @@ exports.updateDishCat = async (req, res) => {
 			res.status(500).send({
 				error: true,
 				data: [],
-				message:
-					err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
+				message: err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
 			});
 		});
 };
@@ -263,8 +254,7 @@ exports.deleteDishCat = async (req, res) => {
 		res.status(500).send({
 			error: true,
 			data: [],
-			message:
-				err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
+			message: err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
 		});
 	});
 
@@ -301,15 +291,13 @@ exports.createResto = async (req, res) => {
 
 	Restaurant.create(req.body)
 		.then((data) => {
-			Restaurant.findByPk(data.resto_id, { include: ['created'] }).then(
-				(result) => {
-					res.send({
-						error: false,
-						data: result,
-						message: ['Restaurant is created successfully.'],
-					});
-				}
-			);
+			Restaurant.findByPk(data.resto_id, { include: ['created'] }).then((result) => {
+				res.send({
+					error: false,
+					data: result,
+					message: ['Restaurant is created successfully.'],
+				});
+			});
 		})
 		.catch((err) => {
 			res.status(500).send({
@@ -371,8 +359,7 @@ exports.findOneResto = (req, res) => {
 			res.status(500).send({
 				error: true,
 				data: [],
-				message:
-					err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
+				message: err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
 			});
 		});
 };
@@ -407,8 +394,7 @@ exports.updateResto = async (req, res) => {
 			res.status(500).send({
 				error: true,
 				data: [],
-				message:
-					err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
+				message: err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
 			});
 		});
 };
@@ -426,8 +412,7 @@ exports.deleteResto = async (req, res) => {
 		res.status(500).send({
 			error: true,
 			data: [],
-			message:
-				err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
+			message: err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
 		});
 	});
 
@@ -516,8 +501,7 @@ exports.findOneDish = (req, res) => {
 			res.status(500).send({
 				error: true,
 				data: [],
-				message:
-					err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
+				message: err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
 			});
 		});
 };
@@ -566,8 +550,7 @@ exports.findOneDishOfResto = (req, res) => {
 			res.status(500).send({
 				error: true,
 				data: [],
-				message:
-					err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
+				message: err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
 			});
 		});
 };
@@ -593,8 +576,7 @@ exports.findOneDishCatOfResto = (req, res) => {
 			res.status(500).send({
 				error: true,
 				data: [],
-				message:
-					err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
+				message: err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
 			});
 		});
 };
@@ -629,8 +611,7 @@ exports.updateDish = async (req, res) => {
 			res.status(500).send({
 				error: true,
 				data: [],
-				message:
-					err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
+				message: err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
 			});
 		});
 };
@@ -648,8 +629,7 @@ exports.deleteDish = async (req, res) => {
 		res.status(500).send({
 			error: true,
 			data: [],
-			message:
-				err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
+			message: err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
 		});
 	});
 
@@ -740,8 +720,7 @@ exports.findRestoOpeningHours = (req, res) => {
 			res.status(500).send({
 				error: true,
 				data: [],
-				message:
-					err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
+				message: err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
 			});
 		});
 };
@@ -756,15 +735,13 @@ exports.updateOpeningHour = async (req, res) => {
 	})
 		.then((result) => {
 			if (result) {
-				OpeningHour.findByPk(id, { include: ['updated', 'restaurant'] }).then(
-					(data) => {
-						res.send({
-							error: false,
-							data: data,
-							message: [process.env.SUCCESS_UPDATE],
-						});
-					}
-				);
+				OpeningHour.findByPk(id, { include: ['updated', 'restaurant'] }).then((data) => {
+					res.send({
+						error: false,
+						data: data,
+						message: [process.env.SUCCESS_UPDATE],
+					});
+				});
 			} else {
 				res.status(500).send({
 					error: true,
@@ -778,8 +755,7 @@ exports.updateOpeningHour = async (req, res) => {
 			res.status(500).send({
 				error: true,
 				data: [],
-				message:
-					err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
+				message: err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
 			});
 		});
 };
@@ -797,8 +773,7 @@ exports.deleteOpeningHour = async (req, res) => {
 		res.status(500).send({
 			error: true,
 			data: [],
-			message:
-				err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
+			message: err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
 		});
 	});
 

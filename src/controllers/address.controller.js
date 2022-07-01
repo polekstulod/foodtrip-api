@@ -8,15 +8,13 @@ exports.create = async (req, res) => {
 
 	Address.create(req.body, { include: ['created'] })
 		.then((data) => {
-			Address.findByPk(data.address_id, { include: ['created'] }).then(
-				(result) => {
-					res.send({
-						error: false,
-						data: result,
-						message: ['Address is created successfully.'],
-					});
-				}
-			);
+			Address.findByPk(data.address_id, { include: ['created'] }).then((result) => {
+				res.send({
+					error: false,
+					data: result,
+					message: ['Address is created successfully.'],
+				});
+			});
 		})
 		.catch((err) => {
 			res.status(500).send({
@@ -62,8 +60,7 @@ exports.findOne = (req, res) => {
 			res.status(500).send({
 				error: true,
 				data: [],
-				message:
-					err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
+				message: err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
 			});
 		});
 };
@@ -97,8 +94,7 @@ exports.update = async (req, res) => {
 			res.status(500).send({
 				error: true,
 				data: [],
-				message:
-					err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
+				message: err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
 			});
 		});
 };
@@ -116,8 +112,7 @@ exports.delete = async (req, res) => {
 		res.status(500).send({
 			error: true,
 			data: [],
-			message:
-				err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
+			message: err.errors.map((e) => e.message) || process.env.GENERAL_ERROR_MSG,
 		});
 	});
 
@@ -126,15 +121,13 @@ exports.delete = async (req, res) => {
 		paranoid: false,
 	}).then((result) => {
 		if (result) {
-			Address.findByPk(id, { paranoid: false, include: ['deleted'] }).then(
-				(data) => {
-					res.send({
-						error: false,
-						data: data,
-						message: [process.env.SUCCESS_DELETE],
-					});
-				}
-			);
+			Address.findByPk(id, { paranoid: false, include: ['deleted'] }).then((data) => {
+				res.send({
+					error: false,
+					data: data,
+					message: [process.env.SUCCESS_DELETE],
+				});
+			});
 		} else {
 			res.status(500).send({
 				error: true,

@@ -12,10 +12,7 @@ const restoStorage = multer.diskStorage({
 	},
 
 	filename: function (req, file, cb) {
-		cb(
-			null,
-			file.fieldname + '-' + Date.now() + path.extname(file.originalname)
-		);
+		cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
 	},
 });
 
@@ -62,10 +59,7 @@ const dishStorage = multer.diskStorage({
 	},
 
 	filename: function (req, file, cb) {
-		cb(
-			null,
-			file.fieldname + '-' + Date.now() + path.extname(file.originalname)
-		);
+		cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
 	},
 });
 
@@ -127,10 +121,7 @@ router.get('/dish', restoController.findAllDish);
 router.get('/dish/:id', restoController.findOneDish);
 router.get('/:restoId/dish/:id', restoController.findOneDishOfResto);
 router.get('/:restoId/dish/', restoController.findAllDishOfResto);
-router.get(
-	'/:restoId/dish/category/:catId',
-	restoController.findOneDishCatOfResto
-);
+router.get('/:restoId/dish/category/:catId', restoController.findOneDishCatOfResto);
 router.delete('/dish/:id', restoController.deleteDish);
 
 // * Opening Hour Controller Routes

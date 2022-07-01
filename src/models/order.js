@@ -93,8 +93,7 @@ module.exports = (sequelize, DataTypes) => {
 					notNull: { msg: 'Order Total should not be null.' },
 					notEmpty: { msg: 'Order Total should not be empty.' },
 				},
-				comment:
-					'Sum of the OrderDetails(subtotal) of all rows with the same order_id',
+				comment: 'Sum of the OrderDetails(subtotal) of all rows with the same order_id',
 			},
 			order_comment: {
 				type: DataTypes.TEXT,
@@ -109,8 +108,7 @@ module.exports = (sequelize, DataTypes) => {
 			},
 			date_released: {
 				type: DataTypes.DATE,
-				comment:
-					'Date and time in which the order/food is released from the restaurant and dispatched to the courier',
+				comment: 'Date and time in which the order/food is released from the restaurant and dispatched to the courier',
 			},
 			date_rejected: {
 				type: DataTypes.DATE,
