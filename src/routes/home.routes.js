@@ -69,7 +69,7 @@ router.get('/restaurants', restaurant.getAllRestaurants);
 router.get('/restaurant/:restoID', restaurant.getRestaurant);
 
 var restoCat = require('../controllers/all/resto_cat.controller.js');
-/* router.get('/resto-categories', restoCat.getAllRestoCat);
-router.get('/resto-category/:restoCatID', restoCat.getRestoCat); */
+router.get('/resto-categories', restoCat.getAllRestoCat);
+router.get('/resto-category/:restoCatID', restoCat.getRestoCat);
 
 module.exports = router;
