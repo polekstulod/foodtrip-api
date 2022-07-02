@@ -9,7 +9,7 @@ const generateToken = (data) => {
 
 exports.login = (req, res) => {
 	if (String(req.body.email_address) === '' || String(req.body.password) === '') {
-		errResponse(res, 'Email or password is empty');
+		return errResponse(res, 'Email or password is empty');
 	}
 
 	db.User.findOne({
