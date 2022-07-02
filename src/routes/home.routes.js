@@ -65,8 +65,8 @@ router.get('/dish-cat', dishCat.getAllDishCat);
 router.get('/dish-cat/:dishCatID', dishCat.getDishCat);
 
 var restaurant = require('../controllers/all/restaurants.controller');
-/* router.get('/restaurants', restaurant.getAllRestaurants);
-router.get('/restaurant/:restoID', restaurant.getRestaurant); */
+router.get('/restaurants', restaurant.getAllRestaurants);
+router.get('/restaurant/:restoID', restaurant.getRestaurant);
 
 var restoCat = require('../controllers/all/resto_cat.controller.js');
 /* router.get('/resto-categories', restoCat.getAllRestoCat);
