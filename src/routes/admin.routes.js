@@ -15,11 +15,11 @@ var addressCtl = require('../controllers/admin/addresses.controller');
 router.get('/address/:addressID', addressCtl.getAddress); */
 
 var userCtl = require('../controllers/admin/user.controller');
-/* router.get('/user/resto-admin', userCtl.getAllRestoAdmin);
+router.get('/user/resto-admin', userCtl.getAllRestoAdmin);
 router.get('/user/resto-admin/:restoAdminID', userCtl.getRestoAdmin);
 router.get('/user/customer', userCtl.getAllCustomer);
 router.get('/user/customer/:customerID', userCtl.getCustomer);
 router.get('/user/admin', userCtl.getAllAdmin);
-router.get('/user/admin/:adminID', userCtl.getAdmin); */
+router.get('/user/admin/:adminID', userCtl.getAdmin);
 
 module.exports = router;
