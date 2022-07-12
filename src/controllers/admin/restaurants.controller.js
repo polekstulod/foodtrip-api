@@ -1,23 +1,48 @@
 const db = require('../../models');
 const { dataResponse, errResponse, emptyDataResponse, checkAuthorization } = require('../../helpers/controller.helper');
+const dataTable = require('sequelize-datatables');
 
 // * Retrieve all Restaurant
-exports.getAllRestaurants = (req, res) => {
+exports.getAllRestaurants = async (req, res) => {
 	if (!checkAuthorization(req, res, 'Admin')) {
 		return;
 	}
-
-	db.Restaurant.findAll({
-		include: [
-			'restaurant_category',
+	req.body = {
+		draw: 1,
+		columns: [
 			{
-				model: db.Dish,
-				as: 'resto_dishes',
+				data: 'resto_id',
+				name: '',
+				searchable: true,
+				orderable: true,
+				search: {
+					value: '',
+					regex: false,
+				},
 			},
 		],
-	})
-		.then((data) => dataResponse(res, data, 'All Restaurants has been retrieved', 'No Restaurants has been retrieved'))
-		.catch((err) => errResponse(res, err));
+		order: [
+			{
+				column: 0,
+				dir: 'asc',
+			},
+		],
+		start: 0,
+		length: 10,
+		search: {
+			value: '',
+			regex: false,
+		},
+	};
+
+	try {
+		let data = await dataTable(db.Restaurant, req.body, {
+			include: ['restaurant_category'],
+		});
+		res.send(data);
+	} catch (err) {
+		errResponse(res, err);
+	}
 };
 
 // * Retrieve single Restaurant
