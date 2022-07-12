@@ -91,27 +91,33 @@ exports.getAllDishCat = async (req, res) => {
 };
 
 // * Retrieve single Dish
-exports.getDish = (req, res) => {
+exports.getDish = async (req, res) => {
 	if (!checkAuthorization(req, res, 'Admin')) {
 		return;
 	}
 
 	const id = req.params.dishID;
 
-	db.Dish.findByPk(id, { include: ['dish_category', 'restaurant'] })
-		.then((data) => dataResponse(res, data, 'Dish has been retrieved', 'No Dish has been retrieved'))
-		.catch((err) => errResponse(res, err));
+	try {
+		let data = await db.Dish.findByPk(id, { include: ['dish_category', 'restaurant'] });
+		dataResponse(res, data, 'Dish has been retrieved', 'No Dish has been retrieved');
+	} catch (err) {
+		errResponse(res, err);
+	}
 };
 
 // * Retrieve single Dish Category
-exports.getDishCat = (req, res) => {
+exports.getDishCat = async (req, res) => {
 	if (!checkAuthorization(req, res, 'Admin')) {
 		return;
 	}
 
 	const id = req.params.dishCatID;
 
-	db.DishCategory.findByPk(id, { include: 'dishes' })
-		.then((data) => dataResponse(res, data, 'Dish Category has been retrieved', 'No Dish Category has been retrieved'))
-		.catch((err) => errResponse(res, err));
+	try {
+		let data = await db.DishCategory.findByPk(id, { include: ['dishes'] });
+		dataResponse(res, data, 'Dish Category has been retrieved', 'No Dish Category has been retrieved');
+	} catch (err) {
+		errResponse(res, err);
+	}
 };

@@ -46,22 +46,25 @@ exports.getAllRestaurants = async (req, res) => {
 };
 
 // * Retrieve single Restaurant
-exports.getRestaurant = (req, res) => {
+exports.getRestaurant = async (req, res) => {
 	if (!checkAuthorization(req, res, 'Admin')) {
 		return;
 	}
 
 	const id = req.params.restoID;
 
-	db.Restaurant.findByPk(id, {
-		include: [
-			'restaurant_category',
-			{
-				model: db.Dish,
-				as: 'resto_dishes',
-			},
-		],
-	})
-		.then((data) => dataResponse(res, data, 'Restaurant has been retrieved', 'No Restaurant has been retrieved'))
-		.catch((err) => errResponse(res, err));
+	try {
+		let data = await db.Restaurant.findByPk(id, {
+			include: [
+				'restaurant_category',
+				{
+					model: db.Dish,
+					as: 'resto_dishes',
+				},
+			],
+		});
+		dataResponse(res, data, 'Restaurant has been retrieved', 'No Restaurant has been retrieved');
+	} catch (err) {
+		errResponse(res, err);
+	}
 };
