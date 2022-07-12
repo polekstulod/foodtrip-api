@@ -40,7 +40,7 @@ exports.getAllRestoAdmin = async (req, res) => {
 			where: { user_type: 'Resto_Admin' },
 			include: ['restaurant'],
 		});
-		dataResponse(res, data, 'All Resto Admin has been retrieved', 'No Resto Admin has been retrieved');
+		res.send(data);
 	} catch (err) {
 		errResponse(res, err);
 	}
@@ -100,8 +100,7 @@ exports.getAllCustomer = async (req, res) => {
 		});
 		res.send(data);
 	} catch (err) {
-		console.log(err);
-		res.send(err);
+		errResponse(res, err);
 	}
 };
 
@@ -160,8 +159,7 @@ exports.getAllAdmin = async (req, res) => {
 		});
 		res.send(data);
 	} catch (err) {
-		console.log(err);
-		res.send(err);
+		errResponse(res, err);
 	}
 };
 
