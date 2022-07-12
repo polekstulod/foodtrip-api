@@ -11,8 +11,8 @@ router.get('/dish/:dishID', dishCtl.getDish);
 router.get('/dish-cat/:dishCatID', dishCtl.getDishCat);
 
 var addressCtl = require('../controllers/admin/addresses.controller');
-/* router.get('/address', addressCtl.getAllAddress);
-router.get('/address/:addressID', addressCtl.getAddress); */
+router.get('/address', addressCtl.getAllAddress);
+router.get('/address/:addressID', addressCtl.getAddress);
 
 var userCtl = require('../controllers/admin/user.controller');
 router.get('/user/resto-admin', userCtl.getAllRestoAdmin);
