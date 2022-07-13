@@ -113,6 +113,15 @@ module.exports = (sequelize, DataTypes) => {
 				},
 				comment: 'Phone number must start with "09" or "+639" and only up 13 characters',
 			},
+			is_default: {
+				type: DataTypes.BOOLEAN,
+				allowNull: false,
+				defaultValue: 1,
+				validate: {
+					notNull: { msg: 'Default should not be null' },
+					notEmpty: { msg: 'Default should not be empty.' },
+				},
+			},
 			user_id: {
 				type: DataTypes.UUID,
 				references: {
