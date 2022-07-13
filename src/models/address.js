@@ -100,6 +100,19 @@ module.exports = (sequelize, DataTypes) => {
 					notEmpty: { msg: 'Zip Code should not be empty.' },
 				},
 			},
+			full_name: {
+				type: DataTypes.STRING,
+			},
+			phone_number: {
+				type: DataTypes.STRING(13),
+				validate: {
+					is: {
+						args: /^(09|\+639)\d{9}$/,
+						msg: 'Please enter a valid phone number.',
+					},
+				},
+				comment: 'Phone number must start with "09" or "+639" and only up 13 characters',
+			},
 			user_id: {
 				type: DataTypes.UUID,
 				references: {
