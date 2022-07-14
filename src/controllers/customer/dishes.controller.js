@@ -3,6 +3,10 @@ const { dataResponse, errResponse, emptyDataResponse, checkAuthorization } = req
 
 // * Retrieve all Dish
 exports.getAllDishes = async (req, res) => {
+	if (!checkAuthorization(req, res, 'Customer')) {
+		return;
+	}
+
 	try {
 		let data = await db.Dish.findAll({ include: ['dish_category', 'restaurant'] });
 		dataResponse(res, data, 'All Dishes has been retrieved', 'No Dishes has been retrieved');
@@ -13,6 +17,10 @@ exports.getAllDishes = async (req, res) => {
 
 // * Retrieve all Dish Category
 exports.getAllDishCat = async (req, res) => {
+	if (!checkAuthorization(req, res, 'Customer')) {
+		return;
+	}
+
 	try {
 		let data = await db.DishCategory.findAll({ include: 'dishes' });
 		dataResponse(res, data, 'All Dish Category has been retrieved', 'No Dish Category has been retrieved');
