@@ -43,11 +43,11 @@ exports.updateRestaurant = async (req, res) => {
 			where: { resto_id: id },
 		});
 
-		if (result) {
+		if (result == 1) {
 			let data = await db.Restaurant.findByPk(id, { include: ['updated'] });
 			dataResponse(res, data, 'Restaurant has been updated successfully', 'Restaurant was not updated');
 		} else {
-			errResponse(res, err);
+			errResponse(res, 'Error in updating Dish');
 		}
 	} catch (err) {
 		errResponse(res, err);
