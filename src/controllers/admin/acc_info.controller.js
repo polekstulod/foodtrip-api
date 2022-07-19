@@ -18,6 +18,7 @@ exports.getAccountInfo = async (req, res) => {
 	}
 };
 
+// * Update User Account Info
 exports.updateAcctInfo = async (req, res) => {
 	if (!checkAuthorization(req, res, 'Admin')) {
 		return;
@@ -41,6 +42,7 @@ exports.updateAcctInfo = async (req, res) => {
 	}
 };
 
+// * Verify Password
 exports.verifyPassword = async (req, res) => {
 	if (!checkAuthorization(req, res, 'Admin')) {
 		return;
@@ -55,6 +57,7 @@ exports.verifyPassword = async (req, res) => {
 	match ? emptyDataResponse(res, 'Password is match') : errResponse(res, 'Password is not match');
 };
 
+// * Update Password
 exports.updatePassword = async (req, res) => {
 	if (!checkAuthorization(req, res, 'Admin')) {
 		return;
