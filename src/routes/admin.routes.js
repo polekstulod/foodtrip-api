@@ -22,4 +22,10 @@ router.get('/user/customer/:customerID', userCtl.getCustomer);
 router.get('/user/admin', userCtl.getAllAdmin);
 router.get('/user/admin/:adminID', userCtl.getAdmin);
 
+var acctInfoCtl = require('../controllers/admin/acc_info.controller');
+router.get('/account/info', acctInfoCtl.getAccountInfo);
+router.put('/account/info', acctInfoCtl.updateAcctInfo);
+router.post('/account/verify-password', acctInfoCtl.verifyPassword);
+router.put('/account/password', acctInfoCtl.updatePassword);
+
 module.exports = router;

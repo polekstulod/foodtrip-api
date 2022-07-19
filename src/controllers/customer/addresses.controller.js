@@ -66,12 +66,11 @@ exports.updateAddress = async (req, res) => {
 		let result = await db.Address.update(req.body, {
 			where: { address_id: id },
 		});
-
-		if (result) {
+		if (result == 1) {
 			let data = await db.Address.findByPk(id, { include: ['updated'] });
 			dataResponse(res, data, 'Address has been successfully updated', 'No Address has been successfully updated');
 		} else {
-			errResponse(res, err);
+			errResponse(res, 'Error in Updating Address');
 		}
 	} catch (err) {
 		errResponse(res, err);
@@ -100,13 +99,17 @@ exports.updateDefaultAddress = async (req, res) => {
 			}
 		);
 
-		let data = await db.Address.findByPk(id, { include: ['updated'] });
-		dataResponse(
-			res,
-			data,
-			'Default Address has been successfully updated',
-			'No Default Address has been successfully updated'
-		);
+		if (result == 1) {
+			let data = await db.Address.findByPk(id, { include: ['updated'] });
+			dataResponse(
+				res,
+				data,
+				'Default Address has been successfully updated',
+				'No Default Address has been successfully updated'
+			);
+		} else {
+			errResponse(res, 'Error in updating Default Address');
+		}
 	} catch (err) {
 		errResponse(res, err);
 	}
@@ -122,19 +125,23 @@ exports.deleteAddress = async (req, res) => {
 	req.body.deleted_by = req.user.user_id;
 
 	try {
-		await db.Address.destroy({
+		let del = await db.Address.destroy({
 			where: {
 				address_id: id,
 			},
 		});
 
-		await db.Address.update(req.body, {
-			where: { address_id: id },
-			paranoid: false,
-		});
+		if (del) {
+			await db.Address.update(req.body, {
+				where: { address_id: id },
+				paranoid: false,
+			});
 
-		let data = await db.Address.findByPk(id, { paranoid: false, include: ['deleted'] });
-		dataResponse(res, data, 'Address has been successfully deleted', 'No address has been successfully deleted.');
+			let data = await db.Address.findByPk(id, { paranoid: false, include: ['deleted'] });
+			dataResponse(res, data, 'Address has been successfully deleted', 'No address has been successfully deleted.');
+		} else {
+			errResponse(res, 'Error in deleting Address');
+		}
 	} catch (err) {
 		errResponse(res, err);
 	}

@@ -117,7 +117,7 @@ exports.updateDish = async (req, res) => {
 			let data = await db.Dish.findByPk(id, { include: ['updated'] });
 			dataResponse(res, data, 'Dish has been updated successfully', 'Dish was not updated');
 		} else {
-			errResponse(res, err);
+			errResponse(res, 'Error in updating Dish');
 		}
 	} catch (err) {
 		errResponse(res, err);
@@ -134,25 +134,25 @@ exports.deleteDish = async (req, res) => {
 	req.body.deleted_by = req.user.user_id;
 
 	try {
-		await db.Dish.destroy({
+		let del = await db.Dish.destroy({
 			where: {
 				dish_id: id,
 			},
 		});
 
-		let result = await db.Dish.update(req.body, {
-			where: { dish_id: id },
-			paranoid: false,
-		});
+		if (del) {
+			await db.Dish.update(req.body, {
+				where: { dish_id: id },
+				paranoid: false,
+			});
 
-		if (result) {
 			let data = await db.Dish.findByPk(id, {
 				paranoid: false,
 				include: ['deleted'],
 			});
 			dataResponse(res, data, 'Dish has been deleted successfully');
 		} else {
-			errResponse(res, err);
+			errResponse(res, 'Error in deleting Dish');
 		}
 	} catch (err) {
 		errResponse(res, err);

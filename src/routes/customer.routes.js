@@ -20,4 +20,10 @@ router.put('/address/:addressID', addressCtl.updateAddress);
 router.put('/address/default/:addressID', addressCtl.updateDefaultAddress);
 router.delete('/address/:addressID', addressCtl.deleteAddress);
 
+var acctInfoCtl = require('../controllers/customer/acc_info.controller');
+router.get('/account/info', acctInfoCtl.getAccountInfo);
+router.put('/account/info', acctInfoCtl.updateAcctInfo);
+router.post('/account/verify-password', acctInfoCtl.verifyPassword);
+router.put('/account/password', acctInfoCtl.updatePassword);
+
 module.exports = router;
