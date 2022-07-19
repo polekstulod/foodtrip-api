@@ -2,6 +2,11 @@ var router = require('express').Router();
 const { updateRestoImage, uploadDishImage, updateDishImage } = require('../middlewares/uploadImage');
 
 var restaurantCtl = require('../controllers/resto_admin/restaurants.controller');
+router.post('/restaurant/opening-hour', restaurantCtl.createOpeningHour);
+router.get('/restaurant/opening-hour', restaurantCtl.getAllOpeningHours);
+router.get('/restaurant/opening-hour/:id', restaurantCtl.getOpeningHour);
+router.put('/restaurant/opening-hour/:id', restaurantCtl.updateOpeningHour);
+router.delete('/restaurant/opening-hour/:id', restaurantCtl.deleteOpeningHour);
 router.get('/restaurant/:restoID', restaurantCtl.getRestaurant);
 router.put('/restaurant/:restoID', updateRestoImage, restaurantCtl.updateRestaurant);
 
