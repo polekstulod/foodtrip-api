@@ -26,4 +26,12 @@ router.put('/account/info', acctInfoCtl.updateAcctInfo);
 router.post('/account/verify-password', acctInfoCtl.verifyPassword);
 router.put('/account/password', acctInfoCtl.updatePassword);
 
+var cartCtl = require('../controllers/customer/cart.controller');
+router.post('/dish/:dishID/add-to-cart', cartCtl.addToCart);
+router.get('/cart', cartCtl.getCart);
+router.post('/cart/add-quantity/:cartDetailsID', cartCtl.addQuantity);
+router.post('/cart/sub-quantity/:cartDetailsID', cartCtl.subQuantity);
+router.delete('/cart/:cartDetailsID', cartCtl.deleteCartDetail);
+router.delete('/cart', cartCtl.deleteCart);
+
 module.exports = router;
