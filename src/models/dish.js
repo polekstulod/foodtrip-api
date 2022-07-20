@@ -40,8 +40,8 @@ module.exports = (sequelize, DataTypes) => {
 				through: models.OrderDetails,
 			});
 			this.belongsToMany(models.Cart, {
-				as: 'cart',
-				foreignKey: 'cart_id',
+				as: 'dish',
+				foreignKey: 'dish_id',
 				through: models.CartDetail,
 			});
 		}
