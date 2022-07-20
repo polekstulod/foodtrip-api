@@ -14,18 +14,13 @@ module.exports = (sequelize, DataTypes) => {
 				foreignKey: 'created_by',
 			});
 
-			this.belongsTo(models.User, {
-				as: 'updated',
-				foreignKey: 'updated_by',
-			});
-
 			this.belongsTo(models.Restaurant, {
 				foreignKey: 'resto_id',
 			});
 
 			this.belongsToMany(models.Dish, {
-				as: 'dish',
-				foreignKey: 'dish_id',
+				as: 'cart_dishes',
+				foreignKey: 'cart_id',
 				through: models.CartDetail,
 			});
 		}
@@ -46,34 +41,17 @@ module.exports = (sequelize, DataTypes) => {
 			},
 			cart_total: {
 				type: DataTypes.DECIMAL(10, 2),
-				allowNull: false,
+				defaultValue: 0,
 				validate: {
 					isDecimal: { msg: 'Cart Total must be in a valid format.' },
-					notNull: { msg: 'Cart Total should not be null.' },
-					notEmpty: { msg: 'Cart Total should not be empty.' },
 				},
 				comment: 'Sum of the CartDetails(subtotal) of all rows with the same order_id',
-			},
-			created_by: {
-				type: DataTypes.UUID,
-				references: {
-					model: sequelize.User,
-					key: 'user_id',
-				},
-			},
-			updated_by: {
-				type: DataTypes.UUID,
-				references: {
-					model: sequelize.User,
-					key: 'user_id',
-				},
 			},
 		},
 		{
 			sequelize,
 			timestamps: true,
 			createdAt: 'date_created',
-			updatedAt: 'date_updated',
 			modelName: 'Cart',
 		}
 	);
