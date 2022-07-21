@@ -1,4 +1,5 @@
 var router = require('express').Router();
+const { validateCart } = require('../middlewares/validateCart');
 
 var restaurantCtl = require('../controllers/customer/restaurants.controller');
 router.get('/restaurants', restaurantCtl.getAllRestaurants);
