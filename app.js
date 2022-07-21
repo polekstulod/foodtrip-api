@@ -60,7 +60,7 @@ const authenticateToken = (req, res, next) => {
 
 app.use('/public', express.static(path.join(__dirname + '/public/uploads/')));
 app.use(`${process.env.API_VERSION}/home`, require('./src/routes/home.routes'));
-app.use(`${process.env.API_VERSION}/test`, authenticateToken, require('./src/routes/test.routes'));
+app.use(`${process.env.API_VERSION}/test`, require('./src/routes/test.routes'));
 app.use(`${process.env.API_VERSION}/resto-admin`, authenticateToken, require('./src/routes/resto_admin.routes'));
 app.use(`${process.env.API_VERSION}/admin`, authenticateToken, require('./src/routes/admin.routes'));
 app.use(`${process.env.API_VERSION}/customer`, authenticateToken, require('./src/routes/customer.routes'));
