@@ -3,6 +3,10 @@ const { dataResponse, errResponse, emptyDataResponse, checkAuthorization } = req
 
 // * Add to Cart
 exports.addToCart = async (req, res) => {
+	if (!checkAuthorization(req, res, 'Customer')) {
+		return;
+	}
+
 	const dishID = req.params.dishID;
 	const userID = req.user.user_id;
 
@@ -48,6 +52,10 @@ exports.addToCart = async (req, res) => {
 
 // * Replace Cart
 exports.replaceCart = async (req, res) => {
+	if (!checkAuthorization(req, res, 'Customer')) {
+		return;
+	}
+
 	const userID = req.user.user_id;
 	const checkCart = await db.Cart.findOne({ where: { created_by: userID } });
 	await db.CartDetail.destroy({ where: { cart_id: checkCart.cart_id } });
@@ -58,6 +66,10 @@ exports.replaceCart = async (req, res) => {
 
 // * Find Cart
 exports.getCart = async (req, res) => {
+	if (!checkAuthorization(req, res, 'Customer')) {
+		return;
+	}
+
 	const userID = req.user.user_id;
 
 	try {
@@ -70,6 +82,10 @@ exports.getCart = async (req, res) => {
 
 // * Add Quantity
 exports.addQuantity = async (req, res) => {
+	if (!checkAuthorization(req, res, 'Customer')) {
+		return;
+	}
+
 	const cartDetailsID = req.params.cartDetailsID;
 	const userID = req.user.user_id;
 
@@ -93,6 +109,10 @@ exports.addQuantity = async (req, res) => {
 
 // * Subract Quantity
 exports.subQuantity = async (req, res) => {
+	if (!checkAuthorization(req, res, 'Customer')) {
+		return;
+	}
+
 	const cartDetailsID = req.params.cartDetailsID;
 	const userID = req.user.user_id;
 
@@ -116,6 +136,10 @@ exports.subQuantity = async (req, res) => {
 
 // * Delete Cart Detail
 exports.deleteCartDetail = async (req, res) => {
+	if (!checkAuthorization(req, res, 'Customer')) {
+		return;
+	}
+
 	const cartDetailID = req.params.cartDetailsID;
 	const userID = req.user.user_id;
 
@@ -133,6 +157,10 @@ exports.deleteCartDetail = async (req, res) => {
 
 // * Delete Cart
 exports.deleteCart = async (req, res) => {
+	if (!checkAuthorization(req, res, 'Customer')) {
+		return;
+	}
+
 	const userID = req.user.user_id;
 
 	const checkCart = await db.Cart.findOne({ where: { created_by: userID } });
