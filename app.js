@@ -24,11 +24,6 @@ if (process.env.ALLOW_SYNC === 'true') {
 	db.sequelize.sync({ alter: true }).then(() => console.log('Done adding/updating the database based on the Models.'));
 }
 
-// * Routes
-const userRoute = require('./src/routes/user.routes');
-const restaurantRoute = require('./src/routes/restaurant.routes');
-const addressRoute = require('./src/routes/address.routes');
-
 // * Initialize express
 var app = express();
 
@@ -64,9 +59,6 @@ app.use(`${process.env.API_VERSION}/test`, require('./src/routes/test.routes'));
 app.use(`${process.env.API_VERSION}/resto-admin`, authenticateToken, require('./src/routes/resto_admin.routes'));
 app.use(`${process.env.API_VERSION}/admin`, authenticateToken, require('./src/routes/admin.routes'));
 app.use(`${process.env.API_VERSION}/customer`, authenticateToken, require('./src/routes/customer.routes'));
-app.use(`${process.env.API_VERSION}/user`, authenticateToken, userRoute);
-app.use(`${process.env.API_VERSION}/restaurant`, authenticateToken, restaurantRoute);
-app.use(`${process.env.API_VERSION}/address`, authenticateToken, addressRoute);
 
 app.listen(PORT, () => {
 	console.log(`Server is running on port ${PORT}.`);
