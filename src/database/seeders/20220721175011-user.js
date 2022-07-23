@@ -163,7 +163,7 @@ module.exports = {
 			},
 		]);
 
-		const users = await queryInterface.sequelize.query(`SELECT user_id from Users;`);
+		const users = await queryInterface.sequelize.query(`SELECT user_id FROM users ORDER BY users.user_no ASC;`);
 		const userRows = users[0];
 
 		// * Customers Addresses
@@ -181,7 +181,7 @@ module.exports = {
 				full_name: 'James Paul L. Tulod',
 				phone_number: '09451152076',
 				is_default: '1',
-				user_id: userRows[0].user_id,
+				user_id: userRows[1].user_id,
 				date_created: new Date(),
 				date_updated: new Date(),
 			},
@@ -197,7 +197,7 @@ module.exports = {
 				full_name: 'Jerald Guillermo',
 				phone_number: '09482749382',
 				is_default: '1',
-				user_id: userRows[1].user_id,
+				user_id: userRows[9].user_id,
 				date_created: new Date(),
 				date_updated: new Date(),
 			},
@@ -229,7 +229,7 @@ module.exports = {
 				full_name: 'Allison Locsin',
 				phone_number: '09752048137',
 				is_default: '1',
-				user_id: userRows[3].user_id,
+				user_id: userRows[7].user_id,
 				date_created: new Date(),
 				date_updated: new Date(),
 			},
@@ -245,7 +245,7 @@ module.exports = {
 				full_name: 'Princess Anna C. Santos',
 				phone_number: '09293819382',
 				is_default: '1',
-				user_id: userRows[4].user_id,
+				user_id: userRows[8].user_id,
 				date_created: new Date(),
 				date_updated: new Date(),
 			},
@@ -261,7 +261,7 @@ module.exports = {
 				full_name: 'Javen Brylle Dela Cruz',
 				phone_number: '09482048339',
 				is_default: '1',
-				user_id: userRows[5].user_id,
+				user_id: userRows[3].user_id,
 				date_created: new Date(),
 				date_updated: new Date(),
 			},
@@ -277,7 +277,7 @@ module.exports = {
 				full_name: 'Aphryll Joy Malazzab',
 				phone_number: '09294482931',
 				is_default: '1',
-				user_id: userRows[6].user_id,
+				user_id: userRows[5].user_id,
 				date_created: new Date(),
 				date_updated: new Date(),
 			},
@@ -293,7 +293,7 @@ module.exports = {
 				full_name: 'Frankly Samson',
 				phone_number: '09382746311',
 				is_default: '1',
-				user_id: userRows[7].user_id,
+				user_id: userRows[4].user_id,
 				date_created: new Date(),
 				date_updated: new Date(),
 			},
@@ -309,7 +309,7 @@ module.exports = {
 				full_name: 'Mellissa C. Taylor',
 				phone_number: '09997492838',
 				is_default: '1',
-				user_id: userRows[8].user_id,
+				user_id: userRows[0].user_id,
 				date_created: new Date(),
 				date_updated: new Date(),
 			},
@@ -325,7 +325,7 @@ module.exports = {
 				full_name: 'James Smith',
 				phone_number: '09673849384',
 				is_default: '1',
-				user_id: userRows[9].user_id,
+				user_id: userRows[10].user_id,
 				date_created: new Date(),
 				date_updated: new Date(),
 			},
@@ -341,11 +341,10 @@ module.exports = {
 				full_name: 'Charles J. Fowler',
 				phone_number: '09243849261',
 				is_default: '1',
-				user_id: userRows[10].user_id,
+				user_id: userRows[6].user_id,
 				date_created: new Date(),
 				date_updated: new Date(),
 			},
-			// ! IMPORTANT: mauulit ulit yung address pero user 1-5 lang
 			{
 				address_id: uuidv4(),
 				address_1: '223 Nenita Street Ext',
