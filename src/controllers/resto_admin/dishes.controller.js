@@ -9,7 +9,7 @@ exports.createDish = async (req, res) => {
 
 	req.body.dish_img = req.file != undefined ? req.file.filename : '';
 	req.body.created_by = req.user.user_id;
-	req.body.dish_no = Math.floor(Math.random() * (99999999999 - 1 + 1) + 1);
+	req.body.dish_no = `DSH-${Math.floor(Date.now() * 2.5)}`;
 
 	try {
 		let data = await db.Dish.create(req.body);
