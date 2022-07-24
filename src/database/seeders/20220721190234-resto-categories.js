@@ -55,7 +55,7 @@ module.exports = {
 			// * Example
 			{
 				resto_id: uuidv4(),
-				resto_no: '10057959412',
+				resto_no: `RTO-${Date.now() * 2}`,
 				resto_name: 'Jollibot',
 				resto_email: 'jollibee@gmail.com',
 				resto_phone: '09451152076',
@@ -68,7 +68,7 @@ module.exports = {
 			},
 			{
 				resto_id: uuidv4(), // ! wag galawin
-				resto_no: '11754674398', // ! wag galawin
+				resto_no: `RTO-${Date.now() * 2}`, // ! wag galawin
 				resto_name: '',
 				resto_email: '',
 				resto_phone: '', // ! 11 digits only and only starts with 09...
@@ -81,7 +81,7 @@ module.exports = {
 			},
 			{
 				resto_id: uuidv4(), // ! wag galawin
-				resto_no: '20462355454', // ! wag galawin
+				resto_no: `RTO-${Date.now() * 2}`, // ! wag galawin
 				resto_name: '',
 				resto_email: '',
 				resto_phone: '', // ! 11 digits only and only starts with 09...
@@ -94,7 +94,7 @@ module.exports = {
 			},
 			{
 				resto_id: uuidv4(), // ! wag galawin
-				resto_no: '30993411766', // ! wag galawin
+				resto_no: `RTO-${Date.now() * 2}`, // ! wag galawin
 				resto_name: '',
 				resto_email: '',
 				resto_phone: '', // ! 11 digits only and only starts with 09...
@@ -107,7 +107,7 @@ module.exports = {
 			},
 			{
 				resto_id: uuidv4(), // ! wag galawin
-				resto_no: '42102023490', // ! wag galawin
+				resto_no: `RTO-${Date.now() * 2}`, // ! wag galawin
 				resto_name: '',
 				resto_email: '',
 				resto_phone: '', // ! 11 digits only and only starts with 09...
@@ -120,7 +120,7 @@ module.exports = {
 			},
 			{
 				resto_id: uuidv4(), // ! wag galawin
-				resto_no: '56066129816', // ! wag galawin
+				resto_no: `RTO-${Date.now() * 2}`, // ! wag galawin
 				resto_name: '',
 				resto_email: '',
 				resto_phone: '', // ! 11 digits only and only starts with 09...
@@ -133,7 +133,7 @@ module.exports = {
 			},
 			{
 				resto_id: uuidv4(), // ! wag galawin
-				resto_no: '60140913365', // ! wag galawin
+				resto_no: `RTO-${Date.now() * 2}`, // ! wag galawin
 				resto_name: '',
 				resto_email: '',
 				resto_phone: '', // ! 11 digits only and only starts with 09...
@@ -146,7 +146,7 @@ module.exports = {
 			},
 			{
 				resto_id: uuidv4(), // ! wag galawin
-				resto_no: '72839446096', // ! wag galawin
+				resto_no: `RTO-${Date.now() * 2}`, // ! wag galawin
 				resto_name: '',
 				resto_email: '',
 				resto_phone: '', // ! 11 digits only and only starts with 09...
@@ -159,7 +159,7 @@ module.exports = {
 			},
 			{
 				resto_id: uuidv4(), // ! wag galawin
-				resto_no: '86281706551', // ! wag galawin
+				resto_no: `RTO-${Date.now() * 2}`, // ! wag galawin
 				resto_name: '',
 				resto_email: '',
 				resto_phone: '', // ! 11 digits only and only starts with 09...
@@ -172,7 +172,7 @@ module.exports = {
 			},
 			{
 				resto_id: uuidv4(), // ! wag galawin
-				resto_no: '90846620294', // ! wag galawin
+				resto_no: `RTO-${Date.now() * 2}`, // ! wag galawin
 				resto_name: '',
 				resto_email: '',
 				resto_phone: '', // ! 11 digits only and only starts with 09...
@@ -185,7 +185,7 @@ module.exports = {
 			},
 			{
 				resto_id: uuidv4(), // ! wag galawin
-				resto_no: '98486949198', // ! wag galawin
+				resto_no: `RTO-${Date.now() * 2}`, // ! wag galawin
 				resto_name: '',
 				resto_email: '',
 				resto_phone: '', // ! 11 digits only and only starts with 09...
@@ -366,7 +366,7 @@ module.exports = {
 		await queryInterface.bulkInsert('Users', [
 			{
 				user_id: uuidv4(),
-				user_no: '10247727672',
+				user_no: `USR-${Math.floor(Date.now() * 1.5)}`,
 				password: await bcrypt.hash('RestoAdmin@123', parseInt(process.env.SALT_ROUND)),
 				first_name: 'Yoorim',
 				middle_name: '',
@@ -379,7 +379,7 @@ module.exports = {
 			},
 			{
 				user_id: uuidv4(), // ! wag galawin
-				user_no: '11180650116', // ! wag galawin
+				user_no: `USR-${Math.floor(Date.now() * 1.5)}`, // ! wag galawin
 				password: await bcrypt.hash('RestoAdmin@123', parseInt(process.env.SALT_ROUND)), // ! wag galawin
 				first_name: '',
 				middle_name: '', // ! optional lang to
@@ -392,7 +392,7 @@ module.exports = {
 			},
 			{
 				user_id: uuidv4(), // ! wag galawin
-				user_no: '23116781095', // ! wag galawin
+				user_no: `USR-${Math.floor(Date.now() * 1.5)}`, // ! wag galawin
 				password: await bcrypt.hash('RestoAdmin@123', parseInt(process.env.SALT_ROUND)), // ! wag galawin
 				first_name: '',
 				middle_name: '', // ! optional lang to
@@ -405,7 +405,7 @@ module.exports = {
 			},
 			{
 				user_id: uuidv4(), // ! wag galawin
-				user_no: '31263714514', // ! wag galawin
+				user_no: `USR-${Math.floor(Date.now() * 1.5)}`, // ! wag galawin
 				password: await bcrypt.hash('RestoAdmin@123', parseInt(process.env.SALT_ROUND)), // ! wag galawin
 				first_name: '',
 				middle_name: '', // ! optional lang to
@@ -418,7 +418,7 @@ module.exports = {
 			},
 			{
 				user_id: uuidv4(), // ! wag galawin
-				user_no: '45462818915', // ! wag galawin
+				user_no: `USR-${Math.floor(Date.now() * 1.5)}`, // ! wag galawin
 				password: await bcrypt.hash('RestoAdmin@123', parseInt(process.env.SALT_ROUND)), // ! wag galawin
 				first_name: '',
 				middle_name: '', // ! optional lang to
@@ -431,7 +431,7 @@ module.exports = {
 			},
 			{
 				user_id: uuidv4(), // ! wag galawin
-				user_no: '58258430612', // ! wag galawin
+				user_no: `USR-${Math.floor(Date.now() * 1.5)}`, // ! wag galawin
 				password: await bcrypt.hash('RestoAdmin@123', parseInt(process.env.SALT_ROUND)), // ! wag galawin
 				first_name: '',
 				middle_name: '', // ! optional lang to
@@ -444,7 +444,7 @@ module.exports = {
 			},
 			{
 				user_id: uuidv4(), // ! wag galawin
-				user_no: '62608500939', // ! wag galawin
+				user_no: `USR-${Math.floor(Date.now() * 1.5)}`, // ! wag galawin
 				password: await bcrypt.hash('RestoAdmin@123', parseInt(process.env.SALT_ROUND)), // ! wag galawin
 				first_name: '',
 				middle_name: '', // ! optional lang to
@@ -457,7 +457,7 @@ module.exports = {
 			},
 			{
 				user_id: uuidv4(), // ! wag galawin
-				user_no: '70841409869', // ! wag galawin
+				user_no: `USR-${Math.floor(Date.now() * 1.5)}`, // ! wag galawin
 				password: await bcrypt.hash('RestoAdmin@123', parseInt(process.env.SALT_ROUND)), // ! wag galawin
 				first_name: '',
 				middle_name: '', // ! optional lang to
@@ -470,7 +470,7 @@ module.exports = {
 			},
 			{
 				user_id: uuidv4(), // ! wag galawin
-				user_no: '83141282057', // ! wag galawin
+				user_no: `USR-${Math.floor(Date.now() * 1.5)}`, // ! wag galawin
 				password: await bcrypt.hash('RestoAdmin@123', parseInt(process.env.SALT_ROUND)), // ! wag galawin
 				first_name: '',
 				middle_name: '', // ! optional lang to
@@ -483,7 +483,7 @@ module.exports = {
 			},
 			{
 				user_id: uuidv4(), // ! wag galawin
-				user_no: '90534553165', // ! wag galawin
+				user_no: `USR-${Math.floor(Date.now() * 1.5)}`, // ! wag galawin
 				password: await bcrypt.hash('RestoAdmin@123', parseInt(process.env.SALT_ROUND)), // ! wag galawin
 				first_name: '',
 				middle_name: '', // ! optional lang to
@@ -496,7 +496,7 @@ module.exports = {
 			},
 			{
 				user_id: uuidv4(), // ! wag galawin
-				user_no: '97055997588', // ! wag galawin
+				user_no: `USR-${Math.floor(Date.now() * 1.5)}`, // ! wag galawin
 				password: await bcrypt.hash('RestoAdmin@123', parseInt(process.env.SALT_ROUND)), // ! wag galawin
 				first_name: '',
 				middle_name: '', // ! optional lang to
