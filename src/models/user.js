@@ -64,7 +64,7 @@ module.exports = (sequelize, DataTypes) => {
 				},
 			},
 			user_no: {
-				type: DataTypes.BIGINT(11),
+				type: DataTypes.STRING(17),
 				allowNull: false,
 				unique: { msg: 'User Number already exists.' },
 				validate: {
