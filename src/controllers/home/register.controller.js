@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 
 // * Register Customer
 exports.customer = async (req, res) => {
-	req.body.user_no = `${Math.floor(Math.random() * (9999999999 - 1 + 1) + 1)}`;
+	req.body.user_no = `USR-${Math.floor(Date.now() * 1.5)}`;
 	req.body.password = await bcrypt.hash(req.body.password, parseInt(process.env.SALT_ROUND));
 
 	try {
@@ -18,7 +18,7 @@ exports.customer = async (req, res) => {
 // * Register Restaurant
 exports.restaurant = async (req, res) => {
 	req.body.resto_img = req.file != undefined ? req.file.filename : '';
-	req.body.resto_no = Math.floor(Math.random() * (99999999999 - 1 + 1) + 1);
+	req.body.resto_no = `RTO-${Date.now() * 2}`;
 
 	try {
 		let data = await db.Restaurant.create(req.body);
@@ -30,7 +30,7 @@ exports.restaurant = async (req, res) => {
 
 // * Register Resto Admin
 exports.restoAdmin = async (req, res) => {
-	req.body.user_no = `${Math.floor(Math.random() * (9999999999 - 1 + 1) + 1)}`;
+	req.body.user_no = `USR-${Math.floor(Date.now() * 1.5)}`;
 	req.body.password = await bcrypt.hash(req.body.password, parseInt(process.env.SALT_ROUND));
 
 	try {
@@ -43,7 +43,7 @@ exports.restoAdmin = async (req, res) => {
 
 // * Register Admin
 exports.admin = async (req, res) => {
-	req.body.user_no = `${Math.floor(Math.random() * (9999999999 - 1 + 1) + 1)}`;
+	req.body.user_no = `USR-${Math.floor(Date.now() * 1.5)}`;
 	req.body.password = await bcrypt.hash(req.body.password, parseInt(process.env.SALT_ROUND));
 
 	try {
