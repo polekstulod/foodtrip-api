@@ -7,7 +7,7 @@ module.exports = {
 		return await queryInterface.bulkInsert('Users', [
 			{
 				user_id: uuidv4(),
-				user_no: '79216388523',
+				user_no: `USR-${Math.floor(Date.now() * 1.5)}`,
 				password: await bcrypt.hash('Admin@123', parseInt(process.env.SALT_ROUND)),
 				first_name: 'Paul',
 				middle_name: null,
@@ -21,7 +21,7 @@ module.exports = {
 			},
 			{
 				user_id: uuidv4(),
-				user_no: '80332370198',
+				user_no: `USR-${Math.floor(Date.now() * 1.5)}`,
 				password: await bcrypt.hash('Admin@123', parseInt(process.env.SALT_ROUND)),
 				first_name: 'Micah',
 				middle_name: null,
