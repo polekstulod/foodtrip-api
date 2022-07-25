@@ -14,34 +14,34 @@ module.exports = {
 				date_updated: new Date(),
 			},
 			{
-				restocatg_id: uuidv4(), // ! wag galawin
-				restocatg_name: '',
-				date_created: new Date(), // ! wag galawin
-				date_updated: new Date(), // ! wag galawin
+				restocatg_id: uuidv4(),
+				restocatg_name: 'Fine Dining',
+				date_created: new Date(),
+				date_updated: new Date(),
 			},
 			{
-				restocatg_id: uuidv4(), // ! wag galawin
-				restocatg_name: '',
-				date_created: new Date(), // ! wag galawin
-				date_updated: new Date(), // ! wag galawin
+				restocatg_id: uuidv4(),
+				restocatg_name: 'Cafe',
+				date_created: new Date(),
+				date_updated: new Date(),
 			},
 			{
-				restocatg_id: uuidv4(), // ! wag galawin
-				restocatg_name: '',
-				date_created: new Date(), // ! wag galawin
-				date_updated: new Date(), // ! wag galawin
+				restocatg_id: uuidv4(),
+				restocatg_name: 'Pizzerias',
+				date_created: new Date(),
+				date_updated: new Date(),
 			},
 			{
-				restocatg_id: uuidv4(), // ! wag galawin
-				restocatg_name: '',
-				date_created: new Date(), // ! wag galawin
-				date_updated: new Date(), // ! wag galawin
+				restocatg_id: uuidv4(),
+				restocatg_name: 'Korean',
+				date_created: new Date(),
+				date_updated: new Date(),
 			},
 			{
-				restocatg_id: uuidv4(), // ! wag galawin
-				restocatg_name: '',
-				date_created: new Date(), // ! wag galawin
-				date_updated: new Date(), // ! wag galawin
+				restocatg_id: uuidv4(),
+				restocatg_name: 'Bakery',
+				date_created: new Date(),
+				date_updated: new Date(),
 			},
 		]);
 
@@ -67,134 +67,134 @@ module.exports = {
 				date_updated: new Date(),
 			},
 			{
-				resto_id: uuidv4(), // ! wag galawin
-				resto_no: `RTO-${Date.now() * 2}`, // ! wag galawin
-				resto_name: '',
-				resto_email: '',
-				resto_phone: '', // ! 11 digits only and only starts with 09...
-				resto_landline: '', // ! 8 digits only
-				resto_website: '',
-				resto_img: 'resto_img-000000000001.png', // ! wag galawin
-				restocatg_id: restoCatRows[1].restocatg_id, // ! wag galawin
-				date_created: new Date(), // ! wag galawin
-				date_updated: new Date(), // ! wag galawin
+				resto_id: uuidv4(),
+				resto_no: `RTO-${Date.now() * 2}`,
+				resto_name: 'Gerrys Grill',
+				resto_email: 'gerrysgrill@gmail.com',
+				resto_phone: '09175011273',
+				resto_landline: '8332-1111',
+				resto_website: 'www.gerrysgrill.com.ph',
+				resto_img: 'resto_img-000000000001.png',
+				restocatg_id: restoCatRows[1].restocatg_id,
+				date_created: new Date(),
+				date_updated: new Date(),
 			},
 			{
-				resto_id: uuidv4(), // ! wag galawin
-				resto_no: `RTO-${Date.now() * 2}`, // ! wag galawin
-				resto_name: '',
-				resto_email: '',
-				resto_phone: '', // ! 11 digits only and only starts with 09...
-				resto_landline: '', // ! 8 digits only
-				resto_website: '',
-				resto_img: 'resto_img-000000000002.png', // ! wag galawin
-				restocatg_id: restoCatRows[2].restocatg_id, // ! wag galawin
-				date_created: new Date(), // ! wag galawin
-				date_updated: new Date(), // ! wag galawin
+				resto_id: uuidv4(),
+				resto_no: `RTO-${Date.now() * 2}`,
+				resto_name: 'Starbucks',
+				resto_email: 'customer@rustancoffee.ph',
+				resto_phone: '09457157924',
+				resto_landline: '8462-6262 ',
+				resto_website: 'www.starbucks.ph',
+				resto_img: 'resto_img-000000000002.png',
+				restocatg_id: restoCatRows[2].restocatg_id,
+				date_created: new Date(),
+				date_updated: new Date(),
 			},
 			{
-				resto_id: uuidv4(), // ! wag galawin
-				resto_no: `RTO-${Date.now() * 2}`, // ! wag galawin
-				resto_name: '',
-				resto_email: '',
-				resto_phone: '', // ! 11 digits only and only starts with 09...
-				resto_landline: '', // ! 8 digits only
-				resto_website: '',
-				resto_img: 'resto_img-000000000003.png', // ! wag galawin
-				restocatg_id: restoCatRows[3].restocatg_id, // ! wag galawin
-				date_created: new Date(), // ! wag galawin
-				date_updated: new Date(), // ! wag galawin
+				resto_id: uuidv4(),
+				resto_no: `RTO-${Date.now() * 2}`,
+				resto_name: 'Angels Pizza',
+				resto_email: 'angelspizza@gmail.com',
+				resto_phone: '09287635411',
+				resto_landline: '8922-2222',
+				resto_website: 'ww.angelspizza.com.ph',
+				resto_img: 'resto_img-000000000003.png',
+				restocatg_id: restoCatRows[3].restocatg_id,
+				date_created: new Date(),
+				date_updated: new Date(),
 			},
 			{
-				resto_id: uuidv4(), // ! wag galawin
-				resto_no: `RTO-${Date.now() * 2}`, // ! wag galawin
-				resto_name: '',
-				resto_email: '',
-				resto_phone: '', // ! 11 digits only and only starts with 09...
-				resto_landline: '', // ! 8 digits only
-				resto_website: '',
-				resto_img: 'resto_img-000000000004.png', // ! wag galawin
-				restocatg_id: restoCatRows[4].restocatg_id, // ! wag galawin
-				date_created: new Date(), // ! wag galawin
-				date_updated: new Date(), // ! wag galawin
+				resto_id: uuidv4(),
+				resto_no: `RTO-${Date.now() * 2}`,
+				resto_name: 'Seoul Train Korean BBQ',
+				resto_email: 'eat@seoultrain.ph',
+				resto_phone: '09177722203',
+				resto_landline: '8733-1111',
+				resto_website: 'http://bit.ly/minimall-st',
+				resto_img: 'resto_img-000000000004.png',
+				restocatg_id: restoCatRows[4].restocatg_id,
+				date_created: new Date(),
+				date_updated: new Date(),
 			},
 			{
-				resto_id: uuidv4(), // ! wag galawin
-				resto_no: `RTO-${Date.now() * 2}`, // ! wag galawin
-				resto_name: '',
-				resto_email: '',
-				resto_phone: '', // ! 11 digits only and only starts with 09...
-				resto_landline: '', // ! 8 digits only
-				resto_website: '',
-				resto_img: 'resto_img-000000000005.png', // ! wag galawin
-				restocatg_id: restoCatRows[5].restocatg_id, // ! wag galawin
-				date_created: new Date(), // ! wag galawin
-				date_updated: new Date(), // ! wag galawin
+				resto_id: uuidv4(),
+				resto_no: `RTO-${Date.now() * 2}`,
+				resto_name: 'Pan De Manila',
+				resto_email: 'pandemanila@gmail.com',
+				resto_phone: '09325478165',
+				resto_landline: '8433-5555',
+				resto_website: 'www.pandemanila.com.ph',
+				resto_img: 'resto_img-000000000005.png',
+				restocatg_id: restoCatRows[5].restocatg_id,
+				date_created: new Date(),
+				date_updated: new Date(),
 			},
 			{
-				resto_id: uuidv4(), // ! wag galawin
-				resto_no: `RTO-${Date.now() * 2}`, // ! wag galawin
-				resto_name: '',
-				resto_email: '',
-				resto_phone: '', // ! 11 digits only and only starts with 09...
-				resto_landline: '', // ! 8 digits only
-				resto_website: '',
-				resto_img: 'resto_img-000000000006.png', // ! wag galawin
-				restocatg_id: restoCatRows[1].restocatg_id, // ! wag galawin
-				date_created: new Date(), // ! wag galawin
-				date_updated: new Date(), // ! wag galawin
+				resto_id: uuidv4(),
+				resto_no: `RTO-${Date.now() * 2}`,
+				resto_name: 'The Melting Potluck',
+				resto_email: 'meltingpotluck@gmail.com',
+				resto_phone: '09152533335',
+				resto_landline: '8533-3335',
+				resto_website: 'www.meltingpotluck.com.ph',
+				resto_img: 'resto_img-000000000006.png',
+				restocatg_id: restoCatRows[1].restocatg_id,
+				date_created: new Date(),
+				date_updated: new Date(),
 			},
 			{
-				resto_id: uuidv4(), // ! wag galawin
-				resto_no: `RTO-${Date.now() * 2}`, // ! wag galawin
-				resto_name: '',
-				resto_email: '',
-				resto_phone: '', // ! 11 digits only and only starts with 09...
-				resto_landline: '', // ! 8 digits only
-				resto_website: '',
-				resto_img: 'resto_img-000000000007.png', // ! wag galawin
-				restocatg_id: restoCatRows[2].restocatg_id, // ! wag galawin
-				date_created: new Date(), // ! wag galawin
-				date_updated: new Date(), // ! wag galawin
+				resto_id: uuidv4(),
+				resto_no: `RTO-${Date.now() * 2}`,
+				resto_name: 'The Fat Seed Cafe',
+				resto_email: 'thefatseedph@gmail.com',
+				resto_phone: '09452781134',
+				resto_landline: '8936-2113',
+				resto_website: 'www.thefatseedph.com',
+				resto_img: 'resto_img-000000000007.png',
+				restocatg_id: restoCatRows[2].restocatg_id,
+				date_created: new Date(),
+				date_updated: new Date(),
 			},
 			{
-				resto_id: uuidv4(), // ! wag galawin
-				resto_no: `RTO-${Date.now() * 2}`, // ! wag galawin
-				resto_name: '',
-				resto_email: '',
-				resto_phone: '', // ! 11 digits only and only starts with 09...
-				resto_landline: '', // ! 8 digits only
-				resto_website: '',
-				resto_img: 'resto_img-000000000008.png', // ! wag galawin
-				restocatg_id: restoCatRows[3].restocatg_id, // ! wag galawin
-				date_created: new Date(), // ! wag galawin
-				date_updated: new Date(), // ! wag galawin
+				resto_id: uuidv4(),
+				resto_no: `RTO-${Date.now() * 2}`,
+				resto_name: 'Yellow Cab Pizza Co.',
+				resto_email: 'onlinesupport@yellowcabpizza.com',
+				resto_phone: '09188035571',
+				resto_landline: '8789-9999',
+				resto_website: 'www.delivery.yellowcabpizza.com',
+				resto_img: 'resto_img-000000000008.png',
+				restocatg_id: restoCatRows[3].restocatg_id,
+				date_created: new Date(),
+				date_updated: new Date(),
 			},
 			{
-				resto_id: uuidv4(), // ! wag galawin
-				resto_no: `RTO-${Date.now() * 2}`, // ! wag galawin
-				resto_name: '',
-				resto_email: '',
-				resto_phone: '', // ! 11 digits only and only starts with 09...
-				resto_landline: '', // ! 8 digits only
-				resto_website: '',
-				resto_img: 'resto_img-000000000009.png', // ! wag galawin
-				restocatg_id: restoCatRows[4].restocatg_id, // ! wag galawin
-				date_created: new Date(), // ! wag galawin
-				date_updated: new Date(), // ! wag galawin
+				resto_id: uuidv4(),
+				resto_no: `RTO-${Date.now() * 2}`,
+				resto_name: 'OGANE Restaurant',
+				resto_email: 'paradise30399@yahoo.com.ph',
+				resto_phone: '09557428535',
+				resto_landline: '7794-2785',
+				resto_website: 'oganerestaurant.com.ph',
+				resto_img: 'resto_img-000000000009.png',
+				restocatg_id: restoCatRows[4].restocatg_id,
+				date_created: new Date(),
+				date_updated: new Date(),
 			},
 			{
-				resto_id: uuidv4(), // ! wag galawin
-				resto_no: `RTO-${Date.now() * 2}`, // ! wag galawin
-				resto_name: '',
-				resto_email: '',
-				resto_phone: '', // ! 11 digits only and only starts with 09...
-				resto_landline: '', // ! 8 digits only
-				resto_website: '',
-				resto_img: 'resto_img-000000000010.png', // ! wag galawin
-				restocatg_id: restoCatRows[5].restocatg_id, // ! wag galawin
-				date_created: new Date(), // ! wag galawin
-				date_updated: new Date(), // ! wag galawin
+				resto_id: uuidv4(),
+				resto_no: `RTO-${Date.now() * 2}`,
+				resto_name: 'Goldilocks',
+				resto_email: 'customercare@goldilocks.com.ph',
+				resto_phone: '09862544713',
+				resto_landline: '2532-2718',
+				resto_website: 'www.goldilocks.com.ph',
+				resto_img: 'resto_img-000000000010.png',
+				restocatg_id: restoCatRows[5].restocatg_id,
+				date_created: new Date(),
+				date_updated: new Date(),
 			},
 		]);
 
@@ -221,140 +221,140 @@ module.exports = {
 				date_updated: new Date(),
 			},
 			{
-				address_id: uuidv4(), // ! wag galawin
-				address_1: '', // ! room, house number, block and lot
-				address_2: '', // ! optional
-				barangay: '', // ! text or number
-				city: '',
-				province: '',
-				region: '',
-				zip_code: '', // ! 4 digits only
-				is_default: '1', // ! wag galawin
-				resto_id: restaurantRows[1].resto_id, // ! wag galawin
-				date_created: new Date(), // ! wag galawin
-				date_updated: new Date(), // ! wag galawin
+				address_id: uuidv4(),
+				address_1: 'Commonwealth Avenue ',
+				address_2: 'Calle Bistro',
+				barangay: 'Ever Commonwealth',
+				city: 'Quezon City',
+				province: 'NCR',
+				region: 'NCR',
+				zip_code: '1121',
+				is_default: '1',
+				resto_id: restaurantRows[1].resto_id,
+				date_created: new Date(),
+				date_updated: new Date(),
+			},
+			{
+				address_id: uuidv4(),
+				address_1: ' Diliman Commercial Center',
+				address_2: '',
+				barangay: '46 Commonwealth Ave',
+				city: 'Quezon City',
+				province: 'NCR',
+				region: 'NCR',
+				zip_code: '1121',
+				is_default: '1',
+				resto_id: restaurantRows[2].resto_id,
+				date_created: new Date(),
+				date_updated: new Date(),
+			},
+			{
+				address_id: uuidv4(),
+				address_1: '103-G',
+				address_2: 'Commonwealth Ave.',
+				barangay: 'Fairview',
+				city: 'Quezon City',
+				province: 'NCR',
+				region: 'NCR',
+				zip_code: '1121',
+				is_default: '1',
+				resto_id: restaurantRows[3].resto_id,
+				date_created: new Date(),
+				date_updated: new Date(),
+			},
+			{
+				address_id: uuidv4(),
+				address_1: '28 Sgt. Esguerra Ave',
+				address_2: '',
+				barangay: ' Diliman',
+				city: 'Quezon City',
+				province: 'NCR',
+				region: 'NCR',
+				zip_code: '	1101',
+				is_default: '1',
+				resto_id: restaurantRows[4].resto_id,
+				date_created: new Date(),
+				date_updated: new Date(),
+			},
+			{
+				address_id: uuidv4(),
+				address_1: '1118 Commonwealth Ave',
+				address_2: 'Novaliches',
+				barangay: 'Pasong Putik',
+				city: 'Quezon City',
+				province: 'NCR',
+				region: 'NCR',
+				zip_code: '1118',
+				is_default: '1',
+				resto_id: restaurantRows[5].resto_id,
+				date_created: new Date(),
+				date_updated: new Date(),
+			},
+			{
+				address_id: uuidv4(),
+				address_1: 'Block 41, Lot, 22 Ascension Ave',
+				address_2: 'Novaliches',
+				barangay: 'North Fairview',
+				city: 'Quezon City',
+				province: 'NCR',
+				region: 'NCR',
+				zip_code: '1121',
+				is_default: '1',
+				resto_id: restaurantRows[6].resto_id,
+				date_created: new Date(),
+				date_updated: new Date(),
+			},
+			{
+				address_id: uuidv4(),
+				address_1: 'M32G+H2J',
+				address_2: '',
+				barangay: 'Diliman',
+				city: 'Quezon City',
+				province: 'NCR',
+				region: 'NCR',
+				zip_code: '1101',
+				is_default: '1',
+				resto_id: restaurantRows[7].resto_id,
+				date_created: new Date(),
+				date_updated: new Date(),
+			},
+			{
+				address_id: uuidv4(),
+				address_1: 'Commercial Center',
+				address_2: 'Regalado Hive',
+				barangay: '2/F',
+				city: ' Quezon City',
+				province: 'NCR',
+				region: 'NCR',
+				zip_code: '1118',
+				is_default: '1',
+				resto_id: restaurantRows[8].resto_id,
+				date_created: new Date(),
+				date_updated: new Date(),
+			},
+			{
+				address_id: uuidv4(),
+				address_1: '303 Tomas',
+				address_2: 'Morato Ave',
+				barangay: 'Diliman',
+				city: 'Quezon City',
+				province: 'NCR',
+				region: 'NCR',
+				zip_code: '1101',
+				is_default: '1',
+				resto_id: restaurantRows[9].resto_id,
+				date_created: new Date(),
+				date_updated: new Date(),
 			},
 			{
 				address_id: uuidv4(), // ! wag galawin
-				address_1: '', // ! room, house number, block and lot
-				address_2: '', // ! optional
-				barangay: '', // ! text or number
-				city: '',
-				province: '',
-				region: '',
-				zip_code: '', // ! 4 digits only
-				is_default: '1', // ! wag galawin
-				resto_id: restaurantRows[2].resto_id, // ! wag galawin
-				date_created: new Date(), // ! wag galawin
-				date_updated: new Date(), // ! wag galawin
-			},
-			{
-				address_id: uuidv4(), // ! wag galawin
-				address_1: '', // ! room, house number, block and lot
-				address_2: '', // ! optional
-				barangay: '', // ! text or number
-				city: '',
-				province: '',
-				region: '',
-				zip_code: '', // ! 4 digits only
-				is_default: '1', // ! wag galawin
-				resto_id: restaurantRows[3].resto_id, // ! wag galawin
-				date_created: new Date(), // ! wag galawin
-				date_updated: new Date(), // ! wag galawin
-			},
-			{
-				address_id: uuidv4(), // ! wag galawin
-				address_1: '', // ! room, house number, block and lot
-				address_2: '', // ! optional
-				barangay: '', // ! text or number
-				city: '',
-				province: '',
-				region: '',
-				zip_code: '', // ! 4 digits only
-				is_default: '1', // ! wag galawin
-				resto_id: restaurantRows[4].resto_id, // ! wag galawin
-				date_created: new Date(), // ! wag galawin
-				date_updated: new Date(), // ! wag galawin
-			},
-			{
-				address_id: uuidv4(), // ! wag galawin
-				address_1: '', // ! room, house number, block and lot
-				address_2: '', // ! optional
-				barangay: '', // ! text or number
-				city: '',
-				province: '',
-				region: '',
-				zip_code: '', // ! 4 digits only
-				is_default: '1', // ! wag galawin
-				resto_id: restaurantRows[5].resto_id, // ! wag galawin
-				date_created: new Date(), // ! wag galawin
-				date_updated: new Date(), // ! wag galawin
-			},
-			{
-				address_id: uuidv4(), // ! wag galawin
-				address_1: '', // ! room, house number, block and lot
-				address_2: '', // ! optional
-				barangay: '', // ! text or number
-				city: '',
-				province: '',
-				region: '',
-				zip_code: '', // ! 4 digits only
-				is_default: '1', // ! wag galawin
-				resto_id: restaurantRows[6].resto_id, // ! wag galawin
-				date_created: new Date(), // ! wag galawin
-				date_updated: new Date(), // ! wag galawin
-			},
-			{
-				address_id: uuidv4(), // ! wag galawin
-				address_1: '', // ! room, house number, block and lot
-				address_2: '', // ! optional
-				barangay: '', // ! text or number
-				city: '',
-				province: '',
-				region: '',
-				zip_code: '', // ! 4 digits only
-				is_default: '1', // ! wag galawin
-				resto_id: restaurantRows[7].resto_id, // ! wag galawin
-				date_created: new Date(), // ! wag galawin
-				date_updated: new Date(), // ! wag galawin
-			},
-			{
-				address_id: uuidv4(), // ! wag galawin
-				address_1: '', // ! room, house number, block and lot
-				address_2: '', // ! optional
-				barangay: '', // ! text or number
-				city: '',
-				province: '',
-				region: '',
-				zip_code: '', // ! 4 digits only
-				is_default: '1', // ! wag galawin
-				resto_id: restaurantRows[8].resto_id, // ! wag galawin
-				date_created: new Date(), // ! wag galawin
-				date_updated: new Date(), // ! wag galawin
-			},
-			{
-				address_id: uuidv4(), // ! wag galawin
-				address_1: '', // ! room, house number, block and lot
-				address_2: '', // ! optional
-				barangay: '', // ! text or number
-				city: '',
-				province: '',
-				region: '',
-				zip_code: '', // ! 4 digits only
-				is_default: '1', // ! wag galawin
-				resto_id: restaurantRows[9].resto_id, // ! wag galawin
-				date_created: new Date(), // ! wag galawin
-				date_updated: new Date(), // ! wag galawin
-			},
-			{
-				address_id: uuidv4(), // ! wag galawin
-				address_1: '', // ! room, house number, block and lot
-				address_2: '', // ! optional
-				barangay: '', // ! text or number
-				city: '',
-				province: '',
-				region: '',
-				zip_code: '', // ! 4 digits only
+				address_1: 'Fairview Centermall,Don Mariano', // ! room, house number, block and lot
+				address_2: 'Marcos Ave. cor. Regalado', // ! optional
+				barangay: 'Novaliches', // ! text or number
+				city: 'Quezon City',
+				province: 'NCR',
+				region: 'NCR',
+				zip_code: '1118', // ! 4 digits only
 				is_default: '1', // ! wag galawin
 				resto_id: restaurantRows[10].resto_id, // ! wag galawin
 				date_created: new Date(), // ! wag galawin
