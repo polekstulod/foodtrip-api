@@ -23,7 +23,7 @@ module.exports = {
 			},
 			{
 				user_id: uuidv4(),
-				user_no: `USR-${Math.floor(Date.now() * 1.5)}`,
+				user_no: `USR-${Math.floor(Date.now() * 1.5) + 1}`,
 				password: await bcrypt.hash('Customer@123', parseInt(process.env.SALT_ROUND)),
 				first_name: 'Jerald',
 				middle_name: '',
@@ -37,7 +37,7 @@ module.exports = {
 			},
 			{
 				user_id: uuidv4(),
-				user_no: `USR-${Math.floor(Date.now() * 1.5)}`,
+				user_no: `USR-${Math.floor(Date.now() * 1.5) + 2}`,
 				password: await bcrypt.hash('Customer@123', parseInt(process.env.SALT_ROUND)),
 				first_name: 'Shaine',
 				middle_name: 'Rieta',
@@ -51,7 +51,7 @@ module.exports = {
 			},
 			{
 				user_id: uuidv4(),
-				user_no: `USR-${Math.floor(Date.now() * 1.5)}`,
+				user_no: `USR-${Math.floor(Date.now() * 1.5) + 3}`,
 				password: await bcrypt.hash('Customer@123', parseInt(process.env.SALT_ROUND)),
 				first_name: 'Allison',
 				middle_name: '',
@@ -65,7 +65,7 @@ module.exports = {
 			},
 			{
 				user_id: uuidv4(),
-				user_no: `USR-${Math.floor(Date.now() * 1.5)}`,
+				user_no: `USR-${Math.floor(Date.now() * 1.5) + 4}`,
 				password: await bcrypt.hash('Customer@123', parseInt(process.env.SALT_ROUND)),
 				first_name: 'Princess Anna',
 				middle_name: 'Calban',
@@ -79,7 +79,7 @@ module.exports = {
 			},
 			{
 				user_id: uuidv4(),
-				user_no: `USR-${Math.floor(Date.now() * 1.5)}`,
+				user_no: `USR-${Math.floor(Date.now() * 1.5) + 5}`,
 				password: await bcrypt.hash('Customer@123', parseInt(process.env.SALT_ROUND)),
 				first_name: 'Javen Brylle',
 				middle_name: '',
@@ -93,7 +93,7 @@ module.exports = {
 			},
 			{
 				user_id: uuidv4(),
-				user_no: `USR-${Math.floor(Date.now() * 1.5)}`,
+				user_no: `USR-${Math.floor(Date.now() * 1.5) + 6}`,
 				password: await bcrypt.hash('Customer@123', parseInt(process.env.SALT_ROUND)),
 				first_name: 'Aphryll Joy',
 				middle_name: '',
@@ -107,7 +107,7 @@ module.exports = {
 			},
 			{
 				user_id: uuidv4(),
-				user_no: `USR-${Math.floor(Date.now() * 1.5)}`,
+				user_no: `USR-${Math.floor(Date.now() * 1.5) + 7}`,
 				password: await bcrypt.hash('Customer@123', parseInt(process.env.SALT_ROUND)),
 				first_name: 'Frankly',
 				middle_name: '',
@@ -121,7 +121,7 @@ module.exports = {
 			},
 			{
 				user_id: uuidv4(),
-				user_no: `USR-${Math.floor(Date.now() * 1.5)}`,
+				user_no: `USR-${Math.floor(Date.now() * 1.5) + 8}`,
 				password: await bcrypt.hash('Customer@123', parseInt(process.env.SALT_ROUND)),
 				first_name: 'Mellissa',
 				middle_name: 'Cruz',
@@ -135,7 +135,7 @@ module.exports = {
 			},
 			{
 				user_id: uuidv4(),
-				user_no: `USR-${Math.floor(Date.now() * 1.5)}`,
+				user_no: `USR-${Math.floor(Date.now() * 1.5) + 9}`,
 				password: await bcrypt.hash('Customer@123', parseInt(process.env.SALT_ROUND)),
 				first_name: 'James',
 				middle_name: '',
@@ -149,7 +149,7 @@ module.exports = {
 			},
 			{
 				user_id: uuidv4(),
-				user_no: `USR-${Math.floor(Date.now() * 1.5)}`,
+				user_no: `USR-${Math.floor(Date.now() * 1.5) + 10}`,
 				password: await bcrypt.hash('Customer@123', parseInt(process.env.SALT_ROUND)),
 				first_name: 'Charles',
 				middle_name: 'Julian',

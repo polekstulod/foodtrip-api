@@ -68,7 +68,7 @@ module.exports = {
 			},
 			{
 				resto_id: uuidv4(),
-				resto_no: `RTO-${Date.now() * 2}`,
+				resto_no: `RTO-${Date.now() * 2 + 1}`,
 				resto_name: 'Gerrys Grill',
 				resto_email: 'gerrysgrill@gmail.com',
 				resto_phone: '09175011273',
@@ -81,7 +81,7 @@ module.exports = {
 			},
 			{
 				resto_id: uuidv4(),
-				resto_no: `RTO-${Date.now() * 2}`,
+				resto_no: `RTO-${Date.now() * 2 + 2}`,
 				resto_name: 'Starbucks',
 				resto_email: 'customer@rustancoffee.ph',
 				resto_phone: '09457157924',
@@ -94,12 +94,12 @@ module.exports = {
 			},
 			{
 				resto_id: uuidv4(),
-				resto_no: `RTO-${Date.now() * 2}`,
+				resto_no: `RTO-${Date.now() * 2 + 3}`,
 				resto_name: 'Angels Pizza',
 				resto_email: 'angelspizza@gmail.com',
 				resto_phone: '09287635411',
 				resto_landline: '8922-2222',
-				resto_website: 'ww.angelspizza.com.ph',
+				resto_website: 'www.angelspizza.com.ph',
 				resto_img: 'resto_img-000000000003.png',
 				restocatg_id: restoCatRows[3].restocatg_id,
 				date_created: new Date(),
@@ -107,7 +107,7 @@ module.exports = {
 			},
 			{
 				resto_id: uuidv4(),
-				resto_no: `RTO-${Date.now() * 2}`,
+				resto_no: `RTO-${Date.now() * 2 + 4}`,
 				resto_name: 'Seoul Train Korean BBQ',
 				resto_email: 'eat@seoultrain.ph',
 				resto_phone: '09177722203',
@@ -120,7 +120,7 @@ module.exports = {
 			},
 			{
 				resto_id: uuidv4(),
-				resto_no: `RTO-${Date.now() * 2}`,
+				resto_no: `RTO-${Date.now() * 2 + 5}`,
 				resto_name: 'Pan De Manila',
 				resto_email: 'pandemanila@gmail.com',
 				resto_phone: '09325478165',
@@ -133,7 +133,7 @@ module.exports = {
 			},
 			{
 				resto_id: uuidv4(),
-				resto_no: `RTO-${Date.now() * 2}`,
+				resto_no: `RTO-${Date.now() * 2 + 6}`,
 				resto_name: 'The Melting Potluck',
 				resto_email: 'meltingpotluck@gmail.com',
 				resto_phone: '09152533335',
@@ -146,7 +146,7 @@ module.exports = {
 			},
 			{
 				resto_id: uuidv4(),
-				resto_no: `RTO-${Date.now() * 2}`,
+				resto_no: `RTO-${Date.now() * 2 + 7}`,
 				resto_name: 'The Fat Seed Cafe',
 				resto_email: 'thefatseedph@gmail.com',
 				resto_phone: '09452781134',
@@ -159,7 +159,7 @@ module.exports = {
 			},
 			{
 				resto_id: uuidv4(),
-				resto_no: `RTO-${Date.now() * 2}`,
+				resto_no: `RTO-${Date.now() * 2 + 8}`,
 				resto_name: 'Yellow Cab Pizza Co.',
 				resto_email: 'onlinesupport@yellowcabpizza.com',
 				resto_phone: '09188035571',
@@ -172,7 +172,7 @@ module.exports = {
 			},
 			{
 				resto_id: uuidv4(),
-				resto_no: `RTO-${Date.now() * 2}`,
+				resto_no: `RTO-${Date.now() * 2 + 9}`,
 				resto_name: 'OGANE Restaurant',
 				resto_email: 'paradise30399@yahoo.com.ph',
 				resto_phone: '09557428535',
@@ -185,7 +185,7 @@ module.exports = {
 			},
 			{
 				resto_id: uuidv4(),
-				resto_no: `RTO-${Date.now() * 2}`,
+				resto_no: `RTO-${Date.now() * 2 + 10}`,
 				resto_name: 'Goldilocks',
 				resto_email: 'customercare@goldilocks.com.ph',
 				resto_phone: '09862544713',
