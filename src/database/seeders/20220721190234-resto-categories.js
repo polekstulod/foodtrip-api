@@ -347,18 +347,18 @@ module.exports = {
 				date_updated: new Date(),
 			},
 			{
-				address_id: uuidv4(), // ! wag galawin
-				address_1: 'Fairview Centermall,Don Mariano', // ! room, house number, block and lot
-				address_2: 'Marcos Ave. cor. Regalado', // ! optional
-				barangay: 'Novaliches', // ! text or number
+				address_id: uuidv4(),
+				address_1: 'Fairview Centermall,Don Mariano',
+				address_2: 'Marcos Ave. cor. Regalado',
+				barangay: 'Novaliches',
 				city: 'Quezon City',
 				province: 'NCR',
 				region: 'NCR',
-				zip_code: '1118', // ! 4 digits only
-				is_default: '1', // ! wag galawin
-				resto_id: restaurantRows[10].resto_id, // ! wag galawin
-				date_created: new Date(), // ! wag galawin
-				date_updated: new Date(), // ! wag galawin
+				zip_code: '1118',
+				is_default: '1',
+				resto_id: restaurantRows[10].resto_id,
+				date_created: new Date(),
+				date_updated: new Date(),
 			},
 		]);
 
@@ -378,134 +378,134 @@ module.exports = {
 				date_updated: new Date(),
 			},
 			{
-				user_id: uuidv4(), // ! wag galawin
-				user_no: `USR-${Math.floor(Date.now() * 1.5)}`, // ! wag galawin
-				password: await bcrypt.hash('RestoAdmin@123', parseInt(process.env.SALT_ROUND)), // ! wag galawin
-				first_name: '',
-				middle_name: '', // ! optional lang to
-				last_name: '',
-				email_address: '',
-				user_type: 'Resto_Admin', // ! wag galawin
-				resto_id: restaurantRows[1].resto_id, // ! wag galawin
-				date_created: new Date(), // ! wag galawin
-				date_updated: new Date(), // ! wag galawin
+				user_id: uuidv4(),
+				user_no: `USR-${Math.floor(Date.now() * 1.5) + 1}`,
+				password: await bcrypt.hash('RestoAdmin@123', parseInt(process.env.SALT_ROUND)),
+				first_name: 'Shyann',
+				middle_name: 'Viola',
+				last_name: 'Horne',
+				email_address: 'Shyann@gmail.com',
+				user_type: 'Resto_Admin',
+				resto_id: restaurantRows[1].resto_id,
+				date_created: new Date(),
+				date_updated: new Date(),
 			},
 			{
-				user_id: uuidv4(), // ! wag galawin
-				user_no: `USR-${Math.floor(Date.now() * 1.5)}`, // ! wag galawin
-				password: await bcrypt.hash('RestoAdmin@123', parseInt(process.env.SALT_ROUND)), // ! wag galawin
-				first_name: '',
-				middle_name: '', // ! optional lang to
-				last_name: '',
-				email_address: '',
-				user_type: 'Resto_Admin', // ! wag galawin
-				resto_id: restaurantRows[2].resto_id, // ! wag galawin
-				date_created: new Date(), // ! wag galawin
-				date_updated: new Date(), // ! wag galawin
+				user_id: uuidv4(),
+				user_no: `USR-${Math.floor(Date.now() * 1.5) + 2}`,
+				password: await bcrypt.hash('RestoAdmin@123', parseInt(process.env.SALT_ROUND)),
+				first_name: 'Lee',
+				middle_name: 'Caprice',
+				last_name: 'Maynard',
+				email_address: 'Lee@gmail.com',
+				user_type: 'Resto_Admin',
+				resto_id: restaurantRows[2].resto_id,
+				date_created: new Date(),
+				date_updated: new Date(),
 			},
 			{
-				user_id: uuidv4(), // ! wag galawin
-				user_no: `USR-${Math.floor(Date.now() * 1.5)}`, // ! wag galawin
-				password: await bcrypt.hash('RestoAdmin@123', parseInt(process.env.SALT_ROUND)), // ! wag galawin
-				first_name: '',
-				middle_name: '', // ! optional lang to
-				last_name: '',
-				email_address: '',
-				user_type: 'Resto_Admin', // ! wag galawin
-				resto_id: restaurantRows[3].resto_id, // ! wag galawin
-				date_created: new Date(), // ! wag galawin
-				date_updated: new Date(), // ! wag galawin
+				user_id: uuidv4(),
+				user_no: `USR-${Math.floor(Date.now() * 1.5) + 3}`,
+				password: await bcrypt.hash('RestoAdmin@123', parseInt(process.env.SALT_ROUND)),
+				first_name: 'Sydney',
+				middle_name: 'Blayne',
+				last_name: 'Bonilla',
+				email_address: 'Sydney@gmail.com',
+				user_type: 'Resto_Admin',
+				resto_id: restaurantRows[3].resto_id,
+				date_created: new Date(),
+				date_updated: new Date(),
 			},
 			{
-				user_id: uuidv4(), // ! wag galawin
-				user_no: `USR-${Math.floor(Date.now() * 1.5)}`, // ! wag galawin
-				password: await bcrypt.hash('RestoAdmin@123', parseInt(process.env.SALT_ROUND)), // ! wag galawin
-				first_name: '',
-				middle_name: '', // ! optional lang to
-				last_name: '',
-				email_address: '',
-				user_type: 'Resto_Admin', // ! wag galawin
-				resto_id: restaurantRows[4].resto_id, // ! wag galawin
-				date_created: new Date(), // ! wag galawin
-				date_updated: new Date(), // ! wag galawin
+				user_id: uuidv4(),
+				user_no: `USR-${Math.floor(Date.now() * 1.5) + 4}`,
+				password: await bcrypt.hash('RestoAdmin@123', parseInt(process.env.SALT_ROUND)),
+				first_name: 'Roderick',
+				middle_name: 'Varian',
+				last_name: 'Keller',
+				email_address: 'Roderick@gmail.com',
+				user_type: 'Resto_Admin',
+				resto_id: restaurantRows[4].resto_id,
+				date_created: new Date(),
+				date_updated: new Date(),
 			},
 			{
-				user_id: uuidv4(), // ! wag galawin
-				user_no: `USR-${Math.floor(Date.now() * 1.5)}`, // ! wag galawin
-				password: await bcrypt.hash('RestoAdmin@123', parseInt(process.env.SALT_ROUND)), // ! wag galawin
-				first_name: '',
-				middle_name: '', // ! optional lang to
-				last_name: '',
-				email_address: '',
-				user_type: 'Resto_Admin', // ! wag galawin
-				resto_id: restaurantRows[5].resto_id, // ! wag galawin
-				date_created: new Date(), // ! wag galawin
-				date_updated: new Date(), // ! wag galawin
+				user_id: uuidv4(),
+				user_no: `USR-${Math.floor(Date.now() * 1.5) + 5}`,
+				password: await bcrypt.hash('RestoAdmin@123', parseInt(process.env.SALT_ROUND)),
+				first_name: 'Leila',
+				middle_name: 'Arden',
+				last_name: 'Gilbert',
+				email_address: 'Leila@gmail.com',
+				user_type: 'Resto_Admin',
+				resto_id: restaurantRows[5].resto_id,
+				date_created: new Date(),
+				date_updated: new Date(),
 			},
 			{
-				user_id: uuidv4(), // ! wag galawin
-				user_no: `USR-${Math.floor(Date.now() * 1.5)}`, // ! wag galawin
-				password: await bcrypt.hash('RestoAdmin@123', parseInt(process.env.SALT_ROUND)), // ! wag galawin
-				first_name: '',
-				middle_name: '', // ! optional lang to
-				last_name: '',
-				email_address: '',
-				user_type: 'Resto_Admin', // ! wag galawin
-				resto_id: restaurantRows[6].resto_id, // ! wag galawin
-				date_created: new Date(), // ! wag galawin
-				date_updated: new Date(), // ! wag galawin
+				user_id: uuidv4(),
+				user_no: `USR-${Math.floor(Date.now() * 1.5) + 6}`,
+				password: await bcrypt.hash('RestoAdmin@123', parseInt(process.env.SALT_ROUND)),
+				first_name: 'Killian',
+				middle_name: 'Miranda',
+				last_name: 'Alvarez',
+				email_address: 'Killian@gmail.copm',
+				user_type: 'Resto_Admin',
+				resto_id: restaurantRows[6].resto_id,
+				date_created: new Date(),
+				date_updated: new Date(),
 			},
 			{
-				user_id: uuidv4(), // ! wag galawin
-				user_no: `USR-${Math.floor(Date.now() * 1.5)}`, // ! wag galawin
-				password: await bcrypt.hash('RestoAdmin@123', parseInt(process.env.SALT_ROUND)), // ! wag galawin
-				first_name: '',
-				middle_name: '', // ! optional lang to
-				last_name: '',
-				email_address: '',
-				user_type: 'Resto_Admin', // ! wag galawin
-				resto_id: restaurantRows[7].resto_id, // ! wag galawin
-				date_created: new Date(), // ! wag galawin
-				date_updated: new Date(), // ! wag galawin
+				user_id: uuidv4(),
+				user_no: `USR-${Math.floor(Date.now() * 1.5) + 7}`,
+				password: await bcrypt.hash('RestoAdmin@123', parseInt(process.env.SALT_ROUND)),
+				first_name: 'Kamryn',
+				middle_name: 'Tyson',
+				last_name: 'Dominguez',
+				email_address: 'kamryn@gmail.com',
+				user_type: 'Resto_Admin',
+				resto_id: restaurantRows[7].resto_id,
+				date_created: new Date(),
+				date_updated: new Date(),
 			},
 			{
-				user_id: uuidv4(), // ! wag galawin
-				user_no: `USR-${Math.floor(Date.now() * 1.5)}`, // ! wag galawin
-				password: await bcrypt.hash('RestoAdmin@123', parseInt(process.env.SALT_ROUND)), // ! wag galawin
-				first_name: '',
-				middle_name: '', // ! optional lang to
-				last_name: '',
-				email_address: '',
-				user_type: 'Resto_Admin', // ! wag galawin
-				resto_id: restaurantRows[8].resto_id, // ! wag galawin
-				date_created: new Date(), // ! wag galawin
-				date_updated: new Date(), // ! wag galawin
+				user_id: uuidv4(),
+				user_no: `USR-${Math.floor(Date.now() * 1.5) + 8}`,
+				password: await bcrypt.hash('RestoAdmin@123', parseInt(process.env.SALT_ROUND)),
+				first_name: 'Shawn',
+				middle_name: 'Murphy',
+				last_name: 'White',
+				email_address: 'Shawn@gmail.com',
+				user_type: 'Resto_Admin',
+				resto_id: restaurantRows[8].resto_id,
+				date_created: new Date(),
+				date_updated: new Date(),
 			},
 			{
-				user_id: uuidv4(), // ! wag galawin
-				user_no: `USR-${Math.floor(Date.now() * 1.5)}`, // ! wag galawin
-				password: await bcrypt.hash('RestoAdmin@123', parseInt(process.env.SALT_ROUND)), // ! wag galawin
-				first_name: '',
-				middle_name: '', // ! optional lang to
-				last_name: '',
-				email_address: '',
-				user_type: 'Resto_Admin', // ! wag galawin
-				resto_id: restaurantRows[9].resto_id, // ! wag galawin
-				date_created: new Date(), // ! wag galawin
-				date_updated: new Date(), // ! wag galawin
+				user_id: uuidv4(),
+				user_no: `USR-${Math.floor(Date.now() * 1.5) + 9}`,
+				password: await bcrypt.hash('RestoAdmin@123', parseInt(process.env.SALT_ROUND)),
+				first_name: 'Uriel',
+				middle_name: 'Michael',
+				last_name: 'Harvey',
+				email_address: 'Uriel@gmail.com',
+				user_type: 'Resto_Admin',
+				resto_id: restaurantRows[9].resto_id,
+				date_created: new Date(),
+				date_updated: new Date(),
 			},
 			{
-				user_id: uuidv4(), // ! wag galawin
-				user_no: `USR-${Math.floor(Date.now() * 1.5)}`, // ! wag galawin
-				password: await bcrypt.hash('RestoAdmin@123', parseInt(process.env.SALT_ROUND)), // ! wag galawin
-				first_name: '',
-				middle_name: '', // ! optional lang to
-				last_name: '',
-				email_address: '',
-				user_type: 'Resto_Admin', // ! wag galawin
-				resto_id: restaurantRows[10].resto_id, // ! wag galawin
-				date_created: new Date(), // ! wag galawin
-				date_updated: new Date(), // ! wag galawin
+				user_id: uuidv4(),
+				user_no: `USR-${Math.floor(Date.now() * 1.5) + 10}`,
+				password: await bcrypt.hash('RestoAdmin@123', parseInt(process.env.SALT_ROUND)),
+				first_name: 'Dominique',
+				middle_name: 'Jacklyn',
+				last_name: 'Rollins',
+				email_address: 'Dominique@gmail.com',
+				user_type: 'Resto_Admin',
+				resto_id: restaurantRows[10].resto_id,
+				date_created: new Date(),
+				date_updated: new Date(),
 			},
 		]);
 
@@ -556,433 +556,433 @@ module.exports = {
 			},
 			// * Restaurant 1
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[1].resto_id, // ! wag galawin
-				day: 'Monday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[1].resto_id,
+				day: 'Monday',
+				open_time: '08:00:00',
+				close_time: '20:00:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[1].resto_id, // ! wag galawin
-				day: 'Tuesday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[1].resto_id,
+				day: 'Tuesday',
+				open_time: '08:00:00',
+				close_time: '20:00:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[1].resto_id, // ! wag galawin
-				day: 'Wednesday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[1].resto_id,
+				day: 'Wednesday',
+				open_time: '08:00:00',
+				close_time: '20:00:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[1].resto_id, // ! wag galawin
-				day: 'Thursday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[1].resto_id,
+				day: 'Thursday',
+				open_time: '08:00:00',
+				close_time: '20:00:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[1].resto_id, // ! wag galawin
-				day: 'Friday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[1].resto_id,
+				day: 'Friday',
+				open_time: '08:00:00',
+				close_time: '20:00:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[1].resto_id, // ! wag galawin
-				day: 'Saturday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[1].resto_id,
+				day: 'Saturday',
+				open_time: '08:00:00',
+				close_time: '20:00:00',
 			},
 			// * Restaurant 2
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[2].resto_id, // ! wag galawin
-				day: 'Monday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[2].resto_id,
+				day: 'Monday',
+				open_time: '10:00:00',
+				close_time: '21:00:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[2].resto_id, // ! wag galawin
-				day: 'Tuesday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[2].resto_id,
+				day: 'Tuesday',
+				open_time: '10:00:00',
+				close_time: '21:00:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[2].resto_id, // ! wag galawin
-				day: 'Wednesday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[2].resto_id,
+				day: 'Wednesday',
+				open_time: '10:00:00',
+				close_time: '21:00:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[2].resto_id, // ! wag galawin
-				day: 'Thursday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[2].resto_id,
+				day: 'Thursday',
+				open_time: '10:00:00',
+				close_time: '21:00:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[2].resto_id, // ! wag galawin
-				day: 'Friday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[2].resto_id,
+				day: 'Friday',
+				open_time: '10:00:00',
+				close_time: '21:00:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[2].resto_id, // ! wag galawin
-				day: 'Saturday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[2].resto_id,
+				day: 'Saturday',
+				open_time: '10:00:00',
+				close_time: '21:00:00',
 			},
 			// * Restaurant 3
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[3].resto_id, // ! wag galawin
-				day: 'Monday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[3].resto_id,
+				day: 'Monday',
+				open_time: '08:30:00',
+				close_time: '20:30:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[3].resto_id, // ! wag galawin
-				day: 'Tuesday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[3].resto_id,
+				day: 'Tuesday',
+				open_time: '08:30:00',
+				close_time: '20:30:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[3].resto_id, // ! wag galawin
-				day: 'Wednesday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[3].resto_id,
+				day: 'Wednesday',
+				open_time: '08:30:00',
+				close_time: '20:30:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[3].resto_id, // ! wag galawin
-				day: 'Thursday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[3].resto_id,
+				day: 'Thursday',
+				open_time: '08:30:00',
+				close_time: '20:30:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[3].resto_id, // ! wag galawin
-				day: 'Friday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[3].resto_id,
+				day: 'Friday',
+				open_time: '08:30:00',
+				close_time: '20:30:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[3].resto_id, // ! wag galawin
-				day: 'Saturday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[3].resto_id,
+				day: 'Saturday',
+				open_time: '08:30:00',
+				close_time: '20:30:00',
 			},
 			// * Restaurant 4
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[4].resto_id, // ! wag galawin
-				day: 'Monday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[4].resto_id,
+				day: 'Monday',
+				open_time: '10:30:00',
+				close_time: '21:30:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[4].resto_id, // ! wag galawin
-				day: 'Tuesday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[4].resto_id,
+				day: 'Tuesday',
+				open_time: '10:30:00',
+				close_time: '21:30:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[4].resto_id, // ! wag galawin
-				day: 'Wednesday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[4].resto_id,
+				day: 'Wednesday',
+				open_time: '10:30:00',
+				close_time: '21:30:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[4].resto_id, // ! wag galawin
-				day: 'Thursday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[4].resto_id,
+				day: 'Thursday',
+				open_time: '10:30:00',
+				close_time: '21:30:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[4].resto_id, // ! wag galawin
-				day: 'Friday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[4].resto_id,
+				day: 'Friday',
+				open_time: '10:30:00',
+				close_time: '21:30:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[4].resto_id, // ! wag galawin
-				day: 'Saturday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[4].resto_id,
+				day: 'Saturday',
+				open_time: '10:30:00',
+				close_time: '21:30:00',
 			},
 			// * Restaurant 5
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[5].resto_id, // ! wag galawin
-				day: 'Monday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[5].resto_id,
+				day: 'Monday',
+				open_time: '09:00:00',
+				close_time: '21:00:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[5].resto_id, // ! wag galawin
-				day: 'Tuesday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[5].resto_id,
+				day: 'Tuesday',
+				open_time: '09:00:00',
+				close_time: '21:00:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[5].resto_id, // ! wag galawin
-				day: 'Wednesday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[5].resto_id,
+				day: 'Wednesday',
+				open_time: '09:00:00',
+				close_time: '21:00:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[5].resto_id, // ! wag galawin
-				day: 'Thursday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[5].resto_id,
+				day: 'Thursday',
+				open_time: '09:00:00',
+				close_time: '21:00:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[5].resto_id, // ! wag galawin
-				day: 'Friday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[5].resto_id,
+				day: 'Friday',
+				open_time: '09:00:00',
+				close_time: '21:00:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[5].resto_id, // ! wag galawin
-				day: 'Saturday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[5].resto_id,
+				day: 'Saturday',
+				open_time: '09:00:00',
+				close_time: '21:00:00',
 			},
 			// * Restaurant 6
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[6].resto_id, // ! wag galawin
-				day: 'Monday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[6].resto_id,
+				day: 'Monday',
+				open_time: '08:00:00',
+				close_time: '20:00:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[6].resto_id, // ! wag galawin
-				day: 'Tuesday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[6].resto_id,
+				day: 'Tuesday',
+				open_time: '08:00:00',
+				close_time: '20:00:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[6].resto_id, // ! wag galawin
-				day: 'Wednesday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[6].resto_id,
+				day: 'Wednesday',
+				open_time: '08:00:00',
+				close_time: '20:00:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[6].resto_id, // ! wag galawin
-				day: 'Thursday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[6].resto_id,
+				day: 'Thursday',
+				open_time: '08:00:00',
+				close_time: '20:00:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[6].resto_id, // ! wag galawin
-				day: 'Friday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[6].resto_id,
+				day: 'Friday',
+				open_time: '08:00:00',
+				close_time: '20:00:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[6].resto_id, // ! wag galawin
-				day: 'Saturday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[6].resto_id,
+				day: 'Saturday',
+				open_time: '08:00:00',
+				close_time: '20:00:00',
 			},
 			// * Restaurant 7
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[7].resto_id, // ! wag galawin
-				day: 'Monday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[7].resto_id,
+				day: 'Monday',
+				open_time: '09:30:00',
+				close_time: '21:30:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[7].resto_id, // ! wag galawin
-				day: 'Tuesday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[7].resto_id,
+				day: 'Tuesday',
+				open_time: '09:30:00',
+				close_time: '21:30:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[7].resto_id, // ! wag galawin
-				day: 'Wednesday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[7].resto_id,
+				day: 'Wednesday',
+				open_time: '09:30:00',
+				close_time: '21:30:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[7].resto_id, // ! wag galawin
-				day: 'Thursday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[7].resto_id,
+				day: 'Thursday',
+				open_time: '09:30:00',
+				close_time: '21:30:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[7].resto_id, // ! wag galawin
-				day: 'Friday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[7].resto_id,
+				day: 'Friday',
+				open_time: '09:30:00',
+				close_time: '21:30:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[7].resto_id, // ! wag galawin
-				day: 'Saturday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[7].resto_id,
+				day: 'Saturday',
+				open_time: '09:30:00',
+				close_time: '21:30:00',
 			},
 			// * Restaurant 8
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[8].resto_id, // ! wag galawin
-				day: 'Monday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[8].resto_id,
+				day: 'Monday',
+				open_time: '10:00:00',
+				close_time: '21:00:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[8].resto_id, // ! wag galawin
-				day: 'Tuesday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[8].resto_id,
+				day: 'Tuesday',
+				open_time: '10:00:00',
+				close_time: '21:00:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[8].resto_id, // ! wag galawin
-				day: 'Wednesday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[8].resto_id,
+				day: 'Wednesday',
+				open_time: '10:00:00',
+				close_time: '21:00:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[8].resto_id, // ! wag galawin
-				day: 'Thursday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[8].resto_id,
+				day: 'Thursday',
+				open_time: '10:00:00',
+				close_time: '21:00:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[8].resto_id, // ! wag galawin
-				day: 'Friday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[8].resto_id,
+				day: 'Friday',
+				open_time: '10:00:00',
+				close_time: '21:00:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[8].resto_id, // ! wag galawin
-				day: 'Saturday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[8].resto_id,
+				day: 'Saturday',
+				open_time: '10:00:00',
+				close_time: '21:00:00',
 			},
 			// * Restaurant 9
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[9].resto_id, // ! wag galawin
-				day: 'Monday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[9].resto_id,
+				day: 'Monday',
+				open_time: '08:00:00',
+				close_time: '20:00:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[9].resto_id, // ! wag galawin
-				day: 'Tuesday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[9].resto_id,
+				day: 'Tuesday',
+				open_time: '08:00:00',
+				close_time: '20:00:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[9].resto_id, // ! wag galawin
-				day: 'Wednesday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[9].resto_id,
+				day: 'Wednesday',
+				open_time: '08:00:00',
+				close_time: '20:00:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[9].resto_id, // ! wag galawin
-				day: 'Thursday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[9].resto_id,
+				day: 'Thursday',
+				open_time: '08:00:00',
+				close_time: '20:00:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[9].resto_id, // ! wag galawin
-				day: 'Friday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[9].resto_id,
+				day: 'Friday',
+				open_time: '08:00:00',
+				close_time: '20:00:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[9].resto_id, // ! wag galawin
-				day: 'Saturday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[9].resto_id,
+				day: 'Saturday',
+				open_time: '08:00:00',
+				close_time: '20:00:00',
 			},
 			// * Restaurant 10
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[10].resto_id, // ! wag galawin
-				day: 'Monday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[10].resto_id,
+				day: 'Monday',
+				open_time: '09:00:00',
+				close_time: '21:00:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[10].resto_id, // ! wag galawin
-				day: 'Tuesday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[10].resto_id,
+				day: 'Tuesday',
+				open_time: '09:00:00',
+				close_time: '21:00:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[10].resto_id, // ! wag galawin
-				day: 'Wednesday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[10].resto_id,
+				day: 'Wednesday',
+				open_time: '09:00:00',
+				close_time: '21:00:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[10].resto_id, // ! wag galawin
-				day: 'Thursday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[10].resto_id,
+				day: 'Thursday',
+				open_time: '09:00:00',
+				close_time: '21:00:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[10].resto_id, // ! wag galawin
-				day: 'Friday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[10].resto_id,
+				day: 'Friday',
+				open_time: '09:00:00',
+				close_time: '21:00:00',
 			},
 			{
-				openhrs_id: uuidv4(), // ! wag galawin
-				resto_id: restaurantRows[10].resto_id, // ! wag galawin
-				day: 'Saturday', // ! wag galawin
-				open_time: '', // ! HH:MM:SS Format
-				close_time: '', // ! HH:MM:SS Format
+				openhrs_id: uuidv4(),
+				resto_id: restaurantRows[10].resto_id,
+				day: 'Saturday',
+				open_time: '09:00:00',
+				close_time: '21:00:00',
 			},
 		]);
 	},
