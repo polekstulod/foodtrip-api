@@ -209,7 +209,7 @@ module.exports = {
 			{
 				address_id: uuidv4(),
 				address_1: '92 Fairview Terraces',
-				address_2: '',
+				address_2: null,
 				barangay: 'Pasong Putik',
 				city: 'Quezon City',
 				province: 'NCR',
@@ -237,7 +237,7 @@ module.exports = {
 			{
 				address_id: uuidv4(),
 				address_1: ' Diliman Commercial Center',
-				address_2: '',
+				address_2: null,
 				barangay: '46 Commonwealth Ave',
 				city: 'Quezon City',
 				province: 'NCR',
@@ -265,7 +265,7 @@ module.exports = {
 			{
 				address_id: uuidv4(),
 				address_1: '28 Sgt. Esguerra Ave',
-				address_2: '',
+				address_2: null,
 				barangay: ' Diliman',
 				city: 'Quezon City',
 				province: 'NCR',
@@ -307,7 +307,7 @@ module.exports = {
 			{
 				address_id: uuidv4(),
 				address_1: 'M32G+H2J',
-				address_2: '',
+				address_2: null,
 				barangay: 'Diliman',
 				city: 'Quezon City',
 				province: 'NCR',
@@ -369,7 +369,7 @@ module.exports = {
 				user_no: `USR-${Math.floor(Date.now() * 1.5)}`,
 				password: await bcrypt.hash('RestoAdmin@123', parseInt(process.env.SALT_ROUND)),
 				first_name: 'Yoorim',
-				middle_name: '',
+				middle_name: null,
 				last_name: 'Heo',
 				email_address: 'yoorimie@gmail.com',
 				user_type: 'Resto_Admin',
@@ -988,11 +988,9 @@ module.exports = {
 	},
 
 	async down(queryInterface, Sequelize) {
-		/**
-		 * Add commands to revert seed here.
-		 *
-		 * Example:
-		 * await queryInterface.bulkDelete('People', null, {});
-		 */
+		await queryInterface.bulkDelete('OpeningHours', null, {});
+		await queryInterface.bulkDelete('Addresses', null, {});
+		await queryInterface.bulkDelete('Restaurants', null, {});
+		return await queryInterface.bulkDelete('RestoCategories', null, {});
 	},
 };
