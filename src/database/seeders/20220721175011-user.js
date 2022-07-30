@@ -26,7 +26,7 @@ module.exports = {
 				user_no: `USR-${Math.floor(Date.now() * 1.5) + 1}`,
 				password: await bcrypt.hash('Customer@123', parseInt(process.env.SALT_ROUND)),
 				first_name: 'Jerald',
-				middle_name: '',
+				middle_name: null,
 				last_name: 'Guillermo',
 				email_address: 'jerald05@gmail.com',
 				phone_number: '09482749382',
@@ -54,7 +54,7 @@ module.exports = {
 				user_no: `USR-${Math.floor(Date.now() * 1.5) + 3}`,
 				password: await bcrypt.hash('Customer@123', parseInt(process.env.SALT_ROUND)),
 				first_name: 'Allison',
-				middle_name: '',
+				middle_name: null,
 				last_name: 'Locsin',
 				email_address: 'allilocsin@gmail.com',
 				phone_number: '09752048137',
@@ -82,7 +82,7 @@ module.exports = {
 				user_no: `USR-${Math.floor(Date.now() * 1.5) + 5}`,
 				password: await bcrypt.hash('Customer@123', parseInt(process.env.SALT_ROUND)),
 				first_name: 'Javen Brylle',
-				middle_name: '',
+				middle_name: null,
 				last_name: 'Dela Cruz',
 				email_address: 'bryllejaven@gmail.com',
 				phone_number: '09482048339',
@@ -96,7 +96,7 @@ module.exports = {
 				user_no: `USR-${Math.floor(Date.now() * 1.5) + 6}`,
 				password: await bcrypt.hash('Customer@123', parseInt(process.env.SALT_ROUND)),
 				first_name: 'Aphryll Joy',
-				middle_name: '',
+				middle_name: null,
 				last_name: 'Malazzab',
 				email_address: 'ajmallazzab@gmail.com',
 				phone_number: '09294482931',
@@ -110,7 +110,7 @@ module.exports = {
 				user_no: `USR-${Math.floor(Date.now() * 1.5) + 7}`,
 				password: await bcrypt.hash('Customer@123', parseInt(process.env.SALT_ROUND)),
 				first_name: 'Frankly',
-				middle_name: '',
+				middle_name: null,
 				last_name: 'Samson',
 				email_address: 'samsonfrankly21@gmail.com',
 				phone_number: '09382746311',
@@ -138,7 +138,7 @@ module.exports = {
 				user_no: `USR-${Math.floor(Date.now() * 1.5) + 9}`,
 				password: await bcrypt.hash('Customer@123', parseInt(process.env.SALT_ROUND)),
 				first_name: 'James',
-				middle_name: '',
+				middle_name: null,
 				last_name: 'Smith',
 				email_address: 'smithjames11@gmail.com',
 				phone_number: '09673849384',
@@ -220,7 +220,7 @@ module.exports = {
 			{
 				address_id: uuidv4(),
 				address_1: '3423 Mankor Street ',
-				address_2: '',
+				address_2: null,
 				barangay: 'Tungkong Mangga',
 				city: 'San Jose del Monte',
 				province: 'Bulacan',
@@ -236,7 +236,7 @@ module.exports = {
 			{
 				address_id: uuidv4(),
 				address_1: '2132 Zenia Street',
-				address_2: '',
+				address_2: null,
 				barangay: '174',
 				city: 'Caloocan',
 				province: 'NCR',
@@ -252,7 +252,7 @@ module.exports = {
 			{
 				address_id: uuidv4(),
 				address_1: '165 Ruby Street',
-				address_2: '',
+				address_2: null,
 				barangay: '171',
 				city: 'Caloocan',
 				province: 'NCR',
@@ -268,7 +268,7 @@ module.exports = {
 			{
 				address_id: uuidv4(),
 				address_1: '324 H. Capiral Street',
-				address_2: '',
+				address_2: null,
 				barangay: 'Duhat',
 				city: 'Bocaue',
 				province: 'Bulacan',
@@ -300,7 +300,7 @@ module.exports = {
 			{
 				address_id: uuidv4(),
 				address_1: '143 Yakal Street',
-				address_2: '',
+				address_2: null,
 				barangay: 'Almanza Uno',
 				city: 'Las Piñas',
 				province: 'NCR',
@@ -316,7 +316,7 @@ module.exports = {
 			{
 				address_id: uuidv4(),
 				address_1: '432 Febo Street',
-				address_2: '',
+				address_2: null,
 				barangay: '862',
 				city: 'Manila',
 				province: 'NCR',
@@ -332,7 +332,7 @@ module.exports = {
 			{
 				address_id: uuidv4(),
 				address_1: '655 Banahaw Street',
-				address_2: '',
+				address_2: null,
 				barangay: '900',
 				city: 'Manila',
 				province: 'NCR',
@@ -348,7 +348,7 @@ module.exports = {
 			{
 				address_id: uuidv4(),
 				address_1: '223 Nenita Street Ext',
-				address_2: '',
+				address_2: null,
 				barangay: 'Gulod',
 				city: 'Quezon City',
 				province: 'NCR',
@@ -364,7 +364,7 @@ module.exports = {
 			{
 				address_id: uuidv4(),
 				address_1: '543 Gold Street',
-				address_2: '',
+				address_2: null,
 				barangay: 'Novaliches Proper',
 				city: 'Quezon City',
 				province: 'NCR',
@@ -380,7 +380,7 @@ module.exports = {
 			{
 				address_id: uuidv4(),
 				address_1: '44 Salvador Street',
-				address_2: '',
+				address_2: null,
 				barangay: '186',
 				city: 'Caloocan',
 				province: 'NCR',
@@ -412,7 +412,7 @@ module.exports = {
 			{
 				address_id: uuidv4(),
 				address_1: '980 Deleon Street',
-				address_2: '',
+				address_2: null,
 				barangay: 'Holy Spirit',
 				city: 'Quezon City',
 				province: 'NCR',
@@ -429,11 +429,7 @@ module.exports = {
 	},
 
 	async down(queryInterface, Sequelize) {
-		/**
-		 * Add commands to revert seed here.
-		 *
-		 * Example:
-		 * await queryInterface.bulkDelete('People', null, {});
-		 */
+		await queryInterface.bulkDelete('Addresses', null, {});
+		return await queryInterface.bulkDelete('Users', null, {});
 	},
 };
