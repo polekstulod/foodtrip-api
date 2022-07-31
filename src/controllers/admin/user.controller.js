@@ -56,7 +56,7 @@ exports.getRestoAdmin = async (req, res) => {
 	const id = req.params.restoAdminID;
 
 	try {
-		const data = await db.User.findAll({ include: ['restaurant'], where: { user_type: 'Resto_Admin', user_id: id } });
+		const data = await db.User.findOne({ include: ['restaurant'], where: { user_type: 'Resto_Admin', user_id: id } });
 		dataResponse(res, data, 'Resto Admin has been retrieved', 'No Resto Admin has been retrieved');
 	} catch (err) {
 		errResponse(res, err);
@@ -116,7 +116,7 @@ exports.getCustomer = async (req, res) => {
 	const id = req.params.customerID;
 
 	try {
-		const data = await db.User.findAll({ where: { user_type: 'Customer', user_id: id } });
+		const data = await db.User.findOne({ where: { user_type: 'Customer', user_id: id } });
 		dataResponse(res, data, 'Customer has been retrieved', 'No Customer has been retrieved');
 	} catch (err) {
 		errResponse(res, err);
@@ -177,7 +177,7 @@ exports.getAdmin = async (req, res) => {
 	const id = req.params.adminID;
 
 	try {
-		const data = await db.User.findAll({ where: { user_type: 'Admin', user_id: id } });
+		const data = await db.User.findOne({ where: { user_type: 'Admin', user_id: id } });
 		dataResponse(res, data, 'Admin has been retrieved', 'No Admin has been retrieved');
 	} catch (err) {
 		errResponse(res, err);

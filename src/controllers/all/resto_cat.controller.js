@@ -16,7 +16,7 @@ exports.getRestoCat = async (req, res) => {
 	const id = req.params.restoCatID;
 
 	try {
-		const data = db.RestoCategory.findByPk(id, { include: 'restaurants' });
+		const data = await db.RestoCategory.findByPk(id, { include: 'restaurants' });
 		dataResponse(res, data, 'Restaurant Category has been retrieved', 'No Restaurant Category has been retrieved');
 	} catch (err) {
 		errResponse(res, err);

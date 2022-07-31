@@ -46,7 +46,7 @@ exports.getAddress = async (req, res) => {
 	const id = req.user.user_id;
 
 	try {
-		const data = await db.Address.findAll({ where: { user_id: id, address_id: addressID } });
+		const data = await db.Address.findOne({ where: { user_id: id, address_id: addressID } });
 		dataResponse(res, data, 'Address has been retrieved', 'No Address has been retrieved');
 	} catch (err) {
 		errResponse(res, err);
@@ -88,7 +88,7 @@ exports.updateDefaultAddress = async (req, res) => {
 	req.body.updated_by = req.user.user_id;
 
 	try {
-		const defaultAdd = await db.Address.findAll({ where: { user_id: userID, is_default: 1 } });
+		const defaultAdd = await db.Address.findOne({ where: { user_id: userID, is_default: 1 } });
 
 		await db.Address.update({ is_default: '0' }, { where: { address_id: defaultAdd[0].address_id, is_default: '1' } });
 
