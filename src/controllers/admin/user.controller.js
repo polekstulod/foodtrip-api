@@ -2,6 +2,7 @@ const db = require('../../models');
 const { dataResponse, errResponse, emptyDataResponse, checkAuthorization } = require('../../helpers/controller.helper');
 const dataTable = require('sequelize-datatables');
 
+// * Find All Restaurant Admin
 exports.getAllRestoAdmin = async (req, res) => {
 	if (!checkAuthorization(req, res, 'Admin')) {
 		return;
@@ -46,6 +47,7 @@ exports.getAllRestoAdmin = async (req, res) => {
 	}
 };
 
+// * Find Restaurant Admin
 exports.getRestoAdmin = async (req, res) => {
 	if (!checkAuthorization(req, res, 'Admin')) {
 		return;
@@ -61,6 +63,7 @@ exports.getRestoAdmin = async (req, res) => {
 	}
 };
 
+// * Find All Customer
 exports.getAllCustomer = async (req, res) => {
 	if (!checkAuthorization(req, res, 'Admin')) {
 		return;
@@ -104,6 +107,7 @@ exports.getAllCustomer = async (req, res) => {
 	}
 };
 
+// * Find Customer
 exports.getCustomer = async (req, res) => {
 	if (!checkAuthorization(req, res, 'Admin')) {
 		return;
@@ -119,6 +123,7 @@ exports.getCustomer = async (req, res) => {
 	}
 };
 
+// * Find All Admin
 exports.getAllAdmin = async (req, res) => {
 	if (!checkAuthorization(req, res, 'Admin')) {
 		return;
@@ -163,6 +168,7 @@ exports.getAllAdmin = async (req, res) => {
 	}
 };
 
+// * Find Admin
 exports.getAdmin = async (req, res) => {
 	if (!checkAuthorization(req, res, 'Admin')) {
 		return;
