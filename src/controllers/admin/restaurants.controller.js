@@ -36,7 +36,7 @@ exports.getAllRestaurants = async (req, res) => {
 	};
 
 	try {
-		let data = await dataTable(db.Restaurant, req.body, {
+		const data = await dataTable(db.Restaurant, req.body, {
 			include: ['restaurant_category'],
 		});
 		res.send(data);
@@ -54,7 +54,7 @@ exports.getRestaurant = async (req, res) => {
 	const id = req.params.restoID;
 
 	try {
-		let data = await db.Restaurant.findByPk(id, {
+		const data = await db.Restaurant.findByPk(id, {
 			include: [
 				'restaurant_category',
 				{

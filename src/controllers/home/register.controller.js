@@ -8,7 +8,7 @@ exports.customer = async (req, res) => {
 	req.body.password = await bcrypt.hash(req.body.password, parseInt(process.env.SALT_ROUND));
 
 	try {
-		let data = await db.User.create(req.body);
+		const data = await db.User.create(req.body);
 		dataResponse(res, data, 'Customer has been registered', 'Customer was not registered');
 	} catch (err) {
 		errResponse(res, err);
@@ -21,7 +21,7 @@ exports.restaurant = async (req, res) => {
 	req.body.resto_no = `RTO-${Date.now() * 2}`;
 
 	try {
-		let data = await db.Restaurant.create(req.body);
+		const data = await db.Restaurant.create(req.body);
 		dataResponse(res, data, 'Restaurant has been registered', 'Restaurant was not registered');
 	} catch (err) {
 		errResponse(res, err);
@@ -34,7 +34,7 @@ exports.restoAdmin = async (req, res) => {
 	req.body.password = await bcrypt.hash(req.body.password, parseInt(process.env.SALT_ROUND));
 
 	try {
-		let data = await db.User.create(req.body);
+		const data = await db.User.create(req.body);
 		dataResponse(res, data, 'Resto Admin has been registered', 'Resto Admin was not registered');
 	} catch (err) {
 		errResponse(res, err);
@@ -47,7 +47,7 @@ exports.admin = async (req, res) => {
 	req.body.password = await bcrypt.hash(req.body.password, parseInt(process.env.SALT_ROUND));
 
 	try {
-		let data = await db.User.create(req.body);
+		const data = await db.User.create(req.body);
 		dataResponse(res, data, 'Admin has been registered', 'Admin was not registered');
 	} catch (err) {
 		errResponse(res, err);

@@ -4,7 +4,7 @@ const { dataResponse, errResponse, emptyDataResponse } = require('../../helpers/
 // * Retrieve all Restaurant Category
 exports.getAllRestoCat = async (req, res) => {
 	try {
-		let data = await db.RestoCategory.findAll({ include: 'restaurants' });
+		const data = await db.RestoCategory.findAll({ include: 'restaurants' });
 		dataResponse(res, data, 'All Restaurant Category has been retrieved', 'No Restaurant Category has been retrieved');
 	} catch (err) {
 		errResponse(res, err);
@@ -16,7 +16,7 @@ exports.getRestoCat = async (req, res) => {
 	const id = req.params.restoCatID;
 
 	try {
-		let data = db.RestoCategory.findByPk(id, { include: 'restaurants' });
+		const data = db.RestoCategory.findByPk(id, { include: 'restaurants' });
 		dataResponse(res, data, 'Restaurant Category has been retrieved', 'No Restaurant Category has been retrieved');
 	} catch (err) {
 		errResponse(res, err);

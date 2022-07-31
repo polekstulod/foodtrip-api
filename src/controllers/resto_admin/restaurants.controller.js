@@ -10,7 +10,7 @@ exports.getRestaurant = async (req, res) => {
 	const id = req.params.restoID;
 
 	try {
-		let data = await db.Restaurant.findByPk(id, {
+		const data = await db.Restaurant.findByPk(id, {
 			include: [
 				'restaurant_category',
 				{
@@ -34,17 +34,17 @@ exports.updateRestaurant = async (req, res) => {
 	const id = req.params.restoID;
 
 	try {
-		let restoImg = await db.Restaurant.findByPk(id, { attributes: ['resto_img'] });
+		const restoImg = await db.Restaurant.findByPk(id, { attributes: ['resto_img'] });
 		req.body.resto_img = restoImg.resto_img.slice(-27);
 		req.body.updated_by = req.user.user_id;
 		if (req.file !== undefined) req.body.resto_img = req.file.filename;
 
-		let result = await db.Restaurant.update(req.body, {
+		const result = await db.Restaurant.update(req.body, {
 			where: { resto_id: id },
 		});
 
 		if (result == 1) {
-			let data = await db.Restaurant.findByPk(id, { include: ['updated'] });
+			const data = await db.Restaurant.findByPk(id, { include: ['updated'] });
 			dataResponse(res, data, 'Restaurant has been updated successfully', 'Restaurant was not updated');
 		} else {
 			errResponse(res, 'Error in updating Dish');
@@ -62,7 +62,7 @@ exports.createOpeningHour = async (req, res) => {
 	});
 
 	try {
-		let data = await db.OpeningHour.bulkCreate(req.body, { validate: true });
+		const data = await db.OpeningHour.bulkCreate(req.body, { validate: true });
 		dataResponse(
 			res,
 			data,
@@ -79,7 +79,7 @@ exports.getAllOpeningHours = async (req, res) => {
 	const id = req.user.resto_id;
 
 	try {
-		let data = await db.OpeningHour.findAll({ where: { resto_id: id } });
+		const data = await db.OpeningHour.findAll({ where: { resto_id: id } });
 		data.push({ restaurant: await db.Restaurant.findByPk(id) });
 		dataResponse(res, data, 'All Opening Hours has been retrieved', 'No Opening Hours has been retrieved');
 	} catch (err) {
@@ -92,7 +92,7 @@ exports.getOpeningHour = async (req, res) => {
 	const id = req.params.id;
 
 	try {
-		let data = await db.OpeningHour.findByPk(id, { include: ['restaurant'] });
+		const data = await db.OpeningHour.findByPk(id, { include: ['restaurant'] });
 		dataResponse(res, data, 'Opening Hour has been retrieved', 'No Opening Hour has been retrieved');
 	} catch (err) {
 		errResponse(res, err);
@@ -105,11 +105,11 @@ exports.updateOpeningHour = async (req, res) => {
 	req.body.updated_by = req.user.user_id;
 
 	try {
-		let result = await db.OpeningHour.update(req.body, {
+		const result = await db.OpeningHour.update(req.body, {
 			where: { openhrs_id: id },
 		});
 		if (result) {
-			let data = await db.OpeningHour.findByPk(id, { include: ['updated', 'restaurant'] });
+			const data = await db.OpeningHour.findByPk(id, { include: ['updated', 'restaurant'] });
 			dataResponse(res, data, 'Opening has been successfully updated', 'No Opening has been successfully updated');
 		} else {
 			errResponse(res, 'Error in updating Opening Hour');
@@ -124,7 +124,7 @@ exports.deleteOpeningHour = async (req, res) => {
 	const id = req.params.id;
 	req.body.deleted_by = req.user.user_id;
 
-	let del = await db.OpeningHour.destroy({
+	const del = await db.OpeningHour.destroy({
 		where: {
 			openhrs_id: id,
 		},
@@ -135,7 +135,7 @@ exports.deleteOpeningHour = async (req, res) => {
 			where: { openhrs_id: id },
 			paranoid: false,
 		});
-		let data = await db.OpeningHour.findByPk(id, {
+		const data = await db.OpeningHour.findByPk(id, {
 			paranoid: false,
 			include: ['deleted', 'restaurant'],
 		});

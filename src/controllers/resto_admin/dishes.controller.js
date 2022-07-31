@@ -12,8 +12,8 @@ exports.createDish = async (req, res) => {
 	req.body.dish_no = `DSH-${Math.floor(Date.now() * 2.5)}`;
 
 	try {
-		let data = await db.Dish.create(req.body);
-		let result = await db.Dish.findByPk(data.dish_id, { include: ['created'] });
+		const data = await db.Dish.create(req.body);
+		const result = await db.Dish.findByPk(data.dish_id, { include: ['created'] });
 		dataResponse(res, result, 'Dish has been created successfully', 'Dish was not created');
 	} catch (err) {
 		errResponse(res, err);
@@ -29,7 +29,7 @@ exports.getAllDishes = async (req, res) => {
 	const restoId = req.params.restoID;
 
 	try {
-		let data = await db.Dish.findAll({
+		const data = await db.Dish.findAll({
 			where: { resto_id: restoId },
 			include: ['dish_category', 'restaurant'],
 		});
@@ -83,7 +83,7 @@ exports.getDish = async (req, res) => {
 	const id = req.params.dishID;
 
 	try {
-		let data = await db.Dish.findByPk(id, {
+		const data = await db.Dish.findByPk(id, {
 			include: ['dish_category', 'restaurant'],
 		});
 		dataResponse(
@@ -105,16 +105,16 @@ exports.updateDish = async (req, res) => {
 
 	const id = req.params.dishID;
 	try {
-		let dishImg = await db.Dish.findByPk(id, { attributes: ['dish_img'] });
+		const dishImg = await db.Dish.findByPk(id, { attributes: ['dish_img'] });
 		req.body.dish_img = dishImg.dish_img.slice(-26);
 		req.body.updated_by = req.user.user_id;
 		if (req.file !== undefined) req.body.dish_img = req.file.filename;
 
-		let result = await db.Dish.update(req.body, {
+		const result = await db.Dish.update(req.body, {
 			where: { dish_id: id },
 		});
 		if (result) {
-			let data = await db.Dish.findByPk(id, { include: ['updated'] });
+			const data = await db.Dish.findByPk(id, { include: ['updated'] });
 			dataResponse(res, data, 'Dish has been updated successfully', 'Dish was not updated');
 		} else {
 			errResponse(res, 'Error in updating Dish');
@@ -134,7 +134,7 @@ exports.deleteDish = async (req, res) => {
 	req.body.deleted_by = req.user.user_id;
 
 	try {
-		let del = await db.Dish.destroy({
+		const del = await db.Dish.destroy({
 			where: {
 				dish_id: id,
 			},
@@ -146,7 +146,7 @@ exports.deleteDish = async (req, res) => {
 				paranoid: false,
 			});
 
-			let data = await db.Dish.findByPk(id, {
+			const data = await db.Dish.findByPk(id, {
 				paranoid: false,
 				include: ['deleted'],
 			});

@@ -11,7 +11,7 @@ exports.getAccountInfo = async (req, res) => {
 	const id = req.user.user_id;
 
 	try {
-		let data = await db.User.findByPk(id, { include: ['restaurant'] });
+		const data = await db.User.findByPk(id, { include: ['restaurant'] });
 		dataResponse(res, data, 'Account Info has been retrieved', 'No Account Info has been retrieved');
 	} catch (err) {
 		errResponse(res, err);
@@ -35,7 +35,7 @@ exports.updateAcctInfo = async (req, res) => {
 		await db.User.update(req.body, {
 			where: { user_id: id },
 		});
-		let data = await db.User.findByPk(id, { include: ['updated', 'restaurant'] });
+		const data = await db.User.findByPk(id, { include: ['updated', 'restaurant'] });
 		dataResponse(res, data, 'User Account Info has been updated', 'No User Account Info has been updated');
 	} catch (err) {
 		errResponse(res, err);
@@ -50,7 +50,7 @@ exports.verifyPassword = async (req, res) => {
 
 	const id = req.user.user_id;
 	const password = req.body.password;
-	let data = await db.User.findByPk(id, { attributes: ['password'] });
+	const data = await db.User.findByPk(id, { attributes: ['password'] });
 
 	const match = await bcrypt.compare(password, data.password);
 
@@ -68,12 +68,12 @@ exports.updatePassword = async (req, res) => {
 	req.body.password = await bcrypt.hash(req.body.password, parseInt(process.env.SALT_ROUND));
 
 	try {
-		let result = await db.User.update(req.body, {
+		const result = await db.User.update(req.body, {
 			where: { user_id: id },
 		});
 
 		if (result) {
-			let data = await db.User.findByPk(id, { include: ['updated', 'restaurant'] });
+			const data = await db.User.findByPk(id, { include: ['updated', 'restaurant'] });
 			dataResponse(res, data, 'User Password has been updated successfully', 'User Password was not updated');
 		} else {
 			errResponse(res, 'Error in updating Password');

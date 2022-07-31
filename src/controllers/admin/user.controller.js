@@ -37,7 +37,7 @@ exports.getAllRestoAdmin = async (req, res) => {
 	};
 
 	try {
-		let data = await dataTable(db.User, req.body, {
+		const data = await dataTable(db.User, req.body, {
 			where: { user_type: 'Resto_Admin' },
 			include: ['restaurant'],
 		});
@@ -56,7 +56,7 @@ exports.getRestoAdmin = async (req, res) => {
 	const id = req.params.restoAdminID;
 
 	try {
-		let data = await db.User.findAll({ include: ['restaurant'], where: { user_type: 'Resto_Admin', user_id: id } });
+		const data = await db.User.findAll({ include: ['restaurant'], where: { user_type: 'Resto_Admin', user_id: id } });
 		dataResponse(res, data, 'Resto Admin has been retrieved', 'No Resto Admin has been retrieved');
 	} catch (err) {
 		errResponse(res, err);
@@ -98,7 +98,7 @@ exports.getAllCustomer = async (req, res) => {
 	};
 
 	try {
-		let data = await dataTable(db.User, req.body, {
+		const data = await dataTable(db.User, req.body, {
 			where: { user_type: 'Customer' },
 		});
 		res.send(data);
@@ -116,7 +116,7 @@ exports.getCustomer = async (req, res) => {
 	const id = req.params.customerID;
 
 	try {
-		let data = await db.User.findAll({ where: { user_type: 'Customer', user_id: id } });
+		const data = await db.User.findAll({ where: { user_type: 'Customer', user_id: id } });
 		dataResponse(res, data, 'Customer has been retrieved', 'No Customer has been retrieved');
 	} catch (err) {
 		errResponse(res, err);
@@ -158,7 +158,7 @@ exports.getAllAdmin = async (req, res) => {
 	};
 
 	try {
-		let data = await dataTable(db.User, req.body, {
+		const data = await dataTable(db.User, req.body, {
 			where: { user_type: 'Admin' },
 			include: ['created'],
 		});
@@ -177,7 +177,7 @@ exports.getAdmin = async (req, res) => {
 	const id = req.params.adminID;
 
 	try {
-		let data = await db.User.findAll({ where: { user_type: 'Admin', user_id: id } });
+		const data = await db.User.findAll({ where: { user_type: 'Admin', user_id: id } });
 		dataResponse(res, data, 'Admin has been retrieved', 'No Admin has been retrieved');
 	} catch (err) {
 		errResponse(res, err);
