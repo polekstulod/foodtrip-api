@@ -12,6 +12,7 @@ exports.getAllRestaurants = async (req, res) => {
 					as: 'resto_dishes',
 				},
 			],
+			limit: 6,
 		});
 		dataResponse(res, data, 'All Restaurants has been retrieved', 'No Restaurants has been retrieved');
 	} catch (err) {
