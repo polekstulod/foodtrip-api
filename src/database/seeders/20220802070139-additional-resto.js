@@ -1,4 +1,5 @@
-'use strict';
+const { v4: uuidv4 } = require('uuid');
+('use strict');
 
 module.exports = {
 	async up(queryInterface, Sequelize) {
@@ -9,15 +10,6 @@ module.exports = {
 
 		// * Restaurants
 		return await queryInterface.bulkInsert('Restaurants', [
-			/* 
-        ! Palitan yung
-        TODO resto_name 
-        TODO resto_email 
-        TODO resto_phone 
-        TODO resto_landline 
-        TODO resto_website
-        TODO restocatg_id (nakadepends kung pang ilan yung category)
-     */
 			{
 				resto_id: uuidv4(),
 				resto_no: `RTO-${Date.now() * 2 + 1}`,
