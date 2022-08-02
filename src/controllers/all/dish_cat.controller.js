@@ -7,10 +7,16 @@ exports.getAllDishes = async (req, res) => {
 		const data = await db.Dish.findAll({
 			include: ['dish_category', 'restaurant'],
 			where: {
-				dishcatg_id: [
-					'b927e32d-30ac-48bf-b272-341f4ed6ff6c',
-					'e45c1775-571d-4804-8f59-c2c456d606f2',
-					'9e4b13a9-ee87-4ab0-a433-df698dc11cfe',
+				dish_name: [
+					'Asian Chicken pasta',
+					'Mac and Cheese',
+					'K Pasta',
+					'Cheesy lasagna',
+					'Dolsot Bibimbap',
+					'Tempura Jyu',
+					'Kimchi Bokkeumbap',
+					'Kimchi fried Rice with Maple Bacon Slab',
+					'Sizzling Kangkong Ala Pobre',
 				],
 			},
 		});
