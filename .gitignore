@@ -105,6 +105,3 @@ dist
 
 # Vscode settings
 .vscode/ 
-
-# Public uploads
-public/
