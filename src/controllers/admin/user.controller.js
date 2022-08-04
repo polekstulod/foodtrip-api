@@ -29,7 +29,7 @@ exports.getAllRestoAdmin = async (req, res) => {
 			},
 		],
 		start: 0,
-		length: 10,
+		length: 100,
 		search: {
 			value: '',
 			regex: false,
@@ -90,7 +90,7 @@ exports.getAllCustomer = async (req, res) => {
 			},
 		],
 		start: 0,
-		length: 10,
+		length: 100,
 		search: {
 			value: '',
 			regex: false,
@@ -150,7 +150,7 @@ exports.getAllAdmin = async (req, res) => {
 			},
 		],
 		start: 0,
-		length: 10,
+		length: 100,
 		search: {
 			value: '',
 			regex: false,

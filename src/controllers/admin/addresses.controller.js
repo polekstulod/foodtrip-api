@@ -29,7 +29,7 @@ exports.getAllAddress = async (req, res) => {
 			},
 		],
 		start: 0,
-		length: 10,
+		length: 100,
 		search: {
 			value: '',
 			regex: false,
@@ -73,7 +73,7 @@ exports.getAddress = async (req, res) => {
 			},
 		],
 		start: 0,
-		length: 10,
+		length: 100,
 		search: {
 			value: '',
 			regex: false,

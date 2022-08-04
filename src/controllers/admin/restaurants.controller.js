@@ -28,7 +28,7 @@ exports.getAllRestaurants = async (req, res) => {
 			},
 		],
 		start: 0,
-		length: 10,
+		length: 100,
 		search: {
 			value: '',
 			regex: false,
