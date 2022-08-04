@@ -26,6 +26,7 @@ module.exports = (sequelize, DataTypes) => {
 			});
 
 			this.hasOne(models.User, {
+				as: 'restoadmin',
 				foreignKey: 'resto_id',
 			});
 

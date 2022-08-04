@@ -37,7 +37,7 @@ exports.getAllRestaurants = async (req, res) => {
 
 	try {
 		const data = await dataTable(db.Restaurant, req.body, {
-			include: ['restaurant_category'],
+			include: ['restaurant_category', 'restoadmin'],
 		});
 		res.send(data);
 	} catch (err) {
