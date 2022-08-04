@@ -56,7 +56,10 @@ exports.getRestoAdmin = async (req, res) => {
 	const id = req.params.restoAdminID;
 
 	try {
-		const data = await db.User.findOne({ include: ['restaurant'], where: { user_type: 'Resto_Admin', user_id: id } });
+		const data = await db.User.findOne({
+			include: [{ model: db.Restaurant, as: 'restaurant', include: ['restaurant_category', 'resto_address'] }],
+			where: { user_type: 'Resto_Admin', user_id: id },
+		});
 		dataResponse(res, data, 'Resto Admin has been retrieved', 'No Resto Admin has been retrieved');
 	} catch (err) {
 		errResponse(res, err);
