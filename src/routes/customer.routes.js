@@ -36,4 +36,9 @@ router.post('/cart/sub-quantity/:cartDetailsID', cartCtl.subQuantity);
 router.delete('/cart/:cartDetailsID', cartCtl.deleteCartDetail);
 router.delete('/cart', cartCtl.deleteCart);
 
+var orderCtl = require('../controllers/customer/order.controller');
+router.post('/order', orderCtl.createOrder);
+router.get('/orders', orderCtl.getAllOrders);
+router.get('/order/:orderID', orderCtl.getOrder);
+
 module.exports = router;
