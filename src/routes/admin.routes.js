@@ -3,6 +3,8 @@ var router = require('express').Router();
 var restaurantCtl = require('../controllers/admin/restaurants.controller');
 router.get('/restaurants', restaurantCtl.getAllRestaurants);
 router.get('/restaurant/:restoID', restaurantCtl.getRestaurant);
+router.get('/resto-cat', restaurantCtl.getAllRestoCat);
+router.get('/resto-cat/:restoCatID', restaurantCtl.getRestoCat);
 
 var dishCtl = require('../controllers/admin/dishes.controller');
 router.get('/dishes', dishCtl.getAllDishes);
