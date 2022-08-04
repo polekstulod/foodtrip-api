@@ -57,6 +57,8 @@ exports.getRestaurant = async (req, res) => {
 		const data = await db.Restaurant.findByPk(id, {
 			include: [
 				'restaurant_category',
+				'restoadmin',
+				'resto_address',
 				{
 					model: db.Dish,
 					as: 'resto_dishes',

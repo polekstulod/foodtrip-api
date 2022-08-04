@@ -31,7 +31,8 @@ module.exports = (sequelize, DataTypes) => {
 			});
 
 			this.hasOne(models.Address, {
-				foreignKey: 'address_id',
+				as: 'resto_address',
+				foreignKey: 'resto_id',
 			});
 
 			this.belongsTo(models.RestoCategory, {
