@@ -30,4 +30,8 @@ router.put('/account/info', acctInfoCtl.updateAcctInfo);
 router.post('/account/verify-password', acctInfoCtl.verifyPassword);
 router.put('/account/password', acctInfoCtl.updatePassword);
 
+var orderCtl = require('../controllers/admin/orders.controller');
+router.get('/orders', orderCtl.getAllOrders);
+router.get('/order/:orderID', orderCtl.getOrder);
+
 module.exports = router;
