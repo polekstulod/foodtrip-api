@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
 			});
 
 			this.hasMany(models.Address, {
-				as: 'user',
+				as: 'addresses',
 				foreignKey: 'user_id',
 			});
 

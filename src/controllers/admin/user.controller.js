@@ -119,7 +119,7 @@ exports.getCustomer = async (req, res) => {
 	const id = req.params.customerID;
 
 	try {
-		const data = await db.User.findOne({ where: { user_type: 'Customer', user_id: id } });
+		const data = await db.User.findOne({ where: { user_type: 'Customer', user_id: id }, include: ['addresses'] });
 		dataResponse(res, data, 'Customer has been retrieved', 'No Customer has been retrieved');
 	} catch (err) {
 		errResponse(res, err);
