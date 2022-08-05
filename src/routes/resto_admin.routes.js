@@ -17,9 +17,13 @@ router.get('/dish/:dishID', dishCtl.getDish);
 router.put('/dish/:dishID', updateDishImage, dishCtl.updateDish);
 router.delete('/dish/:dishID', dishCtl.deleteDish);
 
-var OrderCtl = require('../controllers/resto_admin/orders.controller');
-router.get('/orders', OrderCtl.getAllOrders);
-router.get('/order/:orderID', OrderCtl.getOrder);
+var orderCtl = require('../controllers/resto_admin/orders.controller');
+router.get('/orders', orderCtl.getAllOrders);
+router.get('/order/:orderID', orderCtl.getOrder);
+router.put('/order/in-process/:orderID', orderCtl.inProcess);
+router.put('/order/otw/:orderID', orderCtl.otw);
+router.put('/order/delivered/:orderID', orderCtl.delivered);
+router.put('/order/rejected/:orderID', orderCtl.rejected);
 
 var acctInfoCtl = require('../controllers/resto_admin/acc_info.controller');
 router.get('/account/info', acctInfoCtl.getAccountInfo);
