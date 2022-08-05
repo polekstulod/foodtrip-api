@@ -17,6 +17,7 @@ module.exports = {
 				day: 'Monday',
 				open_time: '10:30:00',
 				close_time: '21:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -24,6 +25,7 @@ module.exports = {
 				day: 'Tuesday',
 				open_time: '10:30:00',
 				close_time: '21:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -31,6 +33,7 @@ module.exports = {
 				day: 'Wednesday',
 				open_time: '10:30:00',
 				close_time: '21:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -38,6 +41,7 @@ module.exports = {
 				day: 'Thursday',
 				open_time: '10:30:00',
 				close_time: '21:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -45,6 +49,7 @@ module.exports = {
 				day: 'Friday',
 				open_time: '10:30:00',
 				close_time: '21:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -52,6 +57,7 @@ module.exports = {
 				day: 'Saturday',
 				open_time: '10:30:00',
 				close_time: '21:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			// * Restaurant 12
 			{
@@ -60,6 +66,7 @@ module.exports = {
 				day: 'Monday',
 				open_time: '08:30:00',
 				close_time: '20:30:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -67,6 +74,7 @@ module.exports = {
 				day: 'Tuesday',
 				open_time: '08:30:00',
 				close_time: '20:30:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -74,6 +82,7 @@ module.exports = {
 				day: 'Wednesday',
 				open_time: '08:30:00',
 				close_time: '20:30:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -81,6 +90,7 @@ module.exports = {
 				day: 'Thursday',
 				open_time: '08:30:00',
 				close_time: '20:30:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -88,6 +98,7 @@ module.exports = {
 				day: 'Friday',
 				open_time: '08:30:00',
 				close_time: '20:30:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -95,6 +106,7 @@ module.exports = {
 				day: 'Saturday',
 				open_time: '08:30:00',
 				close_time: '20:30:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			// * Restaurant 13
 			{
@@ -103,6 +115,7 @@ module.exports = {
 				day: 'Monday',
 				open_time: '09:30:00',
 				close_time: '21:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -110,6 +123,7 @@ module.exports = {
 				day: 'Tuesday',
 				open_time: '09:30:00',
 				close_time: '21:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -117,6 +131,7 @@ module.exports = {
 				day: 'Wednesday',
 				open_time: '09:30:00',
 				close_time: '21:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -124,6 +139,7 @@ module.exports = {
 				day: 'Thursday',
 				open_time: '09:30:00',
 				close_time: '21:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -131,6 +147,7 @@ module.exports = {
 				day: 'Friday',
 				open_time: '09:30:00',
 				close_time: '21:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -138,6 +155,7 @@ module.exports = {
 				day: 'Saturday',
 				open_time: '09:30:00',
 				close_time: '21:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			// * Restaurant 14
 			{
@@ -146,6 +164,7 @@ module.exports = {
 				day: 'Monday',
 				open_time: '08:00:00',
 				close_time: '20:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -153,6 +172,7 @@ module.exports = {
 				day: 'Tuesday',
 				open_time: '08:00:00',
 				close_time: '20:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -160,6 +180,7 @@ module.exports = {
 				day: 'Wednesday',
 				open_time: '08:00:00',
 				close_time: '20:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -167,6 +188,7 @@ module.exports = {
 				day: 'Thursday',
 				open_time: '08:00:00',
 				close_time: '20:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -174,6 +196,7 @@ module.exports = {
 				day: 'Friday',
 				open_time: '08:00:00',
 				close_time: '20:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -181,6 +204,7 @@ module.exports = {
 				day: 'Saturday',
 				open_time: '08:00:00',
 				close_time: '20:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			// * Restaurant 15
 			{
@@ -189,6 +213,7 @@ module.exports = {
 				day: 'Monday',
 				open_time: '10:00:00',
 				close_time: '21:30:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -196,6 +221,7 @@ module.exports = {
 				day: 'Tuesday',
 				open_time: '10:00:00',
 				close_time: '21:30:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -203,6 +229,7 @@ module.exports = {
 				day: 'Wednesday',
 				open_time: '10:00:00',
 				close_time: '21:30:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -210,6 +237,7 @@ module.exports = {
 				day: 'Thursday',
 				open_time: '10:00:00',
 				close_time: '21:30:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -217,6 +245,7 @@ module.exports = {
 				day: 'Friday',
 				open_time: '10:00:00',
 				close_time: '21:30:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -224,6 +253,7 @@ module.exports = {
 				day: 'Saturday',
 				open_time: '10:00:00',
 				close_time: '21:30:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			// * Restaurant 16
 			{
@@ -232,6 +262,7 @@ module.exports = {
 				day: 'Monday',
 				open_time: '09:30:00',
 				close_time: '21:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -239,6 +270,7 @@ module.exports = {
 				day: 'Tuesday',
 				open_time: '09:30:00',
 				close_time: '21:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -246,6 +278,7 @@ module.exports = {
 				day: 'Wednesday',
 				open_time: '09:30:00',
 				close_time: '21:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -253,6 +286,7 @@ module.exports = {
 				day: 'Thursday',
 				open_time: '09:30:00',
 				close_time: '21:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -260,6 +294,7 @@ module.exports = {
 				day: 'Friday',
 				open_time: '09:30:00',
 				close_time: '21:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -267,6 +302,7 @@ module.exports = {
 				day: 'Saturday',
 				open_time: '09:30:00',
 				close_time: '21:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			// * Restaurant 17
 			{
@@ -275,6 +311,7 @@ module.exports = {
 				day: 'Monday',
 				open_time: '10:30:00',
 				close_time: '21:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -282,6 +319,7 @@ module.exports = {
 				day: 'Tuesday',
 				open_time: '10:30:00',
 				close_time: '21:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -289,6 +327,7 @@ module.exports = {
 				day: 'Wednesday',
 				open_time: '10:30:00',
 				close_time: '21:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -296,6 +335,7 @@ module.exports = {
 				day: 'Thursday',
 				open_time: '10:30:00',
 				close_time: '21:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -303,6 +343,7 @@ module.exports = {
 				day: 'Friday',
 				open_time: '10:30:00',
 				close_time: '221:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -310,6 +351,7 @@ module.exports = {
 				day: 'Saturday',
 				open_time: '10:30:00',
 				close_time: '21:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			// * Restaurant 18
 			{
@@ -318,6 +360,7 @@ module.exports = {
 				day: 'Monday',
 				open_time: '08:00:00',
 				close_time: '20:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -325,6 +368,7 @@ module.exports = {
 				day: 'Tuesday',
 				open_time: '08:00:00',
 				close_time: '20:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -332,6 +376,7 @@ module.exports = {
 				day: 'Wednesday',
 				open_time: '08:00:00',
 				close_time: '20:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -339,6 +384,7 @@ module.exports = {
 				day: 'Thursday',
 				open_time: '08:00:00',
 				close_time: '20:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -346,6 +392,7 @@ module.exports = {
 				day: 'Friday',
 				open_time: '08:00:00',
 				close_time: '20:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -353,6 +400,7 @@ module.exports = {
 				day: 'Saturday',
 				open_time: '08:00:00',
 				close_time: '20:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			// * Restaurant 19
 			{
@@ -361,6 +409,7 @@ module.exports = {
 				day: 'Monday',
 				open_time: '09:00:00',
 				close_time: '21:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -368,6 +417,7 @@ module.exports = {
 				day: 'Tuesday',
 				open_time: '09:00:00',
 				close_time: '21:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -375,6 +425,7 @@ module.exports = {
 				day: 'Wednesday',
 				open_time: '09:00:00',
 				close_time: '21:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -382,6 +433,7 @@ module.exports = {
 				day: 'Thursday',
 				open_time: '09:00:00',
 				close_time: '21:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -389,6 +441,7 @@ module.exports = {
 				day: 'Friday',
 				open_time: '09:00:00',
 				close_time: '21:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -396,6 +449,7 @@ module.exports = {
 				day: 'Saturday',
 				open_time: '09:00:00',
 				close_time: '21:00:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			// * Restaurant 20
 			{
@@ -404,6 +458,7 @@ module.exports = {
 				day: 'Monday',
 				open_time: '10:30:00',
 				close_time: '21:30:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -411,6 +466,7 @@ module.exports = {
 				day: 'Tuesday',
 				open_time: '10:30:00',
 				close_time: '21:30:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -418,6 +474,7 @@ module.exports = {
 				day: 'Wednesday',
 				open_time: '10:30:00',
 				close_time: '21:30:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -425,6 +482,7 @@ module.exports = {
 				day: 'Thursday',
 				open_time: '10:30:00',
 				close_time: '21:30:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -432,6 +490,7 @@ module.exports = {
 				day: 'Friday',
 				open_time: '10:30:00',
 				close_time: '21:30:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				openhrs_id: uuidv4(),
@@ -439,6 +498,7 @@ module.exports = {
 				day: 'Saturday',
 				open_time: '10:30:00',
 				close_time: '21:30:00',
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 		]);
 	},

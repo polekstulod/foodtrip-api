@@ -8,6 +8,21 @@ module.exports = {
 		await queryInterface.bulkInsert('Users', [
 			// * Example
 			{
+				user_id: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
+				user_no: `USR-${Math.floor(Date.now() * 1.5)}`,
+				password: await bcrypt.hash('SysAdmin@123', parseInt(process.env.SALT_ROUND)),
+				first_name: 'System',
+				middle_name: null,
+				last_name: 'Admin',
+				email_address: 'sysadmin@gmail.com',
+				phone_number: null,
+				gender: null,
+				user_type: 'Admin',
+				date_created: new Date(),
+				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
+			},
+			{
 				user_id: uuidv4(),
 				user_no: `USR-${Math.floor(Date.now() * 1.5)}`,
 				password: await bcrypt.hash('Customer@123', parseInt(process.env.SALT_ROUND)),
@@ -20,6 +35,7 @@ module.exports = {
 				user_type: 'Customer',
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				user_id: uuidv4(),
@@ -34,6 +50,7 @@ module.exports = {
 				user_type: 'Customer',
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				user_id: uuidv4(),
@@ -48,6 +65,7 @@ module.exports = {
 				user_type: 'Customer',
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				user_id: uuidv4(),
@@ -62,6 +80,7 @@ module.exports = {
 				user_type: 'Customer',
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				user_id: uuidv4(),
@@ -76,6 +95,7 @@ module.exports = {
 				user_type: 'Customer',
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				user_id: uuidv4(),
@@ -90,6 +110,7 @@ module.exports = {
 				user_type: 'Customer',
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				user_id: uuidv4(),
@@ -104,6 +125,7 @@ module.exports = {
 				user_type: 'Customer',
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				user_id: uuidv4(),
@@ -118,6 +140,7 @@ module.exports = {
 				user_type: 'Customer',
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				user_id: uuidv4(),
@@ -132,6 +155,7 @@ module.exports = {
 				user_type: 'Customer',
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				user_id: uuidv4(),
@@ -146,6 +170,7 @@ module.exports = {
 				user_type: 'Customer',
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				user_id: uuidv4(),
@@ -160,6 +185,7 @@ module.exports = {
 				user_type: 'Customer',
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 		]);
 
@@ -184,6 +210,7 @@ module.exports = {
 				user_id: userRows[0].user_id,
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				address_id: uuidv4(),
@@ -200,6 +227,7 @@ module.exports = {
 				user_id: userRows[1].user_id,
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				address_id: uuidv4(),
@@ -216,6 +244,7 @@ module.exports = {
 				user_id: userRows[2].user_id,
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				address_id: uuidv4(),
@@ -232,6 +261,7 @@ module.exports = {
 				user_id: userRows[3].user_id,
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				address_id: uuidv4(),
@@ -248,6 +278,7 @@ module.exports = {
 				user_id: userRows[4].user_id,
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				address_id: uuidv4(),
@@ -264,6 +295,7 @@ module.exports = {
 				user_id: userRows[5].user_id,
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				address_id: uuidv4(),
@@ -280,6 +312,7 @@ module.exports = {
 				user_id: userRows[6].user_id,
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				address_id: uuidv4(),
@@ -296,6 +329,7 @@ module.exports = {
 				user_id: userRows[7].user_id,
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				address_id: uuidv4(),
@@ -312,6 +346,7 @@ module.exports = {
 				user_id: userRows[8].user_id,
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				address_id: uuidv4(),
@@ -328,6 +363,7 @@ module.exports = {
 				user_id: userRows[9].user_id,
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				address_id: uuidv4(),
@@ -344,6 +380,7 @@ module.exports = {
 				user_id: userRows[10].user_id,
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				address_id: uuidv4(),
@@ -360,6 +397,7 @@ module.exports = {
 				user_id: userRows[1].user_id,
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				address_id: uuidv4(),
@@ -376,6 +414,7 @@ module.exports = {
 				user_id: userRows[2].user_id,
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				address_id: uuidv4(),
@@ -392,6 +431,7 @@ module.exports = {
 				user_id: userRows[3].user_id,
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				address_id: uuidv4(),
@@ -408,6 +448,7 @@ module.exports = {
 				user_id: userRows[4].user_id,
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				address_id: uuidv4(),
@@ -424,6 +465,7 @@ module.exports = {
 				user_id: userRows[5].user_id,
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 		]);
 	},

@@ -22,6 +22,7 @@ module.exports = {
 				restocatg_id: restoCatRows[0].restocatg_id,
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				resto_id: uuidv4(),
@@ -35,6 +36,7 @@ module.exports = {
 				restocatg_id: restoCatRows[0].restocatg_id,
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				resto_id: uuidv4(),
@@ -48,6 +50,7 @@ module.exports = {
 				restocatg_id: restoCatRows[1].restocatg_id,
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				resto_id: uuidv4(),
@@ -61,6 +64,7 @@ module.exports = {
 				restocatg_id: restoCatRows[1].restocatg_id,
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				resto_id: uuidv4(),
@@ -74,6 +78,7 @@ module.exports = {
 				restocatg_id: restoCatRows[3].restocatg_id,
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				resto_id: uuidv4(),
@@ -87,6 +92,7 @@ module.exports = {
 				restocatg_id: restoCatRows[3].restocatg_id,
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				resto_id: uuidv4(),
@@ -100,6 +106,7 @@ module.exports = {
 				restocatg_id: restoCatRows[4].restocatg_id,
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				resto_id: uuidv4(),
@@ -113,6 +120,7 @@ module.exports = {
 				restocatg_id: restoCatRows[4].restocatg_id,
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				resto_id: uuidv4(),
@@ -126,6 +134,7 @@ module.exports = {
 				restocatg_id: restoCatRows[5].restocatg_id,
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				resto_id: uuidv4(),
@@ -139,6 +148,7 @@ module.exports = {
 				restocatg_id: restoCatRows[5].restocatg_id,
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 		]);
 	},

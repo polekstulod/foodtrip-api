@@ -23,6 +23,7 @@ module.exports = {
 				resto_id: restaurantRows[11].resto_id,
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				address_id: uuidv4(),
@@ -37,6 +38,7 @@ module.exports = {
 				resto_id: restaurantRows[12].resto_id,
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				address_id: uuidv4(),
@@ -51,6 +53,7 @@ module.exports = {
 				resto_id: restaurantRows[13].resto_id,
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				address_id: uuidv4(),
@@ -65,6 +68,7 @@ module.exports = {
 				resto_id: restaurantRows[14].resto_id,
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				address_id: uuidv4(),
@@ -79,6 +83,7 @@ module.exports = {
 				resto_id: restaurantRows[15].resto_id,
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				address_id: uuidv4(),
@@ -93,6 +98,7 @@ module.exports = {
 				resto_id: restaurantRows[16].resto_id,
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				address_id: uuidv4(),
@@ -107,6 +113,7 @@ module.exports = {
 				resto_id: restaurantRows[17].resto_id,
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				address_id: uuidv4(),
@@ -121,6 +128,7 @@ module.exports = {
 				resto_id: restaurantRows[18].resto_id,
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				address_id: uuidv4(),
@@ -135,6 +143,7 @@ module.exports = {
 				resto_id: restaurantRows[19].resto_id,
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				address_id: uuidv4(),
@@ -149,6 +158,7 @@ module.exports = {
 				resto_id: restaurantRows[20].resto_id,
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 		]);
 	},

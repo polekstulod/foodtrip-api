@@ -16,6 +16,7 @@ module.exports = {
 				user_type: 'Admin',
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				user_id: uuidv4(),
@@ -28,6 +29,7 @@ module.exports = {
 				user_type: 'Admin',
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				user_id: uuidv4(),
@@ -40,6 +42,7 @@ module.exports = {
 				user_type: 'Admin',
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				user_id: uuidv4(),
@@ -52,6 +55,7 @@ module.exports = {
 				user_type: 'Admin',
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				user_id: uuidv4(),
@@ -64,6 +68,7 @@ module.exports = {
 				user_type: 'Admin',
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				user_id: uuidv4(),
@@ -76,6 +81,7 @@ module.exports = {
 				user_type: 'Admin',
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 			{
 				user_id: uuidv4(),
@@ -88,6 +94,7 @@ module.exports = {
 				user_type: 'Admin',
 				date_created: new Date(),
 				date_updated: new Date(),
+				created_by: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
 			},
 		]);
 	},
