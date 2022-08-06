@@ -24,7 +24,15 @@ exports.getOrder = async (req, res) => {
 	const id = req.params.orderID;
 
 	try {
-		const data = await db.Order.findOne({ where: { order_id: id }, include: ['address', 'created'] });
+		const data = await db.Order.findOne({
+			where: { order_id: id },
+			include: [
+				{ model: db.Dish, as: 'order_dishes', include: ['dish_category'] },
+				'address',
+				'created',
+				'delivery_details',
+			],
+		});
 		dataResponse(res, data, 'Order has been retrieved', 'No Order has been retrieved');
 	} catch (err) {
 		errResponse(res, err);

@@ -65,7 +65,12 @@ exports.getOrder = async (req, res) => {
 	const id = req.params.orderID;
 	try {
 		const data = await db.Order.findByPk(id, {
-			include: ['order_dishes', 'address', 'restaurant', 'delivery_details'],
+			include: [
+				{ model: db.Dish, as: 'order_dishes', include: ['dish_category'] },
+				'address',
+				'restaurant',
+				'delivery_details',
+			],
 		});
 		dataResponse(res, data, 'Order has been retrieved', 'No Order has been retrieved');
 	} catch (err) {
