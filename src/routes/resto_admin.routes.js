@@ -25,6 +25,9 @@ router.put('/order/otw/:orderID', orderCtl.otw);
 router.put('/order/delivered/:orderID', orderCtl.delivered);
 router.put('/order/rejected/:orderID', orderCtl.rejected);
 
+var courierCtl = require('../controllers/resto_admin/couriers.controller');
+router.get('/couriers', courierCtl.getAllCouriers);
+
 var acctInfoCtl = require('../controllers/resto_admin/acc_info.controller');
 router.get('/account/info', acctInfoCtl.getAccountInfo);
 router.put('/account/info', acctInfoCtl.updateAcctInfo);
