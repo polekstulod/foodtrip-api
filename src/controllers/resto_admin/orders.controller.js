@@ -9,7 +9,7 @@ exports.getAllOrders = async (req, res) => {
 	const id = req.user.resto_id;
 
 	try {
-		const data = await db.Order.findAll({ where: { resto_id: id } });
+		const data = await db.Order.findAll({ where: { resto_id: id }, include: ['created'] });
 		dataResponse(res, data, 'All Orders has been retrieved', 'No Orders has been retrieved');
 	} catch (err) {
 		errResponse(res, err);
