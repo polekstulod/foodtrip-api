@@ -47,14 +47,16 @@ exports.getAllOrders = async (req, res) => {
 	}
 
 	try {
-		const data = await db.Order.findAll({ include: ['order_dishes'] });
+		const data = await db.Order.findAll({
+			include: [{ model: db.Dish, as: 'order_dishes', include: ['dish_category'] }, 'restaurant'],
+		});
 		dataResponse(res, data, 'All Orders has been retrieved', 'No Orders has been retrieved');
 	} catch (err) {
 		errResponse(res, err);
 	}
 };
 
-// * Retrieved All Order
+// * Retrieved Order
 exports.getOrder = async (req, res) => {
 	if (!checkAuthorization(req, res, 'Customer')) {
 		return;
@@ -62,7 +64,9 @@ exports.getOrder = async (req, res) => {
 
 	const id = req.params.orderID;
 	try {
-		const data = await db.Order.findByPk(id, { include: ['order_dishes', 'address', 'restaurant'] });
+		const data = await db.Order.findByPk(id, {
+			include: ['order_dishes', 'address', 'restaurant', 'delivery_details'],
+		});
 		dataResponse(res, data, 'Order has been retrieved', 'No Order has been retrieved');
 	} catch (err) {
 		errResponse(res, err);
