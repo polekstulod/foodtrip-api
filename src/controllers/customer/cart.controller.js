@@ -9,6 +9,7 @@ exports.addToCart = async (req, res) => {
 
 	const dishID = req.params.dishID;
 	const userID = req.user.user_id;
+	req.body.quantity = 1;
 
 	// * Check if dish is existing, if then, Add quantity
 	const checkDish = await db.CartDetail.findOne({ where: { dish_id: dishID } });
@@ -73,7 +74,10 @@ exports.getCart = async (req, res) => {
 	const userID = req.user.user_id;
 
 	try {
-		const data = await db.Cart.findOne({ where: { created_by: userID }, include: ['cart_dishes'] });
+		const data = await db.Cart.findOne({
+			where: { created_by: userID },
+			include: [{ model: db.Dish, as: 'cart_dishes', include: ['dish_category'] }, 'restaurant'],
+		});
 		dataResponse(res, data, 'Cart has been successfully retrieved', 'No Cart has been successfully retrieved');
 	} catch (err) {
 		errResponse(res, err);
