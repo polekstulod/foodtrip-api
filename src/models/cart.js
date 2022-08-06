@@ -15,6 +15,7 @@ module.exports = (sequelize, DataTypes) => {
 			});
 
 			this.belongsTo(models.Restaurant, {
+				as: 'restaurant',
 				foreignKey: 'resto_id',
 			});
 
