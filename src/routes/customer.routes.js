@@ -41,4 +41,9 @@ router.post('/order', orderCtl.createOrder);
 router.get('/orders', orderCtl.getAllOrders);
 router.get('/order/:orderID', orderCtl.getOrder);
 
+var exploreCtl = require('../controllers/customer/explore.controller');
+router.get('/some-resto-cat', exploreCtl.getSomeRestoCat);
+router.get('/pop-dishes', exploreCtl.getPopularDishes);
+router.get('/pop-restaurants', exploreCtl.getPopularRestaurants);
+
 module.exports = router;
