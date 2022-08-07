@@ -37,4 +37,7 @@ router.get('/order/:orderID', orderCtl.getOrder);
 var courierCtl = require('../controllers/admin/couriers.controller');
 router.get('/couriers', courierCtl.getAllCouriers);
 
+var deliveryCtl = require('../controllers/admin/deliveries.controller');
+router.get('/deliveries', deliveryCtl.getAllDeliveries);
+
 module.exports = router;
