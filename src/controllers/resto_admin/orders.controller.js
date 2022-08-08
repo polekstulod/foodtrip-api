@@ -117,7 +117,26 @@ exports.rejected = async (req, res) => {
 
 	try {
 		await db.Order.update(
-			{ order_status: 'Rejected', updated_by: req.user.user_id, date_cancelled: new Date() },
+			{ order_status: 'Rejected', updated_by: req.user.user_id, date_rejected: new Date() },
+			{ where: { order_id: id } }
+		);
+		const data = await db.Order.findByPk(id);
+		dataResponse(res, data, 'Order Status has been updated', 'No Order Status has been updated');
+	} catch (err) {
+		errResponse(res, err);
+	}
+};
+
+exports.cancelled = async (req, res) => {
+	if (!checkAuthorization(req, res, 'Resto_Admin')) {
+		return;
+	}
+
+	const id = req.params.orderID;
+
+	try {
+		await db.Order.update(
+			{ order_status: 'Cancelled', updated_by: req.user.user_id, date_cancelled: new Date() },
 			{ where: { order_id: id } }
 		);
 		const data = await db.Order.findByPk(id);
