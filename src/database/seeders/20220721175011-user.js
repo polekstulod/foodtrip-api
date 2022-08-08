@@ -9,7 +9,7 @@ module.exports = {
 			// * Example
 			{
 				user_id: '70ea56c6-407b-4bdf-8cf0-b4e09df50fe8',
-				user_no: `USR-${Math.floor(Date.now() * 1.5)}`,
+				user_no: 'USR-9999999999999',
 				password: await bcrypt.hash('SysAdmin@123', parseInt(process.env.SALT_ROUND)),
 				first_name: 'System',
 				middle_name: null,
