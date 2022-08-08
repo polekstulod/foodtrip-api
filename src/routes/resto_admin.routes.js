@@ -24,6 +24,7 @@ router.put('/order/in-process/:orderID', orderCtl.inProcess);
 router.put('/order/otw/:orderID', orderCtl.otw);
 router.put('/order/delivered/:orderID', orderCtl.delivered);
 router.put('/order/rejected/:orderID', orderCtl.rejected);
+router.put('/order/cancelled/:orderID', orderCtl.cancelled);
 
 var courierCtl = require('../controllers/resto_admin/couriers.controller');
 router.get('/couriers', courierCtl.getAllCouriers);
