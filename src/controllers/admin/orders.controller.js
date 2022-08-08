@@ -29,7 +29,7 @@ exports.getOrder = async (req, res) => {
 				'created',
 				'order_dishes',
 				{ model: db.Restaurant, as: 'restaurant', include: ['restaurant_category'] },
-				'delivery_details',
+				{ model: db.DeliveryDetails, as: 'delivery_details', include: ['courier'] },
 			],
 		});
 		dataResponse(res, data, 'Order has been retrieved', 'No Order has been retrieved');
