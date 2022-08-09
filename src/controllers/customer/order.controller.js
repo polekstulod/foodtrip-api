@@ -49,6 +49,7 @@ exports.getAllOrders = async (req, res) => {
 	try {
 		const data = await db.Order.findAll({
 			include: [{ model: db.Dish, as: 'order_dishes', include: ['dish_category'] }, 'restaurant'],
+			order: [['date_created', 'DESC']],
 		});
 		dataResponse(res, data, 'All Orders has been retrieved', 'No Orders has been retrieved');
 	} catch (err) {
@@ -68,11 +69,31 @@ exports.getOrder = async (req, res) => {
 			include: [
 				{ model: db.Dish, as: 'order_dishes', include: ['dish_category'] },
 				'address',
-				'restaurant',
+				{ model: db.Restaurant, as: 'restaurant', include: 'restaurant_category' },
 				{ model: db.DeliveryDetails, as: 'delivery_details', include: ['courier'] },
 			],
 		});
 		dataResponse(res, data, 'Order has been retrieved', 'No Order has been retrieved');
+	} catch (err) {
+		errResponse(res, err);
+	}
+};
+
+// * Cancel Order
+exports.cancelOrder = async (req, res) => {
+	if (!checkAuthorization(req, res, 'Customer')) {
+		return;
+	}
+
+	const id = req.params.orderID;
+
+	try {
+		await db.Order.update(
+			{ order_status: 'Cancelled', updated_by: req.user.user_id, date_cancelled: new Date() },
+			{ where: { order_id: id } }
+		);
+		const data = await db.Order.findByPk(id);
+		dataResponse(res, data, 'Order Status has been updated', 'No Order Status has been updated');
 	} catch (err) {
 		errResponse(res, err);
 	}

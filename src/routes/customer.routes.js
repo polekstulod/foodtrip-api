@@ -40,6 +40,7 @@ var orderCtl = require('../controllers/customer/order.controller');
 router.post('/order', orderCtl.createOrder);
 router.get('/orders', orderCtl.getAllOrders);
 router.get('/order/:orderID', orderCtl.getOrder);
+router.put('/order/cancelled/:orderID', orderCtl.cancelOrder);
 
 var exploreCtl = require('../controllers/customer/explore.controller');
 router.get('/some-resto-cat', exploreCtl.getSomeRestoCat);
