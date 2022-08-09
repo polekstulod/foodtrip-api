@@ -106,7 +106,7 @@ exports.getAllRestoCat = async (req, res) => {
 
 	try {
 		const data = await dataTable(db.RestoCategory, req.body, {
-			include: ['restaurants'],
+			include: ['restaurants', 'created'],
 		});
 		res.send(data);
 	} catch (err) {
