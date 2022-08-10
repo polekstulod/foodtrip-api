@@ -12,8 +12,8 @@ exports.createAddress = async (req, res) => {
 	req.body.user_id = req.user.user_id;
 
 	try {
-		let data = await db.Address.create(req.body, { include: ['created'] });
-		let result = await db.Address.findByPk(data.address_id, { include: ['created'] });
+		const data = await db.Address.create(req.body, { include: ['created'] });
+		const result = await db.Address.findByPk(data.address_id, { include: ['created'] });
 		dataResponse(res, result, 'Address has been successfully created', 'No Address has been successfully created');
 	} catch (err) {
 		errResponse(res, err);
@@ -29,7 +29,7 @@ exports.getAllAddress = async (req, res) => {
 	const id = req.user.user_id;
 
 	try {
-		let data = await db.Address.findAll({ where: { user_id: id } });
+		const data = await db.Address.findAll({ where: { user_id: id } });
 		dataResponse(res, data, 'All Address has been retrieved', 'No Address has been retrieved');
 	} catch (err) {
 		errResponse(res, err);
@@ -46,7 +46,7 @@ exports.getAddress = async (req, res) => {
 	const id = req.user.user_id;
 
 	try {
-		let data = await db.Address.findAll({ where: { user_id: id, address_id: addressID } });
+		const data = await db.Address.findOne({ where: { user_id: id, address_id: addressID } });
 		dataResponse(res, data, 'Address has been retrieved', 'No Address has been retrieved');
 	} catch (err) {
 		errResponse(res, err);
@@ -63,11 +63,11 @@ exports.updateAddress = async (req, res) => {
 	req.body.updated_by = req.user.user_id;
 
 	try {
-		let result = await db.Address.update(req.body, {
+		const result = await db.Address.update(req.body, {
 			where: { address_id: id },
 		});
 		if (result == 1) {
-			let data = await db.Address.findByPk(id, { include: ['updated'] });
+			const data = await db.Address.findByPk(id, { include: ['updated'] });
 			dataResponse(res, data, 'Address has been successfully updated', 'No Address has been successfully updated');
 		} else {
 			errResponse(res, 'Error in Updating Address');
@@ -88,11 +88,11 @@ exports.updateDefaultAddress = async (req, res) => {
 	req.body.updated_by = req.user.user_id;
 
 	try {
-		let defaultAdd = await db.Address.findAll({ where: { user_id: userID, is_default: 1 } });
+		const defaultAdd = await db.Address.findOne({ where: { user_id: userID, is_default: 1 } });
 
 		await db.Address.update({ is_default: '0' }, { where: { address_id: defaultAdd[0].address_id, is_default: '1' } });
 
-		let result = await db.Address.update(
+		const result = await db.Address.update(
 			{ is_default: '1' },
 			{
 				where: { address_id: id },
@@ -100,7 +100,7 @@ exports.updateDefaultAddress = async (req, res) => {
 		);
 
 		if (result == 1) {
-			let data = await db.Address.findByPk(id, { include: ['updated'] });
+			const data = await db.Address.findByPk(id, { include: ['updated'] });
 			dataResponse(
 				res,
 				data,
@@ -125,7 +125,7 @@ exports.deleteAddress = async (req, res) => {
 	req.body.deleted_by = req.user.user_id;
 
 	try {
-		let del = await db.Address.destroy({
+		const del = await db.Address.destroy({
 			where: {
 				address_id: id,
 			},
@@ -137,7 +137,7 @@ exports.deleteAddress = async (req, res) => {
 				paranoid: false,
 			});
 
-			let data = await db.Address.findByPk(id, { paranoid: false, include: ['deleted'] });
+			const data = await db.Address.findByPk(id, { paranoid: false, include: ['deleted'] });
 			dataResponse(res, data, 'Address has been successfully deleted', 'No address has been successfully deleted.');
 		} else {
 			errResponse(res, 'Error in deleting Address');

@@ -29,7 +29,7 @@ exports.getAllDishes = async (req, res) => {
 			},
 		],
 		start: 0,
-		length: 10,
+		length: 100,
 		search: {
 			value: '',
 			regex: false,
@@ -37,7 +37,7 @@ exports.getAllDishes = async (req, res) => {
 	};
 
 	try {
-		let data = await dataTable(db.Dish, req.body, {
+		const data = await dataTable(db.Dish, req.body, {
 			include: ['dish_category', 'restaurant'],
 		});
 		res.send(data);
@@ -73,7 +73,7 @@ exports.getAllDishCat = async (req, res) => {
 			},
 		],
 		start: 0,
-		length: 10,
+		length: 100,
 		search: {
 			value: '',
 			regex: false,
@@ -81,7 +81,7 @@ exports.getAllDishCat = async (req, res) => {
 	};
 
 	try {
-		let data = await dataTable(db.DishCategory, req.body, {
+		const data = await dataTable(db.DishCategory, req.body, {
 			include: ['dishes'],
 		});
 		res.send(data);
@@ -99,7 +99,7 @@ exports.getDish = async (req, res) => {
 	const id = req.params.dishID;
 
 	try {
-		let data = await db.Dish.findByPk(id, { include: ['dish_category', 'restaurant'] });
+		const data = await db.Dish.findByPk(id, { include: ['dish_category', 'restaurant'] });
 		dataResponse(res, data, 'Dish has been retrieved', 'No Dish has been retrieved');
 	} catch (err) {
 		errResponse(res, err);
@@ -115,7 +115,7 @@ exports.getDishCat = async (req, res) => {
 	const id = req.params.dishCatID;
 
 	try {
-		let data = await db.DishCategory.findByPk(id, { include: ['dishes'] });
+		const data = await db.DishCategory.findByPk(id, { include: ['dishes'] });
 		dataResponse(res, data, 'Dish Category has been retrieved', 'No Dish Category has been retrieved');
 	} catch (err) {
 		errResponse(res, err);

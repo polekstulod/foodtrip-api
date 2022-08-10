@@ -1,7 +1,7 @@
 'use strict';
 const { Model } = require('sequelize');
 
-const PROTECTED_ATTRIBUTES = ['user_id', 'password'];
+const PROTECTED_ATTRIBUTES = ['password'];
 
 module.exports = (sequelize, DataTypes) => {
 	class User extends Model {
@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
 			});
 
 			this.hasMany(models.Address, {
-				as: 'user',
+				as: 'addresses',
 				foreignKey: 'user_id',
 			});
 
@@ -64,7 +64,7 @@ module.exports = (sequelize, DataTypes) => {
 				},
 			},
 			user_no: {
-				type: DataTypes.BIGINT(11),
+				type: DataTypes.STRING(17),
 				allowNull: false,
 				unique: { msg: 'User Number already exists.' },
 				validate: {

@@ -1,0 +1,3005 @@
+{
+	"info": {
+		"_postman_id": "44e77e97-ba42-4b52-aadb-eb9bc3fa13fb",
+		"name": "FoodTrip",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19581172"
+	},
+	"item": [
+		{
+			"name": "Home",
+			"item": [
+				{
+					"name": "Login",
+					"item": [
+						{
+							"name": "Admin Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email_address\": \"paultulod@pm.me\",\r\n    \"password\": \"Admin@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/home/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"home",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Customer Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email_address\": \"princess28@gmail.com\",\r\n    \"password\": \"Customer@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/home/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"home",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Resto Admin Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email_address\": \"Roderick@gmail.com\",\r\n    \"password\": \"RestoAdmin@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/home/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"home",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Register",
+					"item": [
+						{
+							"name": "Register Customer",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\": \"password\",\r\n    \"first_name\": \"thirteen customer\",\r\n    \"middle_name\": \"\",\r\n    \"last_name\": \"last name\",\r\n    \"email_address\": \"thirteen@gmail.com\",\r\n    \"phone_number\": \"09123456789\",\r\n    \"gender\": \"Others\",\r\n    \"user_type\": \"Customer\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/home/register/customer",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"home",
+										"register",
+										"customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Restaurant",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "resto_name",
+											"value": "낭만돼지 Romantic Baboy 2",
+											"type": "text"
+										},
+										{
+											"key": "resto_phone",
+											"value": "09123456789",
+											"type": "text"
+										},
+										{
+											"key": "resto_email",
+											"value": "romanticbaboy2@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "resto_landline",
+											"value": "98765432",
+											"type": "text"
+										},
+										{
+											"key": "resto_website",
+											"value": "www.romanticbaboy.com",
+											"type": "text"
+										},
+										{
+											"key": "restocatg_id",
+											"value": "c2e92c07-fc62-4029-a613-579643de599e",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "Open",
+											"type": "text"
+										},
+										{
+											"key": "resto_img",
+											"type": "file",
+											"src": "/C:/Users/pault/OneDrive/Pictures/IMG_20220502_164919.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/home/register/restaurant",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"home",
+										"register",
+										"restaurant"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Register Resto Admin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"resto_id\": \"e5d6c086-da66-4d8c-885f-2984a93e4a82\",\r\n    \"password\": \"password\",\r\n    \"first_name\": \"romantic\",\r\n    \"middle_name\": \"\",\r\n    \"last_name\": \"baboy\",\r\n    \"email_address\": \"romanticbaboy2@gmail.com\",\r\n    \"user_type\": \"Resto_Admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/home/register/resto-admin",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"home",
+										"register",
+										"resto-admin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Register Admin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\": \"admin\",\r\n    \"first_name\": \"Admin4\",\r\n    \"middle_name\": \"\",\r\n    \"last_name\": \"Admin4\",\r\n    \"email_address\": \"admin4@gmail.com\",\r\n    \"user_type\": \"Admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/home/register/admin",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"home",
+										"register",
+										"admin"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Dishes",
+					"item": [
+						{
+							"name": "Find All Dish",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/home/dishes/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"home",
+										"dishes",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find All Dish Category",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/home/dish-cat/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"home",
+										"dish-cat",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find Dish Category",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/home/dish-cat/:dishCatID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"home",
+										"dish-cat",
+										":dishCatID"
+									],
+									"variable": [
+										{
+											"key": "dishCatID",
+											"value": "0b53a4f1-68fb-4d21-9b99-4e2aa64eb696"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Restaurant",
+					"item": [
+						{
+							"name": "Find All  Restaurant",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/home/restaurants",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"home",
+										"restaurants"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find Restaurant",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/home/restaurant/:restoID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"home",
+										"restaurant",
+										":restoID"
+									],
+									"variable": [
+										{
+											"key": "restoID",
+											"value": "1c159440-43bb-42c5-9832-1623e7826d91"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Restaurant Category",
+					"item": [
+						{
+							"name": "Find All Restaurant Category",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/home/resto-categories",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"home",
+										"resto-categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find Restaurant Category",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/home/resto-category/:restoCatID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"home",
+										"resto-category",
+										":restoCatID"
+									],
+									"variable": [
+										{
+											"key": "restoCatID",
+											"value": "1eae726a-f45e-4f8e-99b2-02c3e34769b6"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Resto Admin",
+			"item": [
+				{
+					"name": "Restaurant",
+					"item": [
+						{
+							"name": "Find Restaurant",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/resto-admin/restaurant/:restoID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"resto-admin",
+										"restaurant",
+										":restoID"
+									],
+									"variable": [
+										{
+											"key": "restoID",
+											"value": "57da26cf-b157-4544-a72f-ae18c9d34287"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Restaurant",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "resto_name",
+											"value": "Yellow Cab",
+											"type": "text"
+										},
+										{
+											"key": "resto_email",
+											"value": "yellowcab@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "resto_phone",
+											"value": "09123456789",
+											"type": "text"
+										},
+										{
+											"key": "resto_landline",
+											"value": "98765432",
+											"type": "text"
+										},
+										{
+											"key": "resto_website",
+											"value": "www.yellowcab.com",
+											"type": "text"
+										},
+										{
+											"key": "restocatg_id",
+											"value": "f454f350-9f74-4505-a42e-a268a40aa739",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "Closed",
+											"type": "text"
+										},
+										{
+											"key": "resto_img",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/resto-admin/restaurant/:restoID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"resto-admin",
+										"restaurant",
+										":restoID"
+									],
+									"variable": [
+										{
+											"key": "restoID",
+											"value": "7789f5c1-1d00-4f42-a45e-026d738c14e3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Opening Hour",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"day\": \"Monday\",\r\n        \"open_time\": \"09:00:00\",\r\n        \"close_time\": \"21:00:00\"\r\n    },\r\n    {\r\n        \"day\": \"Thursday\",\r\n        \"open_time\": \"06:00:00\",\r\n        \"close_time\": \"21:00:00\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/resto-admin/restaurant/opening-hour",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"resto-admin",
+										"restaurant",
+										"opening-hour"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find All Opening Hour",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/resto-admin/restaurant/opening-hour",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"resto-admin",
+										"restaurant",
+										"opening-hour"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find Opening Hour",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/resto-admin/restaurant/opening-hour/:id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"resto-admin",
+										"restaurant",
+										"opening-hour",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "ed16de11-1b6d-4697-9697-c4b478168be7"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Opening Hour",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"day\": \"Monday\",\r\n    \"open_time\": \"07:00:00\",\r\n    \"close_time\": \"18:00:00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/restaurant/opening-hour/:id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"restaurant",
+										"opening-hour",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "e5814f34-093b-4cb2-91c0-7b63d21f9d47"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Opening Hour",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/resto-admin/restaurant/opening-hour/:id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"resto-admin",
+										"restaurant",
+										"opening-hour",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "d5249395-d8f3-4924-9088-c8f3af52cdd5"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Dish",
+					"item": [
+						{
+							"name": "Create Dish",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "dish_name",
+											"value": "Americano",
+											"type": "text"
+										},
+										{
+											"key": "dish_desc",
+											"value": "18-inch classic pizza oozing with Pure Mozzarella Cheese topped with premium ground beef and fresh white onion slices.",
+											"type": "text"
+										},
+										{
+											"key": "dish_price",
+											"value": "999",
+											"type": "text"
+										},
+										{
+											"key": "dish_img",
+											"type": "file",
+											"src": "/C:/Users/pault/OneDrive/Pictures/convege modem.jpg"
+										},
+										{
+											"key": "status",
+											"value": "Available",
+											"type": "text"
+										},
+										{
+											"key": "dishcatg_id",
+											"value": "568db479-1760-4e70-aa36-69c9b9ff9dc5",
+											"type": "text"
+										},
+										{
+											"key": "resto_id",
+											"value": "4b789228-d210-4070-a503-f82a79bc3732",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/resto-admin/dish",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"resto-admin",
+										"dish"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Dish",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/resto-admin/dishes/:restoID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"resto-admin",
+										"dishes",
+										":restoID"
+									],
+									"variable": [
+										{
+											"key": "restoID",
+											"value": "9a4f15b1-dafb-4773-93b2-43382de2d4c4"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find All Dish Category of Restaurant Copy",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/resto-admin/dish-cat/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"resto-admin",
+										"dish-cat",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find Dish Category of Restaurant",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/resto-admin/dish-cat/:dishCatID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"resto-admin",
+										"dish-cat",
+										":dishCatID"
+									],
+									"variable": [
+										{
+											"key": "dishCatID",
+											"value": "568db479-1760-4e70-aa36-69c9b9ff9dc5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find Dish",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/resto-admin/dish/:dishID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"resto-admin",
+										"dish",
+										":dishID"
+									],
+									"variable": [
+										{
+											"key": "dishID",
+											"value": "5147d512-ef9f-4adb-b957-e86dafab4b66"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Dish",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "dish_name",
+											"value": "Chocolate Blush",
+											"type": "text"
+										},
+										{
+											"key": "dish_desc",
+											"value": "An array of luscious chocolate cake, cream filling, strawberry cheesecake topped with malt chocolate.",
+											"type": "text"
+										},
+										{
+											"key": "dish_price",
+											"value": "1175",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "Available",
+											"type": "text"
+										},
+										{
+											"key": "dishcatg_id",
+											"value": "84f07a78-6752-45a4-9551-d666bb00a230",
+											"type": "text"
+										},
+										{
+											"key": "resto_id",
+											"value": "4b789228-d210-4070-a503-f82a79bc3732",
+											"type": "text"
+										},
+										{
+											"key": "dish_img",
+											"type": "file",
+											"src": "/C:/Users/pault/Downloads/contis-chocolate-blush-cake-02.jpeg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/resto-admin/dish/:dishID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"resto-admin",
+										"dish",
+										":dishID"
+									],
+									"variable": [
+										{
+											"key": "dishID",
+											"value": "12b6457c-090d-4e58-9316-0256aa9ae500"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Dish",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/resto-admin/dish/:dishID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"resto-admin",
+										"dish",
+										":dishID"
+									],
+									"variable": [
+										{
+											"key": "dishID",
+											"value": "5147d512-ef9f-4adb-b957-e86dafab4b66"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Account Info",
+					"item": [
+						{
+							"name": "Find User Account Info",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/resto-admin/account/info",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"resto-admin",
+										"account",
+										"info"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update User Account Info",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\": \"popeye\",\r\n    \"first_name\": \"Popeyes\",\r\n    \"middle_name\": \"Wings\",\r\n    \"last_name\": \"Chicken\",\r\n    \"email_address\": \"popeye@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/resto-admin/account/info",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"resto-admin",
+										"account",
+										"info"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Verify User Password",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\": \"popeye\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/resto-admin/account/verify-password",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"resto-admin",
+										"account",
+										"verify-password"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update User Password",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\": \"password\" \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/resto-admin/account/password",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"resto-admin",
+										"account",
+										"password"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Orders",
+					"item": [
+						{
+							"name": "Find All Orders",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/resto-admin/orders",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"resto-admin",
+										"orders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find Orders",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/resto-admin/order/:orderID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"resto-admin",
+										"order",
+										":orderID"
+									],
+									"variable": [
+										{
+											"key": "orderID",
+											"value": "ed02bd94-fab6-4c45-982f-c2a16204e3a8"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Order Status: In Process",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/resto-admin/order/in-process/:orderID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"resto-admin",
+										"order",
+										"in-process",
+										":orderID"
+									],
+									"variable": [
+										{
+											"key": "orderID",
+											"value": "ed02bd94-fab6-4c45-982f-c2a16204e3a8"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Order Status:  On The Way",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"courier_id\": \"b6ff7661-e6cb-491a-b57e-7241abcf930f\",\r\n    \"driver_name\": \"Josayah\",\r\n    \"driver_phone\": \"09451152076\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/resto-admin/order/otw/:orderID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"resto-admin",
+										"order",
+										"otw",
+										":orderID"
+									],
+									"variable": [
+										{
+											"key": "orderID",
+											"value": "ed02bd94-fab6-4c45-982f-c2a16204e3a8"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Order Status:  Delivered",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/resto-admin/order/delivered/:orderID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"resto-admin",
+										"order",
+										"delivered",
+										":orderID"
+									],
+									"variable": [
+										{
+											"key": "orderID",
+											"value": "ed02bd94-fab6-4c45-982f-c2a16204e3a8"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Order Status:  Rejected",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/resto-admin/order/rejected/:orderID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"resto-admin",
+										"order",
+										"rejected",
+										":orderID"
+									],
+									"variable": [
+										{
+											"key": "orderID",
+											"value": "395af1a7-1d5c-4f7c-8eed-5c052ea4a78f"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Order Status: Cancelled",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/resto-admin/order/cancelled/:orderID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"resto-admin",
+										"order",
+										"cancelled",
+										":orderID"
+									],
+									"variable": [
+										{
+											"key": "orderID",
+											"value": "26bf25d2-409c-4e00-b8bc-b0ad3394407e"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Couriers",
+					"item": [
+						{
+							"name": "Find All Couriers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/resto-admin/couriers",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"resto-admin",
+										"couriers"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYTUyZjlkYTMtZDI0NC00Nzg4LTk3YWEtNDM4MDk4OWU4MDE4IiwibmFtZSI6IlVyaWVsIEhhcnZleSIsImVtYWlsX2FkZHJlc3MiOiJVcmllbEBnbWFpbC5jb20iLCJyZXN0b19pZCI6IjJkZjg4YWVmLTYxNGUtNGM5Zi1hYTFiLTBlMWQ4ZDI0YzFmMCIsInVzZXJfdHlwZSI6IlJlc3RvX0FkbWluIiwiaWF0IjoxNjYwMDI4MjAwLCJleHAiOjE2NjAwNzE0MDB9.64VYkPWSjFz7iNFay_4nzj9rDlF37kXElxyFXbBxGYo",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Restaurant",
+					"item": [
+						{
+							"name": "Find All  Restaurant",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/restaurants",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"restaurants"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find Restaurant",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/restaurant/:restoID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"restaurant",
+										":restoID"
+									],
+									"variable": [
+										{
+											"key": "restoID",
+											"value": "29eb300e-8115-4783-8b65-2e14b9208b85"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find All  Restaurant Category",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/resto-cat",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"resto-cat"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find Restaurant Category",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/resto-cat/:restoCatID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"resto-cat",
+										":restoCatID"
+									],
+									"variable": [
+										{
+											"key": "restoCatID",
+											"value": "17e05ee4-6fff-4947-b258-46cf3c4d419f"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Dishes",
+					"item": [
+						{
+							"name": "Find All Dish",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/dishes/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"dishes",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find All Dish Category",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/dish-cat/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"dish-cat",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find Dish",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/dish/:dishID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"dish",
+										":dishID"
+									],
+									"variable": [
+										{
+											"key": "dishID",
+											"value": null,
+											"description": "015a4c53-a032-4c7b-80ba-1f1427f718a4"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find Dish Category",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/dish-cat/:dishCatID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"dish-cat",
+										":dishCatID"
+									],
+									"variable": [
+										{
+											"key": "dishCatID",
+											"value": "84f07a78-6752-45a4-9551-d666bb00a230"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "FInd All Resto Admin",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/user/resto-admin",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"user",
+										"resto-admin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find Resto Admin",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNTM4YzViYjQtMmI2My00MjczLThjZDMtMjY2MjAxZTUwOGIzIiwibmFtZSI6IlBhdWwgVHVsb2QiLCJlbWFpbF9hZGRyZXNzIjoicGF1bHR1bG9kQHBtLm1lIiwicmVzdG9faWQiOm51bGwsInVzZXJfdHlwZSI6IkFkbWluIiwiaWF0IjoxNjU5NTk3NTQzLCJleHAiOjE2NTk2NDA3NDN9.nf6WUFmh37u_dMUZJihZ3APiFj30KzdKWktw33SYT_8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/user/resto-admin/:restoAdminID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"user",
+										"resto-admin",
+										":restoAdminID"
+									],
+									"variable": [
+										{
+											"key": "restoAdminID",
+											"value": "2550d488-b837-47be-93ca-e261db4ae2fe"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find All Customers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/user/customer",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"user",
+										"customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find Customer",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/user/customer/:customerID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"user",
+										"customer",
+										":customerID"
+									],
+									"variable": [
+										{
+											"key": "customerID",
+											"value": "aaade4fa-91aa-417e-a5f7-7f4f3244c406"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find All Admin",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/user/admin",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"user",
+										"admin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find Admin",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/user/admin/:adminID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"user",
+										"admin",
+										":adminID"
+									],
+									"variable": [
+										{
+											"key": "adminID",
+											"value": "13a9bec7-36fe-48e4-a36e-b1f4e30e3024"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Address",
+					"item": [
+						{
+							"name": "Find All Address",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/address/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"address",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find Address",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/address/:addressID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"address",
+										":addressID"
+									],
+									"variable": [
+										{
+											"key": "addressID",
+											"value": "0c486f5d-67b7-4626-87b3-9c90ce8ef6ed"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Account Info",
+					"item": [
+						{
+							"name": "Find User Account Info",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/account/info",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"account",
+										"info"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update User Account Info",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"first_name\": \"Admin3\",\r\n    \"middle_name\": \"\",\r\n    \"last_name\": \"Admin3\",\r\n    \"email_address\": \"admin3@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/account/info",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"account",
+										"info"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Verify User Password",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\": \"Admin@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/account/verify-password",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"account",
+										"verify-password"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update User Password",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\": \"Admin@123\" \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/account/password",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"account",
+										"password"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Orders",
+					"item": [
+						{
+							"name": "Find All Orders",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/orders",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"orders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find Orders",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/order/:orderID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"order",
+										":orderID"
+									],
+									"variable": [
+										{
+											"key": "orderID",
+											"value": "ed02bd94-fab6-4c45-982f-c2a16204e3a8"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Delivery Details",
+					"item": [
+						{
+							"name": "Find All Couriers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/deliveries",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"deliveries"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Couriers",
+					"item": [
+						{
+							"name": "Find All Couriers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/couriers",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"couriers"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJjOWQ0NzctOGVmZC00MGM2LWFhNDItMTdjOGJlZDdjODhlIiwibmFtZSI6IlBhdWwgVHVsb2QiLCJlbWFpbF9hZGRyZXNzIjoicGF1bHR1bG9kQHBtLm1lIiwicmVzdG9faWQiOm51bGwsInVzZXJfdHlwZSI6IkFkbWluIiwiaWF0IjoxNjYwMDIwNTM5LCJleHAiOjE2NjAwNjM3Mzl9.g93B3NjVjhHfr_XsbcTZFQRdIdlgg-IsgzpZG_yKjAM",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Explore",
+					"item": [
+						{
+							"name": "Find Some Restaurant Category",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/customer/some-resto-cat",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"customer",
+										"some-resto-cat"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find Popular Dish",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/customer/pop-dishes",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"customer",
+										"pop-dishes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find Popular Restaurant",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/customer/pop-restaurants",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"customer",
+										"pop-restaurants"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Restaurant",
+					"item": [
+						{
+							"name": "Find All  Restaurant",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/customer/restaurants",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"customer",
+										"restaurants"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find Restaurant",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/customer/restaurant/:restoID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"customer",
+										"restaurant",
+										":restoID"
+									],
+									"variable": [
+										{
+											"key": "restoID",
+											"value": "06d3993e-cad4-49e2-bf3e-5bd3f0a5bac9"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find All Restaurant Category",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/customer/resto-cat",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"customer",
+										"resto-cat"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find Restaurant Category",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/customer/resto-cat/:restoCatID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"customer",
+										"resto-cat",
+										":restoCatID"
+									],
+									"variable": [
+										{
+											"key": "restoCatID",
+											"value": "040bbc9e-0360-4b1a-bdc3-7ca8bfd9fb06"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Dishes",
+					"item": [
+						{
+							"name": "Find All Dish",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/customer/dishes/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"customer",
+										"dishes",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find All Dish Category",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/customer/dish-cat/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"customer",
+										"dish-cat",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find Dish",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/customer/dish/:dishID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"customer",
+										"dish",
+										":dishID"
+									],
+									"variable": [
+										{
+											"key": "dishID",
+											"value": "6c4866d6-3b89-4a5a-a553-905c9dd1045c"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find Dish Category",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/customer/dish-cat/:dishCatID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"customer",
+										"dish-cat",
+										":dishCatID"
+									],
+									"variable": [
+										{
+											"key": "dishCatID",
+											"value": "568db479-1760-4e70-aa36-69c9b9ff9dc5"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Address",
+					"item": [
+						{
+							"name": "Create Address",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"address_1\": \"Block 8 Lot 34, Sunrise Street\",\r\n    \"address_2\": \"Maligaya Subdivision\",\r\n    \"barangay\": \"177\",\r\n    \"city\": \"Caloocan City\",\r\n    \"province\": \"Metro Manila\",\r\n    \"region\": \"Metro Manila\",\r\n    \"zip_code\": \"1424\",\r\n    \"phone_number\": \"09451152076\",\r\n    \"full_name\": \"Paul Tulod\",\r\n    \"is_default\": \"1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/customer/address/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"customer",
+										"address",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Another Address",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"address_1\": \"Sunrise Street\",\r\n    \"address_2\": \"Subdivision\",\r\n    \"barangay\": \"177\",\r\n    \"city\": \"City\",\r\n    \"province\": \"Manila\",\r\n    \"region\": \"Manila\",\r\n    \"zip_code\": \"1424\",\r\n    \"phone_number\": \"09451152076\",\r\n    \"full_name\": \"Tulod\",\r\n    \"is_default\": \"0\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/customer/address/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"customer",
+										"address",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find All Address",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/customer/address/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"customer",
+										"address",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find Address",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/customer/address/:addressID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"customer",
+										"address",
+										":addressID"
+									],
+									"variable": [
+										{
+											"key": "addressID",
+											"value": "2ad8e2ab-d7cc-440f-9247-6690665f134c"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Address",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"address_1\": \"Block 8 Lot 34, Sunrise Street\",\r\n    \"address_2\": \"Maligaya Subdivision\",\r\n    \"barangay\": \"177\",\r\n    \"city\": \"Caloocan City\",\r\n    \"province\": \"Metro Manila\",\r\n    \"region\": \"Metro Manila\",\r\n    \"zip_code\": \"1424\",\r\n    \"phone_number\": \"09451152076\",\r\n    \"full_name\": \"Paul Lim Tulod\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/customer/address/:addressID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"customer",
+										"address",
+										":addressID"
+									],
+									"variable": [
+										{
+											"key": "addressID",
+											"value": "2ad8e2ab-d7cc-440f-9247-6690665f134c"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Default Address",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/customer/address/default/:addressID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"customer",
+										"address",
+										"default",
+										":addressID"
+									],
+									"variable": [
+										{
+											"key": "addressID",
+											"value": "b671a9c7-7a77-4cd6-879b-b1a89fda6680"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Address",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/customer/address/:addressID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"customer",
+										"address",
+										":addressID"
+									],
+									"variable": [
+										{
+											"key": "addressID",
+											"value": "ddbcdb5c-a818-45b1-afcf-fb2210e184ba"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Account Info",
+					"item": [
+						{
+							"name": "Find User Account Info",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/customer/account/info",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"customer",
+										"account",
+										"info"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update User Account Info",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"first_name\": \"Paul\",\r\n    \"middle_name\": \"\",\r\n    \"last_name\": \"Tulod\",\r\n    \"email_address\": \"paultulod@gmail.com\",\r\n    \"phone_number\": \"09123456789\",\r\n    \"gender\": \"Male\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/customer/account/info",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"customer",
+										"account",
+										"info"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Verify User Password",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\": \"customer\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/customer/account/verify-password",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"customer",
+										"account",
+										"verify-password"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update User Password",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\": \"customer\" \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/customer/account/password",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"customer",
+										"account",
+										"password"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Cart",
+					"item": [
+						{
+							"name": "Add To Cart",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/customer/dish/:dishID/add-to-cart",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"customer",
+										"dish",
+										":dishID",
+										"add-to-cart"
+									],
+									"variable": [
+										{
+											"key": "dishID",
+											"value": "738889a0-6e19-477a-a345-4b6d74935ae0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Replace Cart",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/customer/cart/replace/:dishID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"customer",
+										"cart",
+										"replace",
+										":dishID"
+									],
+									"variable": [
+										{
+											"key": "dishID",
+											"value": "aaf3d305-c13a-46f7-9dd5-909dc32caa49"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Quantity",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/customer/cart/add-quantity/:cartDetailsID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"customer",
+										"cart",
+										"add-quantity",
+										":cartDetailsID"
+									],
+									"variable": [
+										{
+											"key": "cartDetailsID",
+											"value": "ef4792b2-f312-489d-93a0-d0b707a00f54"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Subract Quantity",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/customer/cart/sub-quantity/:cartDetailsID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"customer",
+										"cart",
+										"sub-quantity",
+										":cartDetailsID"
+									],
+									"variable": [
+										{
+											"key": "cartDetailsID",
+											"value": "0d6cddd6-5f40-49a0-b030-e280cbe9d61c"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find Cart",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/customer/cart",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"customer",
+										"cart"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Cart Details",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/customer/cart/:cartDetailsID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"customer",
+										"cart",
+										":cartDetailsID"
+									],
+									"variable": [
+										{
+											"key": "cartDetailsID",
+											"value": "6b8fa6d9-1b5e-423d-879a-45909bc132d0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Cart",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/customer/cart",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"customer",
+										"cart"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Orders",
+					"item": [
+						{
+							"name": "Create Order",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"order_comment\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et odio pellentesque diam volutpat commodo sed egestas. Interdum velit euismod in pellentesque massa placerat duis. Semper viverra nam libero justo. Ac felis donec et odio pellentesque diam.\",\r\n    \"address_id\": \"fa2a7a23-79c0-4b91-a9a3-990b71ea908b\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/customer/order",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"customer",
+										"order"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find All Orders",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/customer/orders",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"customer",
+										"orders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find Orders",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/customer/order/:orderID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"customer",
+										"order",
+										":orderID"
+									],
+									"variable": [
+										{
+											"key": "orderID",
+											"value": "e319a195-eb9b-4243-96a2-6f4c6ee5682a"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cancel Order",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/customer/order/cancelled/:orderID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"customer",
+										"order",
+										"cancelled",
+										":orderID"
+									],
+									"variable": [
+										{
+											"key": "orderID",
+											"value": "8b6f3f58-0592-4082-8b5e-2099f077efba"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNDg0NjdjMWEtY2NlNi00Y2U2LWFjZDUtOWRlZTYzMDliNjk5IiwibmFtZSI6IkplcmFsZCBHdWlsbGVybW8iLCJlbWFpbF9hZGRyZXNzIjoiamVyYWxkMDVAZ21haWwuY29tIiwicmVzdG9faWQiOm51bGwsInVzZXJfdHlwZSI6IkN1c3RvbWVyIiwiaWF0IjoxNjYwMDI4MDIyLCJleHAiOjE2NjAwNzEyMjJ9.SbAPhfkfXvnp3pUzmqr8G3MRfXBNSBE-CucWdvehDhQ",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}

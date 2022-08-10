@@ -36,4 +36,15 @@ router.post('/cart/sub-quantity/:cartDetailsID', cartCtl.subQuantity);
 router.delete('/cart/:cartDetailsID', cartCtl.deleteCartDetail);
 router.delete('/cart', cartCtl.deleteCart);
 
+var orderCtl = require('../controllers/customer/order.controller');
+router.post('/order', orderCtl.createOrder);
+router.get('/orders', orderCtl.getAllOrders);
+router.get('/order/:orderID', orderCtl.getOrder);
+router.put('/order/cancelled/:orderID', orderCtl.cancelOrder);
+
+var exploreCtl = require('../controllers/customer/explore.controller');
+router.get('/some-resto-cat', exploreCtl.getSomeRestoCat);
+router.get('/pop-dishes', exploreCtl.getPopularDishes);
+router.get('/pop-restaurants', exploreCtl.getPopularRestaurants);
+
 module.exports = router;

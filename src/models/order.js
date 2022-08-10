@@ -25,6 +25,7 @@ module.exports = (sequelize, DataTypes) => {
 			});
 
 			this.belongsTo(models.Restaurant, {
+				as: 'restaurant',
 				foreignKey: 'resto_id',
 			});
 
@@ -45,6 +46,7 @@ module.exports = (sequelize, DataTypes) => {
 			});
 
 			this.hasOne(models.DeliveryDetails, {
+				as: 'delivery_details',
 				foreignKey: 'order_id',
 			});
 		}
@@ -57,7 +59,7 @@ module.exports = (sequelize, DataTypes) => {
 				defaultValue: DataTypes.UUIDV4,
 			},
 			order_no: {
-				type: DataTypes.BIGINT(11),
+				type: DataTypes.STRING(17),
 				allowNull: false,
 				unique: { msg: 'Order Number already exists.' },
 				validate: {
@@ -74,13 +76,13 @@ module.exports = (sequelize, DataTypes) => {
 			},
 			order_status: {
 				type: DataTypes.STRING,
-				defaultValue: 'In Process',
+				defaultValue: 'Pending',
 				allowNull: false,
 				validate: {
 					notNull: { msg: 'Order Status is required.' },
 					notEmpty: { msg: 'Order Status should not be empty.' },
 					isIn: {
-						args: [['In Process', 'On the Way', 'Delivered', 'Rejected']],
+						args: [['Pending', 'In Process', 'On the Way', 'Delivered', 'Rejected', 'Cancelled']],
 						msg: "Order Status should be 'In Process', 'On the Way', 'Delivered', or 'Rejected' only.",
 					},
 				},
@@ -105,6 +107,15 @@ module.exports = (sequelize, DataTypes) => {
 					model: sequelize.Address,
 					key: 'address_id',
 				},
+			},
+			date_processed: {
+				type: DataTypes.DATE,
+				comment:
+					'Date and time in which the order/food has been processed by the restaurant and is sent to the kitchen for preparation and cooking.',
+			},
+			date_cancelled: {
+				type: DataTypes.DATE,
+				comment: 'Date and time in which the order/food is cancelled by the customer.',
 			},
 			date_released: {
 				type: DataTypes.DATE,

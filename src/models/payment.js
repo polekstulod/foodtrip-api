@@ -38,7 +38,7 @@ module.exports = (sequelize, DataTypes) => {
 				defaultValue: DataTypes.UUIDV4,
 			},
 			payment_no: {
-				type: DataTypes.BIGINT(11),
+				type: DataTypes.STRING(17),
 				allowNull: false,
 				unique: { msg: 'Payment Number already exists.' },
 				validate: {
@@ -55,13 +55,13 @@ module.exports = (sequelize, DataTypes) => {
 			},
 			payment_status: {
 				type: DataTypes.STRING,
-				defaultValue: 'Paid',
+				defaultValue: 'Pending',
 				allowNull: false,
 				validate: {
 					notNull: { msg: 'Payment Status should not be null.' },
 					notEmpty: { msg: 'Payment Status should not be empty.' },
 					isIn: {
-						args: [['Paid', 'Refunded']],
+						args: [['Pending', 'Paid', 'Refunded', 'Failed']],
 						msg: "Payment Status should be 'Paid' or 'Refunded' only.",
 					},
 				},

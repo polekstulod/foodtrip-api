@@ -25,6 +25,7 @@ module.exports = (sequelize, DataTypes) => {
 			});
 
 			this.belongsTo(models.Order, {
+				as: 'order',
 				foreignKey: 'order_id',
 			});
 
@@ -42,7 +43,7 @@ module.exports = (sequelize, DataTypes) => {
 				defaultValue: DataTypes.UUIDV4,
 			},
 			tracking_no: {
-				type: DataTypes.BIGINT(11),
+				type: DataTypes.STRING(17),
 				allowNull: false,
 				unique: { msg: 'Tracking Number already exists.' },
 				validate: {

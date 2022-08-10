@@ -2,6 +2,7 @@ const db = require('../../models');
 const { dataResponse, errResponse, emptyDataResponse, checkAuthorization } = require('../../helpers/controller.helper');
 const dataTable = require('sequelize-datatables');
 
+// * Find All Restaurant Admin
 exports.getAllRestoAdmin = async (req, res) => {
 	if (!checkAuthorization(req, res, 'Admin')) {
 		return;
@@ -28,7 +29,7 @@ exports.getAllRestoAdmin = async (req, res) => {
 			},
 		],
 		start: 0,
-		length: 10,
+		length: 100,
 		search: {
 			value: '',
 			regex: false,
@@ -36,7 +37,7 @@ exports.getAllRestoAdmin = async (req, res) => {
 	};
 
 	try {
-		let data = await dataTable(db.User, req.body, {
+		const data = await dataTable(db.User, req.body, {
 			where: { user_type: 'Resto_Admin' },
 			include: ['restaurant'],
 		});
@@ -46,6 +47,7 @@ exports.getAllRestoAdmin = async (req, res) => {
 	}
 };
 
+// * Find Restaurant Admin
 exports.getRestoAdmin = async (req, res) => {
 	if (!checkAuthorization(req, res, 'Admin')) {
 		return;
@@ -54,13 +56,17 @@ exports.getRestoAdmin = async (req, res) => {
 	const id = req.params.restoAdminID;
 
 	try {
-		let data = await db.User.findAll({ include: ['restaurant'], where: { user_type: 'Resto_Admin', user_id: id } });
+		const data = await db.User.findOne({
+			include: [{ model: db.Restaurant, as: 'restaurant', include: ['restaurant_category', 'resto_address'] }],
+			where: { user_type: 'Resto_Admin', user_id: id },
+		});
 		dataResponse(res, data, 'Resto Admin has been retrieved', 'No Resto Admin has been retrieved');
 	} catch (err) {
 		errResponse(res, err);
 	}
 };
 
+// * Find All Customer
 exports.getAllCustomer = async (req, res) => {
 	if (!checkAuthorization(req, res, 'Admin')) {
 		return;
@@ -87,7 +93,7 @@ exports.getAllCustomer = async (req, res) => {
 			},
 		],
 		start: 0,
-		length: 10,
+		length: 100,
 		search: {
 			value: '',
 			regex: false,
@@ -95,7 +101,7 @@ exports.getAllCustomer = async (req, res) => {
 	};
 
 	try {
-		let data = await dataTable(db.User, req.body, {
+		const data = await dataTable(db.User, req.body, {
 			where: { user_type: 'Customer' },
 		});
 		res.send(data);
@@ -104,6 +110,7 @@ exports.getAllCustomer = async (req, res) => {
 	}
 };
 
+// * Find Customer
 exports.getCustomer = async (req, res) => {
 	if (!checkAuthorization(req, res, 'Admin')) {
 		return;
@@ -112,13 +119,14 @@ exports.getCustomer = async (req, res) => {
 	const id = req.params.customerID;
 
 	try {
-		let data = await db.User.findAll({ where: { user_type: 'Customer', user_id: id } });
+		const data = await db.User.findOne({ where: { user_type: 'Customer', user_id: id }, include: ['addresses'] });
 		dataResponse(res, data, 'Customer has been retrieved', 'No Customer has been retrieved');
 	} catch (err) {
 		errResponse(res, err);
 	}
 };
 
+// * Find All Admin
 exports.getAllAdmin = async (req, res) => {
 	if (!checkAuthorization(req, res, 'Admin')) {
 		return;
@@ -145,7 +153,7 @@ exports.getAllAdmin = async (req, res) => {
 			},
 		],
 		start: 0,
-		length: 10,
+		length: 100,
 		search: {
 			value: '',
 			regex: false,
@@ -153,7 +161,7 @@ exports.getAllAdmin = async (req, res) => {
 	};
 
 	try {
-		let data = await dataTable(db.User, req.body, {
+		const data = await dataTable(db.User, req.body, {
 			where: { user_type: 'Admin' },
 			include: ['created'],
 		});
@@ -163,6 +171,7 @@ exports.getAllAdmin = async (req, res) => {
 	}
 };
 
+// * Find Admin
 exports.getAdmin = async (req, res) => {
 	if (!checkAuthorization(req, res, 'Admin')) {
 		return;
@@ -171,7 +180,7 @@ exports.getAdmin = async (req, res) => {
 	const id = req.params.adminID;
 
 	try {
-		let data = await db.User.findAll({ where: { user_type: 'Admin', user_id: id } });
+		const data = await db.User.findOne({ where: { user_type: 'Admin', user_id: id } });
 		dataResponse(res, data, 'Admin has been retrieved', 'No Admin has been retrieved');
 	} catch (err) {
 		errResponse(res, err);

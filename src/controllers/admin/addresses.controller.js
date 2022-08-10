@@ -29,7 +29,7 @@ exports.getAllAddress = async (req, res) => {
 			},
 		],
 		start: 0,
-		length: 10,
+		length: 100,
 		search: {
 			value: '',
 			regex: false,
@@ -37,7 +37,7 @@ exports.getAllAddress = async (req, res) => {
 	};
 
 	try {
-		let data = await dataTable(db.Address, req.body, {});
+		const data = await dataTable(db.Address, req.body, {});
 		res.send(data);
 	} catch (err) {
 		errResponse(res, err);
@@ -73,7 +73,7 @@ exports.getAddress = async (req, res) => {
 			},
 		],
 		start: 0,
-		length: 10,
+		length: 100,
 		search: {
 			value: '',
 			regex: false,
@@ -81,7 +81,7 @@ exports.getAddress = async (req, res) => {
 	};
 
 	try {
-		let data = await dataTable(db.Address, req.body, { where: { address_id: id } });
+		const data = await dataTable(db.Address, req.body, { where: { address_id: id } });
 		res.send(data);
 	} catch (err) {
 		errResponse(res, err);

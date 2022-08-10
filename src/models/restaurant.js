@@ -26,11 +26,13 @@ module.exports = (sequelize, DataTypes) => {
 			});
 
 			this.hasOne(models.User, {
+				as: 'restoadmin',
 				foreignKey: 'resto_id',
 			});
 
 			this.hasOne(models.Address, {
-				foreignKey: 'address_id',
+				as: 'resto_address',
+				foreignKey: 'resto_id',
 			});
 
 			this.belongsTo(models.RestoCategory, {
@@ -60,7 +62,7 @@ module.exports = (sequelize, DataTypes) => {
 				defaultValue: DataTypes.UUIDV4,
 			},
 			resto_no: {
-				type: DataTypes.BIGINT(11),
+				type: DataTypes.STRING(17),
 				allowNull: false,
 				unique: { msg: 'Restaurant Number already exists.' },
 				validate: {

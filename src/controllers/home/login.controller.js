@@ -12,7 +12,7 @@ exports.login = async (req, res) => {
 		return errResponse(res, 'Email or password is empty');
 	}
 	try {
-		let data = await db.User.findOne({
+		const data = await db.User.findOne({
 			where: { email_address: req.body.email_address },
 		});
 		if (data) {

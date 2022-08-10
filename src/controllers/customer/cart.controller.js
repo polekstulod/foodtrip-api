@@ -9,6 +9,7 @@ exports.addToCart = async (req, res) => {
 
 	const dishID = req.params.dishID;
 	const userID = req.user.user_id;
+	req.body.quantity = 1;
 
 	// * Check if dish is existing, if then, Add quantity
 	const checkDish = await db.CartDetail.findOne({ where: { dish_id: dishID } });
@@ -73,8 +74,12 @@ exports.getCart = async (req, res) => {
 	const userID = req.user.user_id;
 
 	try {
-		const data = await db.Cart.findOne({ where: { created_by: userID }, include: ['cart_dishes'] });
-		dataResponse(res, data, 'Cart has been successfully retrieved', 'No Cart has been successfully retrieved');
+		const data = await db.Cart.findOne({
+			where: { created_by: userID },
+			include: [{ model: db.Dish, as: 'cart_dishes', include: ['dish_category'] }, 'restaurant'],
+		});
+		if (data == null) emptyDataResponse(res, 'Cart is empty');
+		else dataResponse(res, data, 'Cart has been successfully retrieved', 'No Cart has been successfully retrieved');
 	} catch (err) {
 		errResponse(res, err);
 	}
@@ -101,7 +106,7 @@ exports.addQuantity = async (req, res) => {
 		await calcCartTotal(dishDetails.dish_price, userID, 'add');
 		const data = await db.CartDetail.findByPk(cartDetailsID);
 
-		dataResponse(res, data, 'Add Quantity Successfully', 'Add Quantity Failed');
+		dataResponse(res, data, 'Added Dish Quantity Successfully', 'Added Dish Quantity Failed');
 	} catch (err) {
 		errResponse(res, err);
 	}
@@ -119,18 +124,21 @@ exports.subQuantity = async (req, res) => {
 	const cartDetails = await db.CartDetail.findByPk(cartDetailsID);
 	const dishDetails = await db.Dish.findByPk(cartDetails.dish_id);
 
-	try {
-		await calcQuantity(1, cartDetailsID, 'minus');
-		await db.CartDetail.update(
-			{ subtotal: parseFloat(cartDetails.subtotal) - parseFloat(dishDetails.dish_price) },
-			{ where: { cartdetail_id: cartDetailsID } }
-		);
-		await calcCartTotal(dishDetails.dish_price, userID, 'sub');
-		const data = await db.CartDetail.findByPk(cartDetailsID);
+	if (cartDetails.quantity == 1) errResponse(res, 'Cannot Subract Dish Quantity ');
+	else {
+		try {
+			await calcQuantity(1, cartDetailsID, 'minus');
+			await db.CartDetail.update(
+				{ subtotal: parseFloat(cartDetails.subtotal) - parseFloat(dishDetails.dish_price) },
+				{ where: { cartdetail_id: cartDetailsID } }
+			);
+			await calcCartTotal(dishDetails.dish_price, userID, 'sub');
+			const data = await db.CartDetail.findByPk(cartDetailsID);
 
-		dataResponse(res, data, 'Subtract Quantity Successfully', 'Subtract Quantity Failed');
-	} catch (err) {
-		errResponse(res, err);
+			dataResponse(res, data, 'Subtracted Dish Quantity Successfully', 'Subtracted Dish Quantity Failed');
+		} catch (err) {
+			errResponse(res, err);
+		}
 	}
 };
 
